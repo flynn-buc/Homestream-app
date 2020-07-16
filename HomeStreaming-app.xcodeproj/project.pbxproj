@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045AE24C1160D00334E7F /* AppDelegate.swift */; };
+		CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045B024C1160D00334E7F /* SceneDelegate.swift */; };
+		CED045B324C1160D00334E7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045B224C1160D00334E7F /* ViewController.swift */; };
+		CED045B624C1160D00334E7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED045B424C1160D00334E7F /* Main.storyboard */; };
+		CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED045B724C1160D00334E7F /* HomeStreaming_app.xcdatamodeld */; };
+		CED045BB24C1160E00334E7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED045BA24C1160E00334E7F /* Assets.xcassets */; };
+		CED045BE24C1160E00334E7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED045BC24C1160E00334E7F /* LaunchScreen.storyboard */; };
+		CED045C924C1160E00334E7F /* HomeStreaming_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045C824C1160E00334E7F /* HomeStreaming_appTests.swift */; };
+		CED045D424C1160E00334E7F /* HomeStreaming_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */; };
+		CED045E324C1163400334E7F /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = CED045E224C1163400334E7F /* SocketIO */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CED045C524C1160E00334E7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED045A324C1160D00334E7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CED045AA24C1160D00334E7F;
+			remoteInfo = "HomeStreaming-app";
+		};
+		CED045D024C1160E00334E7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED045A324C1160D00334E7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CED045AA24C1160D00334E7F;
+			remoteInfo = "HomeStreaming-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CED045AB24C1160D00334E7F /* HomeStreaming-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeStreaming-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED045AE24C1160D00334E7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CED045B024C1160D00334E7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CED045B224C1160D00334E7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CED045B524C1160D00334E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CED045B824C1160D00334E7F /* HomeStreaming_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeStreaming_app.xcdatamodel; sourceTree = "<group>"; };
+		CED045BA24C1160E00334E7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CED045BD24C1160E00334E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CED045BF24C1160E00334E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED045C424C1160E00334E7F /* HomeStreaming-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeStreaming-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED045C824C1160E00334E7F /* HomeStreaming_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStreaming_appTests.swift; sourceTree = "<group>"; };
+		CED045CA24C1160E00334E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED045CF24C1160E00334E7F /* HomeStreaming-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeStreaming-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStreaming_appUITests.swift; sourceTree = "<group>"; };
+		CED045D524C1160E00334E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CED045A824C1160D00334E7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED045E324C1163400334E7F /* SocketIO in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED045C124C1160E00334E7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED045CC24C1160E00334E7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CED045A224C1160D00334E7F = {
+			isa = PBXGroup;
+			children = (
+				CED045AD24C1160D00334E7F /* HomeStreaming-app */,
+				CED045C724C1160E00334E7F /* HomeStreaming-appTests */,
+				CED045D224C1160E00334E7F /* HomeStreaming-appUITests */,
+				CED045AC24C1160D00334E7F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CED045AC24C1160D00334E7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CED045AB24C1160D00334E7F /* HomeStreaming-app.app */,
+				CED045C424C1160E00334E7F /* HomeStreaming-appTests.xctest */,
+				CED045CF24C1160E00334E7F /* HomeStreaming-appUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CED045AD24C1160D00334E7F /* HomeStreaming-app */ = {
+			isa = PBXGroup;
+			children = (
+				CED045AE24C1160D00334E7F /* AppDelegate.swift */,
+				CED045B024C1160D00334E7F /* SceneDelegate.swift */,
+				CED045B224C1160D00334E7F /* ViewController.swift */,
+				CED045B424C1160D00334E7F /* Main.storyboard */,
+				CED045BA24C1160E00334E7F /* Assets.xcassets */,
+				CED045BC24C1160E00334E7F /* LaunchScreen.storyboard */,
+				CED045BF24C1160E00334E7F /* Info.plist */,
+				CED045B724C1160D00334E7F /* HomeStreaming_app.xcdatamodeld */,
+			);
+			path = "HomeStreaming-app";
+			sourceTree = "<group>";
+		};
+		CED045C724C1160E00334E7F /* HomeStreaming-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				CED045C824C1160E00334E7F /* HomeStreaming_appTests.swift */,
+				CED045CA24C1160E00334E7F /* Info.plist */,
+			);
+			path = "HomeStreaming-appTests";
+			sourceTree = "<group>";
+		};
+		CED045D224C1160E00334E7F /* HomeStreaming-appUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */,
+				CED045D524C1160E00334E7F /* Info.plist */,
+			);
+			path = "HomeStreaming-appUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CED045AA24C1160D00334E7F /* HomeStreaming-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED045D824C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-app" */;
+			buildPhases = (
+				CED045A724C1160D00334E7F /* Sources */,
+				CED045A824C1160D00334E7F /* Frameworks */,
+				CED045A924C1160D00334E7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HomeStreaming-app";
+			packageProductDependencies = (
+				CED045E224C1163400334E7F /* SocketIO */,
+			);
+			productName = "HomeStreaming-app";
+			productReference = CED045AB24C1160D00334E7F /* HomeStreaming-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CED045C324C1160E00334E7F /* HomeStreaming-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED045DB24C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-appTests" */;
+			buildPhases = (
+				CED045C024C1160E00334E7F /* Sources */,
+				CED045C124C1160E00334E7F /* Frameworks */,
+				CED045C224C1160E00334E7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CED045C624C1160E00334E7F /* PBXTargetDependency */,
+			);
+			name = "HomeStreaming-appTests";
+			productName = "HomeStreaming-appTests";
+			productReference = CED045C424C1160E00334E7F /* HomeStreaming-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CED045CE24C1160E00334E7F /* HomeStreaming-appUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED045DE24C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-appUITests" */;
+			buildPhases = (
+				CED045CB24C1160E00334E7F /* Sources */,
+				CED045CC24C1160E00334E7F /* Frameworks */,
+				CED045CD24C1160E00334E7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CED045D124C1160E00334E7F /* PBXTargetDependency */,
+			);
+			name = "HomeStreaming-appUITests";
+			productName = "HomeStreaming-appUITests";
+			productReference = CED045CF24C1160E00334E7F /* HomeStreaming-appUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CED045A324C1160D00334E7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					CED045AA24C1160D00334E7F = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					CED045C324C1160E00334E7F = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = CED045AA24C1160D00334E7F;
+					};
+					CED045CE24C1160E00334E7F = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = CED045AA24C1160D00334E7F;
+					};
+				};
+			};
+			buildConfigurationList = CED045A624C1160D00334E7F /* Build configuration list for PBXProject "HomeStreaming-app" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CED045A224C1160D00334E7F;
+			packageReferences = (
+				CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */,
+			);
+			productRefGroup = CED045AC24C1160D00334E7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CED045AA24C1160D00334E7F /* HomeStreaming-app */,
+				CED045C324C1160E00334E7F /* HomeStreaming-appTests */,
+				CED045CE24C1160E00334E7F /* HomeStreaming-appUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CED045A924C1160D00334E7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED045BE24C1160E00334E7F /* LaunchScreen.storyboard in Resources */,
+				CED045BB24C1160E00334E7F /* Assets.xcassets in Resources */,
+				CED045B624C1160D00334E7F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED045C224C1160E00334E7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED045CD24C1160E00334E7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CED045A724C1160D00334E7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED045B324C1160D00334E7F /* ViewController.swift in Sources */,
+				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
+				CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */,
+				CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED045C024C1160E00334E7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED045C924C1160E00334E7F /* HomeStreaming_appTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED045CB24C1160E00334E7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED045D424C1160E00334E7F /* HomeStreaming_appUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CED045C624C1160E00334E7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CED045AA24C1160D00334E7F /* HomeStreaming-app */;
+			targetProxy = CED045C524C1160E00334E7F /* PBXContainerItemProxy */;
+		};
+		CED045D124C1160E00334E7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CED045AA24C1160D00334E7F /* HomeStreaming-app */;
+			targetProxy = CED045D024C1160E00334E7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CED045B424C1160D00334E7F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED045B524C1160D00334E7F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CED045BC24C1160E00334E7F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED045BD24C1160E00334E7F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CED045D624C1160E00334E7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CED045D724C1160E00334E7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CED045D924C1160E00334E7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL3D2R8VQP;
+				INFOPLIST_FILE = "HomeStreaming-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CED045DA24C1160E00334E7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL3D2R8VQP;
+				INFOPLIST_FILE = "HomeStreaming-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CED045DC24C1160E00334E7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL3D2R8VQP;
+				INFOPLIST_FILE = "HomeStreaming-appTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeStreaming-app.app/HomeStreaming-app";
+			};
+			name = Debug;
+		};
+		CED045DD24C1160E00334E7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL3D2R8VQP;
+				INFOPLIST_FILE = "HomeStreaming-appTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeStreaming-app.app/HomeStreaming-app";
+			};
+			name = Release;
+		};
+		CED045DF24C1160E00334E7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL3D2R8VQP;
+				INFOPLIST_FILE = "HomeStreaming-appUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "HomeStreaming-app";
+			};
+			name = Debug;
+		};
+		CED045E024C1160E00334E7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL3D2R8VQP;
+				INFOPLIST_FILE = "HomeStreaming-appUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "HomeStreaming-app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CED045A624C1160D00334E7F /* Build configuration list for PBXProject "HomeStreaming-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED045D624C1160E00334E7F /* Debug */,
+				CED045D724C1160E00334E7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CED045D824C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED045D924C1160E00334E7F /* Debug */,
+				CED045DA24C1160E00334E7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CED045DB24C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED045DC24C1160E00334E7F /* Debug */,
+				CED045DD24C1160E00334E7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CED045DE24C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-appUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED045DF24C1160E00334E7F /* Debug */,
+				CED045E024C1160E00334E7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CED045E224C1163400334E7F /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CED045B724C1160D00334E7F /* HomeStreaming_app.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CED045B824C1160D00334E7F /* HomeStreaming_app.xcdatamodel */,
+			);
+			currentVersion = CED045B824C1160D00334E7F /* HomeStreaming_app.xcdatamodel */;
+			path = HomeStreaming_app.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CED045A324C1160D00334E7F /* Project object */;
+}

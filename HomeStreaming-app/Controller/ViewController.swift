@@ -20,17 +20,6 @@ class ViewController: UIViewController {
         
     }
     @IBAction func sendButtonPressed(_ sender: Any) {
-        guard let message = messageTxtField.text else {return}
-        
-        if (message != ""){
-            ClientService.instance.getMessage { (message) in
-                print(message)
-            } onError: { (message) in
-                print(message)
-            }
-
-            messageTxtField.text = ""
-        }
         
        
     }

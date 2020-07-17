@@ -21,6 +21,8 @@
 		CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815A24C148E900CF9428 /* MessageData.swift */; };
 		CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815F24C16F5F00CF9428 /* FolderCell.swift */; };
 		CEE9816324C171B600CF9428 /* FolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816224C171B600CF9428 /* FolderController.swift */; };
+		CEE9816624C224F100CF9428 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816524C224F100CF9428 /* APIError.swift */; };
+		CEE9816824C22A9500CF9428 /* Subfolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816724C22A9500CF9428 /* Subfolders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		CEE9815A24C148E900CF9428 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		CEE9815F24C16F5F00CF9428 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		CEE9816224C171B600CF9428 /* FolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderController.swift; sourceTree = "<group>"; };
+		CEE9816524C224F100CF9428 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CEE9816724C22A9500CF9428 /* Subfolders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subfolders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				CEE9815A24C148E900CF9428 /* MessageData.swift */,
+				CEE9816724C22A9500CF9428 /* Subfolders.swift */,
+				CEE9816524C224F100CF9428 /* APIError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,12 +321,14 @@
 			files = (
 				CED045B324C1160D00334E7F /* ViewController.swift in Sources */,
 				CEE9816324C171B600CF9428 /* FolderController.swift in Sources */,
+				CEE9816824C22A9500CF9428 /* Subfolders.swift in Sources */,
 				CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */,
 				CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */,
 				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
 				CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */,
 				CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */,
 				CEE9815724C1445900CF9428 /* ClientService.swift in Sources */,
+				CEE9816624C224F100CF9428 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

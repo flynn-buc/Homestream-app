@@ -6,3 +6,6 @@
 //
 
 import Foundation
+struct Subfolders: Codable{
+    let subfolders: [String]
+        }

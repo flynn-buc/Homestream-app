@@ -17,6 +17,10 @@
 		CED045C924C1160E00334E7F /* HomeStreaming_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045C824C1160E00334E7F /* HomeStreaming_appTests.swift */; };
 		CED045D424C1160E00334E7F /* HomeStreaming_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */; };
 		CED045E324C1163400334E7F /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = CED045E224C1163400334E7F /* SocketIO */; };
+		CEE9815724C1445900CF9428 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815624C1445900CF9428 /* ClientService.swift */; };
+		CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815A24C148E900CF9428 /* MessageData.swift */; };
+		CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815F24C16F5F00CF9428 /* FolderCell.swift */; };
+		CEE9816324C171B600CF9428 /* FolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816224C171B600CF9428 /* FolderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		CED045CF24C1160E00334E7F /* HomeStreaming-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeStreaming-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStreaming_appUITests.swift; sourceTree = "<group>"; };
 		CED045D524C1160E00334E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE9815624C1445900CF9428 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		CEE9815A24C148E900CF9428 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
+		CEE9815F24C16F5F00CF9428 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		CEE9816224C171B600CF9428 /* FolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE83ED5924C117B000D86436 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9815624C1445900CF9428 /* ClientService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CED045A224C1160D00334E7F = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +119,12 @@
 		CED045AD24C1160D00334E7F /* HomeStreaming-app */ = {
 			isa = PBXGroup;
 			children = (
+				CE83ED5924C117B000D86436 /* Service */,
+				CEE9815524C1435800CF9428 /* Model */,
+				CEE9815424C1435300CF9428 /* View */,
+				CEE9815324C1434C00CF9428 /* Controller */,
 				CED045AE24C1160D00334E7F /* AppDelegate.swift */,
 				CED045B024C1160D00334E7F /* SceneDelegate.swift */,
-				CED045B224C1160D00334E7F /* ViewController.swift */,
 				CED045B424C1160D00334E7F /* Main.storyboard */,
 				CED045BA24C1160E00334E7F /* Assets.xcassets */,
 				CED045BC24C1160E00334E7F /* LaunchScreen.storyboard */,
@@ -131,6 +150,31 @@
 				CED045D524C1160E00334E7F /* Info.plist */,
 			);
 			path = "HomeStreaming-appUITests";
+			sourceTree = "<group>";
+		};
+		CEE9815324C1434C00CF9428 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CED045B224C1160D00334E7F /* ViewController.swift */,
+				CEE9816224C171B600CF9428 /* FolderController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CEE9815424C1435300CF9428 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9815F24C16F5F00CF9428 /* FolderCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE9815524C1435800CF9428 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9815A24C148E900CF9428 /* MessageData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED045B324C1160D00334E7F /* ViewController.swift in Sources */,
+				CEE9816324C171B600CF9428 /* FolderController.swift in Sources */,
+				CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */,
+				CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */,
 				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
 				CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */,
 				CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */,
+				CEE9815724C1445900CF9428 /* ClientService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
 				INFOPLIST_FILE = "HomeStreaming-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,6 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
 				INFOPLIST_FILE = "HomeStreaming-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

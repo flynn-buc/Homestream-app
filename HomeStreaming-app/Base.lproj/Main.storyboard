@@ -1,24 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnD-vL-u9F">
+    <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kEs-Hr-RCD">
+                                <rect key="frame" x="543.5" y="476" width="279" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9P-dO-gYA">
+                                        <rect key="frame" x="89" y="0.0" width="101" height="30"/>
+                                        <state key="normal" title="Get Folder List"/>
+                                        <connections>
+                                            <action selector="connectButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6t2-MI-GlQ"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="WsN-sd-Zni">
+                                        <rect key="frame" x="0.0" y="38" width="279" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZe-dl-uzL">
+                                                <rect key="frame" x="0.0" y="0.0" width="226" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="226" id="m3e-7e-o7O"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-Xs-4ev">
+                                                <rect key="frame" x="243" y="0.0" width="36" height="34"/>
+                                                <state key="normal" title="Send"/>
+                                                <connections>
+                                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pwt-Lp-wKw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kEs-Hr-RCD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NEV-pO-i32"/>
+                            <constraint firstItem="kEs-Hr-RCD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UQB-cr-gDr"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Main Screen" id="eO8-0w-RGO"/>
+                    <connections>
+                        <outlet property="messageTxtField" destination="WZe-dl-uzL" id="dGJ-zh-vFf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="831.91800878477295" y="137.6953125"/>
+        </scene>
+        <!--Folder List-->
+        <scene sceneID="CTT-bt-icn">
+            <objects>
+                <viewController id="kqx-Nd-9T2" customClass="FolderController" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S0I-ps-sq5">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O4Y-uq-e4u">
+                                <rect key="frame" x="5" y="55" width="1356" height="914"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YSF-ke-Y37">
+                                    <size key="itemSize" width="164" height="152"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="folderCell" id="Vq1-lp-ltB" customClass="FolderCell" customModule="HomeStreaming_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="152"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nAg-Uh-OdM">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="152"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="27S-DR-2er">
+                                                    <rect key="frame" x="5" y="5" width="154" height="142"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RLS-fe-yVi">
+                                                            <rect key="frame" x="0.0" y="1" width="154" height="116.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="RLS-fe-yVi" secondAttribute="height" multiplier="22:17" id="QSm-Qs-UZr"/>
+                                                                <constraint firstAttribute="width" constant="140" id="Ryo-lH-MOD"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Names" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTC-rQ-Y6Z">
+                                                            <rect key="frame" x="0.0" y="126" width="154" height="16"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="27S-DR-2er" firstAttribute="leading" secondItem="nAg-Uh-OdM" secondAttribute="leading" constant="5" id="Rjh-0A-zxy"/>
+                                                <constraint firstAttribute="bottom" secondItem="27S-DR-2er" secondAttribute="bottom" constant="5" id="S73-jY-sDo"/>
+                                                <constraint firstAttribute="trailing" secondItem="27S-DR-2er" secondAttribute="trailing" constant="5" id="h84-O7-VDg"/>
+                                                <constraint firstItem="27S-DR-2er" firstAttribute="top" secondItem="nAg-Uh-OdM" secondAttribute="top" constant="5" id="pDf-yy-IBI"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="164" height="152"/>
+                                        <connections>
+                                            <outlet property="folderImageView" destination="RLS-fe-yVi" id="uIV-Ty-ecF"/>
+                                            <outlet property="folderName" destination="hTC-rQ-Y6Z" id="T6w-DA-7SE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bCG-Ex-m9x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bCG-Ex-m9x" firstAttribute="bottom" secondItem="O4Y-uq-e4u" secondAttribute="bottom" constant="5" id="7Tu-qo-Dbm"/>
+                            <constraint firstItem="O4Y-uq-e4u" firstAttribute="leading" secondItem="bCG-Ex-m9x" secondAttribute="leading" constant="5" id="A7d-2x-XEQ"/>
+                            <constraint firstItem="bCG-Ex-m9x" firstAttribute="trailing" secondItem="O4Y-uq-e4u" secondAttribute="trailing" constant="5" id="Whu-b1-hRa"/>
+                            <constraint firstItem="O4Y-uq-e4u" firstAttribute="top" secondItem="bCG-Ex-m9x" secondAttribute="top" constant="5" id="XBj-G4-I8J"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Folder List" id="db7-ia-td4"/>
+                    <navigationItem key="navigationItem" title="Folder List" id="LLG-8I-ugd"/>
+                    <connections>
+                        <outlet property="folderCollection" destination="O4Y-uq-e4u" id="FpX-QA-cxU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RW7-eG-ON2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822.69399707174227" y="1076.953125"/>
+        </scene>
+        <!--Folder List-->
+        <scene sceneID="Obm-oH-Djf">
+            <objects>
+                <navigationController id="daa-Nv-n94" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Folder List" id="d8T-D5-DrP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sm1-Rs-X4X">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kqx-Nd-9T2" kind="relationship" relationship="rootViewController" id="Taj-77-JZ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lt-Rp-B9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69" y="1077"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6Sf-lu-JcG">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hnD-vL-u9F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X2A-IR-HCY">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="fAl-CI-If9"/>
+                        <segue destination="daa-Nv-n94" kind="relationship" relationship="viewControllers" id="YN7-AC-DWK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVh-RF-Uat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.79941434846265" y="137.6953125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="folder.fill" catalog="system" width="128" height="97"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

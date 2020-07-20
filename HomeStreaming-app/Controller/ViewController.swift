@@ -6,22 +6,41 @@
 //
 
 import UIKit
-
+@IBDesignable
 class ViewController: UIViewController {
 
-    @IBOutlet weak var messageTxtField: UITextField!
+    
+    @IBInspectable @IBOutlet weak var addressField: UITextField!
+    
+    @IBInspectable @IBOutlet weak var portField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        setupToolbar()
     }
 
 
-    @IBAction func connectButtonPressed(_ sender: Any) {
+    @IBAction func saveSettingsButtonPressed(_ sender: Any) {
+        guard let address = addressField.text, let port = portField.text else{return}
+        ClientService.instance.setCustomAddress(ip: address, port: port)
+        view.endEditing(true)
+    }
+    
+    func setupToolbar(){
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+                doneToolbar.barStyle = .default
+        let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissMyKeyboard))
+        doneToolbar.items = [flexSpace, flexSpace, doneBtn]
+        doneToolbar.sizeToFit()
+        portField.inputAccessoryView = doneToolbar
+        addressField.inputAccessoryView = doneToolbar
         
     }
-    @IBAction func sendButtonPressed(_ sender: Any) {
-        
-       
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
     }
 }
 

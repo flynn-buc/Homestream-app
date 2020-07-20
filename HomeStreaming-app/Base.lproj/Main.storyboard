@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnD-vL-u9F">
-    <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -14,38 +15,45 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kEs-Hr-RCD">
-                                <rect key="frame" x="543.5" y="476" width="279" height="72"/>
+                                <rect key="frame" x="278.5" y="499.5" width="253" height="81"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9P-dO-gYA">
-                                        <rect key="frame" x="89" y="0.0" width="101" height="30"/>
-                                        <state key="normal" title="Get Folder List"/>
-                                        <connections>
-                                            <action selector="connectButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6t2-MI-GlQ"/>
-                                        </connections>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="WsN-sd-Zni">
-                                        <rect key="frame" x="0.0" y="38" width="279" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="WsN-sd-Zni">
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="81"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZe-dl-uzL">
-                                                <rect key="frame" x="0.0" y="0.0" width="226" height="34"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Zsf-cE-Lii">
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="34"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZe-dl-uzL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="182.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Port" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jH-bS-OM7">
+                                                        <rect key="frame" x="197.5" y="0.0" width="55.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                    </textField>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="226" id="m3e-7e-o7O"/>
+                                                    <constraint firstAttribute="width" constant="253" id="Lyb-Uu-ktR"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-Xs-4ev">
-                                                <rect key="frame" x="243" y="0.0" width="36" height="34"/>
-                                                <state key="normal" title="Send"/>
+                                                <rect key="frame" x="0.0" y="51" width="253" height="30"/>
+                                                <state key="normal" title="Save Connection Settings"/>
                                                 <connections>
-                                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pwt-Lp-wKw"/>
+                                                    <action selector="saveSettingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pwt-Lp-wKw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="253" id="YkT-aT-AHg"/>
+                                            <constraint firstAttribute="height" constant="81" id="uYu-pY-Als"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -59,7 +67,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Screen" id="eO8-0w-RGO"/>
                     <connections>
-                        <outlet property="messageTxtField" destination="WZe-dl-uzL" id="dGJ-zh-vFf"/>
+                        <outlet property="addressField" destination="WZe-dl-uzL" id="dGJ-zh-vFf"/>
+                        <outlet property="portField" destination="5jH-bS-OM7" id="gkS-lG-3Ja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,40 +80,40 @@
             <objects>
                 <viewController id="kqx-Nd-9T2" customClass="FolderController" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S0I-ps-sq5">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O4Y-uq-e4u">
-                                <rect key="frame" x="5" y="55" width="1356" height="914"/>
+                                <rect key="frame" x="5" y="55" width="800" height="970"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YSF-ke-Y37">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YSF-ke-Y37">
                                     <size key="itemSize" width="164" height="152"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="folderCell" id="Vq1-lp-ltB" customClass="FolderCell" customModule="HomeStreaming_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="164" height="152"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="folderCell" id="Vq1-lp-ltB" customClass="FolderCell" customModule="HomeStreaming_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="177"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nAg-Uh-OdM">
-                                            <rect key="frame" x="0.0" y="0.0" width="164" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="177"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="27S-DR-2er">
-                                                    <rect key="frame" x="5" y="5" width="154" height="142"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="27S-DR-2er">
+                                                    <rect key="frame" x="5" y="5" width="154" height="167"/>
                                                     <subviews>
-                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBf-U9-VxO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="154" height="110"/>
-                                                            <state key="normal" image="folder"/>
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBf-U9-VxO" customClass="FolderButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="154" height="127"/>
+                                                            <state key="normal" image="subtitle"/>
                                                             <connections>
                                                                 <action selector="folderBtnPressed:" destination="kqx-Nd-9T2" eventType="touchUpInside" id="Nym-73-kz1"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Names" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="hTC-rQ-Y6Z">
-                                                            <rect key="frame" x="0.0" y="117" width="154" height="25"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Names" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="hTC-rQ-Y6Z">
+                                                            <rect key="frame" x="33" y="132" width="88.5" height="35"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="2mN-xB-e4J"/>
+                                                                <constraint firstAttribute="height" constant="35" id="2mN-xB-e4J"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                             <nil key="textColor"/>
@@ -112,19 +121,38 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="154" id="fCp-P5-1Ae"/>
-                                                        <constraint firstAttribute="height" constant="142" id="lL3-oi-nim"/>
+                                                        <constraint firstItem="kBf-U9-VxO" firstAttribute="top" secondItem="27S-DR-2er" secondAttribute="top" id="VR8-KZ-bD4"/>
+                                                        <constraint firstItem="hTC-rQ-Y6Z" firstAttribute="top" secondItem="kBf-U9-VxO" secondAttribute="bottom" constant="5" id="msj-BZ-fgV"/>
                                                     </constraints>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dm8-c4-7vR" customClass="FavoritesButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                    <rect key="frame" x="130" y="5" width="29" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="29" id="H1k-Fz-DZJ"/>
+                                                        <constraint firstAttribute="height" constant="29" id="TDz-dD-fMs"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemRedColor"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" red="0.8411795661" green="0.28270526130000001" blue="0.1245664168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <imageReference key="image" image="heart" catalog="system" symbolScale="default"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="favoritesBtnPressed:" destination="kqx-Nd-9T2" eventType="touchUpInside" id="I2U-9A-Y41"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="dm8-c4-7vR" firstAttribute="top" secondItem="nAg-Uh-OdM" secondAttribute="top" constant="5" id="FE4-FV-PiN"/>
+                                                <constraint firstAttribute="trailing" secondItem="dm8-c4-7vR" secondAttribute="trailing" constant="5" id="HPx-Sq-fNh"/>
                                                 <constraint firstItem="27S-DR-2er" firstAttribute="leading" secondItem="nAg-Uh-OdM" secondAttribute="leading" constant="5" id="Rjh-0A-zxy"/>
                                                 <constraint firstAttribute="bottom" secondItem="27S-DR-2er" secondAttribute="bottom" constant="5" id="S73-jY-sDo"/>
                                                 <constraint firstAttribute="trailing" secondItem="27S-DR-2er" secondAttribute="trailing" constant="5" id="h84-O7-VDg"/>
                                                 <constraint firstItem="27S-DR-2er" firstAttribute="top" secondItem="nAg-Uh-OdM" secondAttribute="top" constant="5" id="pDf-yy-IBI"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="164" height="177"/>
                                         <connections>
+                                            <outlet property="favoritesButton" destination="dm8-c4-7vR" id="334-aD-YVb"/>
                                             <outlet property="folderButton" destination="kBf-U9-VxO" id="L8r-QU-X5M"/>
                                             <outlet property="folderName" destination="hTC-rQ-Y6Z" id="T6w-DA-7SE"/>
                                         </connections>
@@ -150,7 +178,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="6Kv-rH-D6P">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m3T-2x-Qhd">
-                                <rect key="frame" x="1274" y="14" width="72" height="22"/>
+                                <rect key="frame" x="718" y="14" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow.triangle.2.circlepath" catalog="system"/>
                                 <connections>
@@ -169,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RW7-eG-ON2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822.69399707174227" y="1076.953125"/>
+            <point key="canvasLocation" x="822.22222222222217" y="1076.6666666666667"/>
         </scene>
         <!--Folder List-->
         <scene sceneID="Obm-oH-Djf">
@@ -177,7 +205,7 @@
                 <navigationController id="daa-Nv-n94" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Folder List" id="d8T-D5-DrP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sm1-Rs-X4X">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -211,9 +239,13 @@
     <resources>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="folder" width="2153" height="1721"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="subtitle" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

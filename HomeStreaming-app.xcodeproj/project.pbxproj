@@ -23,6 +23,13 @@
 		CEE9816324C171B600CF9428 /* FolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816224C171B600CF9428 /* FolderController.swift */; };
 		CEE9816624C224F100CF9428 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816524C224F100CF9428 /* APIError.swift */; };
 		CEE9816824C22A9500CF9428 /* Subfolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816724C22A9500CF9428 /* Subfolders.swift */; };
+		CEE9816C24C2654B00CF9428 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816B24C2654B00CF9428 /* Files.swift */; };
+		CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816E24C2A51000CF9428 /* FileType.swift */; };
+		CEE9817324C2A59600CF9428 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817224C2A59600CF9428 /* Item.swift */; };
+		CEE9817524C2DD3700CF9428 /* FolderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817424C2DD3700CF9428 /* FolderButton.swift */; };
+		CEE9817824C2E18C00CF9428 /* Differ in Frameworks */ = {isa = PBXBuildFile; productRef = CEE9817724C2E18C00CF9428 /* Differ */; };
+		CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */; };
+		CEE9817E24C4C12D00CF9428 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817D24C4C12D00CF9428 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +71,12 @@
 		CEE9816224C171B600CF9428 /* FolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderController.swift; sourceTree = "<group>"; };
 		CEE9816524C224F100CF9428 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CEE9816724C22A9500CF9428 /* Subfolders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subfolders.swift; sourceTree = "<group>"; };
+		CEE9816B24C2654B00CF9428 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		CEE9816E24C2A51000CF9428 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
+		CEE9817224C2A59600CF9428 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CEE9817424C2DD3700CF9428 /* FolderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderButton.swift; sourceTree = "<group>"; };
+		CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
+		CEE9817D24C4C12D00CF9428 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE9817824C2E18C00CF9428 /* Differ in Frameworks */,
 				CED045E324C1163400334E7F /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +137,7 @@
 		CED045AD24C1160D00334E7F /* HomeStreaming-app */ = {
 			isa = PBXGroup;
 			children = (
+				CEE9816D24C2A50300CF9428 /* Enums */,
 				CE83ED5924C117B000D86436 /* Service */,
 				CEE9815524C1435800CF9428 /* Model */,
 				CEE9815424C1435300CF9428 /* View */,
@@ -169,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				CEE9815F24C16F5F00CF9428 /* FolderCell.swift */,
+				CEE9817424C2DD3700CF9428 /* FolderButton.swift */,
+				CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,11 +193,38 @@
 		CEE9815524C1435800CF9428 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CEE9815A24C148E900CF9428 /* MessageData.swift */,
-				CEE9816724C22A9500CF9428 /* Subfolders.swift */,
-				CEE9816524C224F100CF9428 /* APIError.swift */,
+				CEE9817124C2A58B00CF9428 /* LocalModel */,
+				CEE9817024C2A57F00CF9428 /* ServerModel */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE9816D24C2A50300CF9428 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9816E24C2A51000CF9428 /* FileType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		CEE9817024C2A57F00CF9428 /* ServerModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9815A24C148E900CF9428 /* MessageData.swift */,
+				CEE9816724C22A9500CF9428 /* Subfolders.swift */,
+				CEE9816B24C2654B00CF9428 /* Files.swift */,
+				CEE9816524C224F100CF9428 /* APIError.swift */,
+				CEE9817D24C4C12D00CF9428 /* File.swift */,
+			);
+			path = ServerModel;
+			sourceTree = "<group>";
+		};
+		CEE9817124C2A58B00CF9428 /* LocalModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9817224C2A59600CF9428 /* Item.swift */,
+			);
+			path = LocalModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +245,7 @@
 			name = "HomeStreaming-app";
 			packageProductDependencies = (
 				CED045E224C1163400334E7F /* SocketIO */,
+				CEE9817724C2E18C00CF9428 /* Differ */,
 			);
 			productName = "HomeStreaming-app";
 			productReference = CED045AB24C1160D00334E7F /* HomeStreaming-app.app */;
@@ -275,6 +320,7 @@
 			mainGroup = CED045A224C1160D00334E7F;
 			packageReferences = (
 				CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */,
+				CEE9817624C2E18C00CF9428 /* XCRemoteSwiftPackageReference "Differ" */,
 			);
 			productRefGroup = CED045AC24C1160D00334E7F /* Products */;
 			projectDirPath = "";
@@ -320,11 +366,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED045B324C1160D00334E7F /* ViewController.swift in Sources */,
+				CEE9816C24C2654B00CF9428 /* Files.swift in Sources */,
 				CEE9816324C171B600CF9428 /* FolderController.swift in Sources */,
 				CEE9816824C22A9500CF9428 /* Subfolders.swift in Sources */,
 				CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */,
+				CEE9817E24C4C12D00CF9428 /* File.swift in Sources */,
+				CEE9817524C2DD3700CF9428 /* FolderButton.swift in Sources */,
 				CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */,
 				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
+				CEE9817324C2A59600CF9428 /* Item.swift in Sources */,
+				CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */,
+				CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */,
 				CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */,
 				CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */,
 				CEE9815724C1445900CF9428 /* ClientService.swift in Sources */,
@@ -673,6 +725,14 @@
 				minimumVersion = 15.2.0;
 			};
 		};
+		CEE9817624C2E18C00CF9428 /* XCRemoteSwiftPackageReference "Differ" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tonyarnold/Differ";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -680,6 +740,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */;
 			productName = SocketIO;
+		};
+		CEE9817724C2E18C00CF9428 /* Differ */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEE9817624C2E18C00CF9428 /* XCRemoteSwiftPackageReference "Differ" */;
+			productName = Differ;
 		};
 /* End XCSwiftPackageProductDependency section */
 

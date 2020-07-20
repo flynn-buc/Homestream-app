@@ -13,4 +13,5 @@ struct MessageData: Codable{
     let path: String
     let currentFolder: String
     let folders: Subfolders
+    let files: Files
 }

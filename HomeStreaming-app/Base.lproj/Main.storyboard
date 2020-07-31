@@ -199,6 +199,16 @@
             </objects>
             <point key="canvasLocation" x="822.22222222222217" y="1076.6666666666667"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="36Q-ta-6Hk">
+            <objects>
+                <avPlayerViewController storyboardIdentifier="videoPlayerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" videoGravity="AVLayerVideoGravityResizeAspect" id="VpJ-rJ-e43" customClass="VideoPlayerVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="XRO-uQ-FXV"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Py1-yN-rL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1541" y="1077"/>
+        </scene>
         <!--Folder List-->
         <scene sceneID="Obm-oH-Djf">
             <objects>

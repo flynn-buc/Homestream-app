@@ -80,7 +80,16 @@ class FolderController: UIViewController {
         ClientService.instance.get(fileAt: path) { (response) in
             let alert = UIAlertController(title: "Would Play File", message: response.file, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            //self.present(alert, animated: true, completion: nil)
+            guard let videoPlayerVC = self.storyboard?.instantiateViewController(identifier: "videoPlayerVC") as? VideoPlayerVC else {
+                print("failed")
+                return
+            }
+            
+            print("Path to play:: \(path)")
+            self.present(videoPlayerVC, animated: true, completion: nil)
+            videoPlayerVC.initPlayer(url: "http://nissa.local:3004\(path)/Play/")
+            
         } onError: { (message) in
             print(message)
         }
@@ -94,8 +103,6 @@ class FolderController: UIViewController {
         } onError: { (error) in
             print(error)
         }
-
-       
         print("reload btn pressed")
     }
     

@@ -14,12 +14,12 @@ let port = 3004
 typealias OnGetFoldersAndFilesSuccess = (MessageData) -> Void
 typealias OnGetFileSuccess = (File) -> Void
 typealias OnAPIFailure = (String) -> Void
+typealias onRefreshSuccess = (String) -> Void
 
 class ClientService: NSObject{
     static let instance = ClientService()
     
     var URL_BASE = "http://\(IP):\(port)"
-    let URL_ADD_TODO = "/"
     
     
     func setCustomAddress(ip: String, port: String){
@@ -94,5 +94,40 @@ class ClientService: NSObject{
             }
         }
         task.resume()
+    }
+    
+    func refresh(onSuccess: @escaping onRefreshSuccess, onError: @escaping OnAPIFailure){
+        
+        let url = URL(string: "\(URL_BASE)/Refresh/")!
+        print("URL::: \(url.absoluteString)")
+        let task = session.dataTask(with: url) { (data, response, error) in
+            
+            DispatchQueue.main.async {
+                if let error = error {
+                 
+                    onError("error there: \(error.localizedDescription)")
+                    return
+                }
+                guard let data = data, let response = response as? HTTPURLResponse else{
+                    onError("Invalid Data or Response")
+                    return}
+                
+                do{
+                    if response.statusCode == 200{
+                 
+                        let response = try JSONDecoder().decode(APIError.self, from: data)
+                        onSuccess(response.message)
+                        // handle success
+                    } else {
+                        let err = try JSONDecoder().decode(APIError.self, from: data)
+                     onError(err.message)
+                    }
+                }catch{
+                    onError("error here: \(error.localizedDescription)")
+                }
+            }
+        }
+        task.resume()
+        
     }
 }

@@ -81,13 +81,28 @@ class FolderController: UIViewController {
             let alert = UIAlertController(title: "Would Play File", message: response.file, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             //self.present(alert, animated: true, completion: nil)
+            guard let videoPlayerVC = self.storyboard?.instantiateViewController(identifier: "videoPlayerVC") as? VideoPlayerVC else {
+                print("failed")
+                return
+            }
+            
+            print("Path to play:: \(path)")
+            self.present(videoPlayerVC, animated: true, completion: nil)
+            videoPlayerVC.initPlayer(url: "http://nissa.local:3004\(path)/Play/")
+            
         } onError: { (message) in
             print(message)
         }
     }
     
     @IBAction func reloadBtnPressed(_ sender: Any) {
-        loadFolders(path: currentPath)
+        
+        ClientService.instance.refresh { (response) in
+            print(response)
+            self.loadFolders(path: self.currentPath)
+        } onError: { (error) in
+            print(error)
+        }
         print("reload btn pressed")
     }
     
@@ -105,7 +120,7 @@ class FolderController: UIViewController {
             if sender.type == .movie{
                 var pathToDisplay = currentPath
                 pathToDisplay.append("/")
-                pathToDisplay.append(path(asURL: sender.title(for: .normal) ?? "Fucled up"))
+                pathToDisplay.append(path(asURL: sender.title(for: .normal) ?? "Fucked up"))
                 displayFile(path: pathToDisplay)
             }
         }

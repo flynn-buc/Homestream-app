@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77288724D0D4C300586EED /* VideoPlayerVC.swift */; };
 		CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045AE24C1160D00334E7F /* AppDelegate.swift */; };
 		CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045B024C1160D00334E7F /* SceneDelegate.swift */; };
 		CED045B324C1160D00334E7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045B224C1160D00334E7F /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE77288724D0D4C300586EED /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
 		CED045AB24C1160D00334E7F /* HomeStreaming-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeStreaming-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED045AE24C1160D00334E7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED045B024C1160D00334E7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				CED045B224C1160D00334E7F /* ViewController.swift */,
 				CEE9816224C171B600CF9428 /* FolderController.swift */,
+				CE77288724D0D4C300586EED /* VideoPlayerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				CEE9816324C171B600CF9428 /* FolderController.swift in Sources */,
 				CEE9816824C22A9500CF9428 /* Subfolders.swift in Sources */,
 				CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */,
+				CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */,
 				CEE9817E24C4C12D00CF9428 /* File.swift in Sources */,
 				CEE9817524C2DD3700CF9428 /* FolderButton.swift in Sources */,
 				CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */,

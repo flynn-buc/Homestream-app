@@ -10,7 +10,7 @@ import Differ
 
 private let reuseIdentifier = "Cell"
 
-class FolderController: UIViewController {
+class FolderVC: UIViewController {
     
     @IBOutlet weak var folderCollection: UICollectionView!
     
@@ -23,12 +23,18 @@ class FolderController: UIViewController {
     private var paths: [String] = []
     private var depth: Int = 0
     
+    private let refreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         folderCollection.delegate = self
         folderCollection.dataSource = self
         loadFolders(path:currentPath)
         backBtn.isEnabled = false
+        
+        folderCollection.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.folderCollection.alwaysBounceVertical = true
     }
     
     
@@ -41,7 +47,8 @@ class FolderController: UIViewController {
             tempFolders.append(Item(name: folderName, type: .folder))
         }
         
-        self.title = response.currentFolder
+        self.navigationItem.title = response.currentFolder
+        
         itemsClicked.append(response.currentFolder)
         
         if (path == ""){
@@ -50,6 +57,8 @@ class FolderController: UIViewController {
         }else{
             backBtn.isEnabled = true
         }
+        
+        
         
         for file in response.files.files{
             if (file.contains(".srt")){
@@ -95,15 +104,25 @@ class FolderController: UIViewController {
         }
     }
     
-    @IBAction func reloadBtnPressed(_ sender: Any) {
-        
+    
+     @objc private func refresh() {
         ClientService.instance.refresh { (response) in
             print(response)
             self.loadFolders(path: self.currentPath)
+            self.endRefresh()
+            
         } onError: { (error) in
             print(error)
         }
         print("reload btn pressed")
+    }
+    
+    private func endRefresh(){
+        self.refreshControl.endRefreshing()
+    }
+    
+    @IBAction func reloadBtnPressed(_ sender: Any) {
+        refresh()
     }
     
     @IBAction func folderBtnPressed(_ sender: FolderButton) {
@@ -150,7 +169,7 @@ class FolderController: UIViewController {
 
 
 
-extension FolderController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension FolderVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return folders.count
     }

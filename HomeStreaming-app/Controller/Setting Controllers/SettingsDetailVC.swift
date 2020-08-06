@@ -59,7 +59,7 @@ class SettingsDetailVC: UITableViewController {
             if let menuItems = menuItems{
                 print(menuItems[indexPath.row].title)
                 menuItems[indexPath.row].component.tag = indexPath.row
-                cell.setComponent(text: menuItems[indexPath.row].title, component: menuItems[indexPath.row].component)
+                cell.setComponent(cellModel:  menuItems[indexPath.row])
                 return cell
             }
             

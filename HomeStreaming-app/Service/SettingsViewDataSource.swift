@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class SettingsViewDataSource{
     static let instance = SettingsViewDataSource()
@@ -103,12 +104,14 @@ class Items{
 
 class NetworkItems: Items{
 
-    private let localIP = TextSettingsOptionCellModel(title: "Local Server IP:")
-    private let port = TextSettingsOptionCellModel(title: "Port:")
-    private let remoteAccess = SwitchSettingsOptionCellModel(title: "Enable remote access:")
-    private let remoteIP = TextSettingsOptionCellModel(title: "Remote Server IP:")
+    private let localIP = TextSettingsOptionCellModel(title: "Local Server IP:", key: .localIP)
+    private let port = TextSettingsOptionCellModel(title: "Port:", key: .port)
+    private let remoteAccess = SwitchSettingsOptionCellModel(title: "Enable Remote Access:", key: .enableRemoteAccess)
+    private let remoteIP = TextSettingsOptionCellModel(title: "Remote Server IP:", key: .remoteIP)
     
      init(){
+
+       // let preferences = UserPreferences(context: managedContext)
         super.init(items: [localIP, port, remoteAccess, remoteIP])
        
     }
@@ -116,9 +119,9 @@ class NetworkItems: Items{
 
 class LoginItems: Items{
 
-    private let useLoginItem = SwitchSettingsOptionCellModel(title: "Enable Authentication")
-    private let username = TextSettingsOptionCellModel(title: "Username: ")
-    private let password = TextSettingsOptionCellModel(title: "Password: ")
+    private let useLoginItem = SwitchSettingsOptionCellModel(title: "Enable Authentication", key: .enableAuthentication)
+    private let username = TextSettingsOptionCellModel(title: "Username: ", key: .username)
+    private let password = TextSettingsOptionCellModel(title: "Password: ", key: .password)
      init(){
         super.init(items: [useLoginItem, username, password])
     }

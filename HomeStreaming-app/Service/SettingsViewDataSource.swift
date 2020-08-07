@@ -107,7 +107,7 @@ class NetworkItems: Items{
     private let localIP = TextSettingsOptionCellModel(title: "Local Server IP:", key: .localIP)
     private let port = TextSettingsOptionCellModel(title: "Port:", key: .port)
     private let remoteAccess = SwitchSettingsOptionCellModel(title: "Enable Remote Access:", key: .enableRemoteAccess)
-    private let remoteIP = TextSettingsOptionCellModel(title: "Remote Server IP:", key: .remoteIP)
+    private let remoteIP = TextSettingsOptionCellModel(title: "Remote Server IP:", key: .remoteIP, keyIfDisplayed: .enableRemoteAccess)
     
      init(){
 
@@ -120,8 +120,8 @@ class NetworkItems: Items{
 class LoginItems: Items{
 
     private let useLoginItem = SwitchSettingsOptionCellModel(title: "Enable Authentication", key: .enableAuthentication)
-    private let username = TextSettingsOptionCellModel(title: "Username: ", key: .username)
-    private let password = TextSettingsOptionCellModel(title: "Password: ", key: .password)
+    private let username = TextSettingsOptionCellModel(title: "Username: ", key: .username, keyIfDisplayed: .enableAuthentication)
+    private let password = TextSettingsOptionCellModel(title: "Password: ", key: .password, keyIfDisplayed: .enableAuthentication)
      init(){
         super.init(items: [useLoginItem, username, password])
     }

@@ -11,6 +11,5 @@ import UIKit
 struct SettingsCellModel{
     var icon: UIImage?
     var title: String
-    //var bgColor: UIColor
 }
 

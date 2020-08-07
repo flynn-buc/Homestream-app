@@ -69,7 +69,6 @@ class SettingsTableVC: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSettingsDetail"{
-            
             if let indexPath = settingsTable.indexPathForSelectedRow{
                 let section = sections[indexPath.section]
                 let cellModel = section[indexPath.row]

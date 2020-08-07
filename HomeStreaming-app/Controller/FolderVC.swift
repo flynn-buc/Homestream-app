@@ -72,12 +72,26 @@ class FolderVC: UIViewController {
         self.reloadChanges(from: oldData, to: tempFolders)
     }
     
+    fileprivate func invalidQueryError(_ message: String) {
+        if message.contains("Invalid Query"){
+            self.paths = []
+            self.depth = 0
+            self.currentPath = ""
+            self.backBtn.isEnabled = false
+            self.currentFolder = ""
+            self.itemsClicked = []
+            self.folders = []
+            self.folderCollection.reloadData()
+        }
+    }
+    
     func loadFolders(path: String){
         ClientService.instance.get(foldersAndFilesAt: path) { (response) in
             self.loadUIWithItems(response, path)
             
         } onError: { (message) in
             print(message)
+            self.invalidQueryError(message)
         }
         
         for folder in folders{
@@ -101,6 +115,7 @@ class FolderVC: UIViewController {
             
         } onError: { (message) in
             print(message)
+            self.invalidQueryError(message)
         }
     }
     
@@ -113,6 +128,7 @@ class FolderVC: UIViewController {
             
         } onError: { (error) in
             print(error)
+            self.invalidQueryError(error)
         }
         print("reload btn pressed")
     }

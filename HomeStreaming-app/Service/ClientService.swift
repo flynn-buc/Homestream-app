@@ -22,6 +22,20 @@ class ClientService: NSObject{
     var URL_BASE = "http://\(IP):\(port)"
     
     
+    override init(){
+        super.init()
+        updateAddress()
+    }
+    
+    
+    func updateAddress(){
+        if let userData = UserDefaults.init(suiteName: "User Data"){
+            guard let IP = userData.string(forKey: UserDefaultKey.localIP.rawValue) else{return}
+            guard let port = userData.string(forKey: UserDefaultKey.port.rawValue) else{return}
+            setCustomAddress(ip: IP, port: port)
+        }
+    }
+    
     func setCustomAddress(ip: String, port: String){
         self.URL_BASE = "http://\(ip):\(port)"
     }
@@ -36,7 +50,7 @@ class ClientService: NSObject{
             
             DispatchQueue.main.async {
                 if let error = error {
-                 
+                    
                     onError("error: \(error.localizedDescription)")
                     return
                 }
@@ -46,13 +60,13 @@ class ClientService: NSObject{
                 
                 do{
                     if response.statusCode == 200{
-                 
+                        
                         let response = try JSONDecoder().decode(MessageData.self, from: data)
-                     onSuccess(response)
+                        onSuccess(response)
                         // handle success
                     } else {
                         let err = try JSONDecoder().decode(APIError.self, from: data)
-                     onError(err.message)
+                        onError(err.message)
                     }
                 }catch{
                     onError("error: \(error.localizedDescription)")
@@ -70,7 +84,7 @@ class ClientService: NSObject{
             
             DispatchQueue.main.async {
                 if let error = error {
-                 
+                    
                     onError("error there: \(error.localizedDescription)")
                     return
                 }
@@ -80,13 +94,13 @@ class ClientService: NSObject{
                 
                 do{
                     if response.statusCode == 200{
-                 
+                        
                         let response = try JSONDecoder().decode(File.self, from: data)
-                     onSuccess(response)
+                        onSuccess(response)
                         // handle success
                     } else {
                         let err = try JSONDecoder().decode(APIError.self, from: data)
-                     onError(err.message)
+                        onError(err.message)
                     }
                 }catch{
                     onError("error here: \(error.localizedDescription)")
@@ -104,7 +118,7 @@ class ClientService: NSObject{
             
             DispatchQueue.main.async {
                 if let error = error {
-                 
+                    
                     onError("error there: \(error.localizedDescription)")
                     return
                 }
@@ -114,13 +128,13 @@ class ClientService: NSObject{
                 
                 do{
                     if response.statusCode == 200{
-                 
+                        
                         let response = try JSONDecoder().decode(APIError.self, from: data)
                         onSuccess(response.message)
                         // handle success
                     } else {
                         let err = try JSONDecoder().decode(APIError.self, from: data)
-                     onError(err.message)
+                        onError(err.message)
                     }
                 }catch{
                     onError("error here: \(error.localizedDescription)")

@@ -8,19 +8,19 @@
 import UIKit
 
 class SettingsDetailVC: UITableViewController {
-   
+    
     
     @IBOutlet var settingsOptionsTable: UITableView!
-    
+    private var switchesData: UserDefaults!
+    private var userData: UserDefaults!
     
     private var text: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsOptionsTable.delegate = self
         settingsOptionsTable.dataSource = self
-        
-
-        // Do any additional setup after loading the view.
+        switchesData = UserDefaults.init(suiteName: "Switch Toggles")
+        userData = UserDefaults.init(suiteName: "User Data")
     }
     
     var menuItems: [SettingsOptionCellModel]?{
@@ -59,10 +59,9 @@ class SettingsDetailVC: UITableViewController {
             if let menuItems = menuItems{
                 print(menuItems[indexPath.row].title)
                 menuItems[indexPath.row].component.tag = indexPath.row
-                cell.setComponent(cellModel:  menuItems[indexPath.row])
+                cell.setComponent(cellModel: menuItems[indexPath.row])
                 return cell
             }
-            
         }
         return SettingsOptionCell()
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnD-vL-u9F">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="kqx-Nd-9T2" customClass="FolderVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S0I-ps-sq5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O4Y-uq-e4u">
-                                <rect key="frame" x="5" y="93" width="404" height="715"/>
+                                <rect key="frame" x="5" y="55" width="1070" height="700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YSF-ke-Y37">
                                     <size key="itemSize" width="164" height="152"/>
@@ -46,7 +46,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Names" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="hTC-rQ-Y6Z">
-                                                            <rect key="frame" x="32.666666666666664" y="132" width="88.666666666666686" height="35"/>
+                                                            <rect key="frame" x="33" y="132" width="88.5" height="35"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="2mN-xB-e4J"/>
                                                             </constraints>
@@ -113,7 +113,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="6Kv-rH-D6P">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m3T-2x-Qhd">
-                                <rect key="frame" x="322" y="11" width="72" height="22"/>
+                                <rect key="frame" x="988" y="14" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow.triangle.2.circlepath" catalog="system"/>
                                 <connections>
@@ -150,7 +150,7 @@
                 <navigationController id="daa-Nv-n94" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="All Files" image="folder.fill" catalog="system" selectedImage="folder.fill" id="d8T-D5-DrP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sm1-Rs-X4X">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -186,18 +186,18 @@
             <objects>
                 <tableViewController id="ObT-5z-hXE" customClass="SettingsDetailVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="m4f-z9-yuy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="759.5" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsOptionCell" id="dol-JW-qIH" customClass="SettingsOptionCell" customModule="HomeStreaming_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="45"/>
+                                <rect key="frame" x="20" y="55.5" width="719.5" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dol-JW-qIH" id="6Dt-gZ-4pJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="719.5" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mim-bH-yg8">
-                                            <rect key="frame" x="20.000000000000004" y="11" width="41.333333333333343" height="23"/>
+                                            <rect key="frame" x="16" y="11" width="41.5" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -229,13 +229,143 @@
             </objects>
             <point key="canvasLocation" x="2876.811594202899" y="218.97321428571428"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zzq-Wn-nMp">
+            <objects>
+                <viewController id="7b1-aJ-AdH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="01d-Ui-joa">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgV-dr-28c">
+                                <rect key="frame" x="0.0" y="490" width="1080" height="320"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fQ7-iw-oRn">
+                                        <rect key="frame" x="408" y="7.5" width="264" height="305"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="e49-7V-1I8">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyv-Am-caw" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="65"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="Wgf-c7-Lpg"/>
+                                                            <constraint firstAttribute="width" secondItem="oyv-Am-caw" secondAttribute="height" multiplier="1.2:1" id="gMr-V9-qPH"/>
+                                                        </constraints>
+                                                        <state key="normal" title="1"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrD-fn-w4a" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="93" y="0.0" width="78" height="65"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                        <state key="normal" title="2"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUL-8x-1Pd" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="186" y="0.0" width="78" height="65"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                        <state key="normal" title="3"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PWR-lI-O0h">
+                                                <rect key="frame" x="0.0" y="80" width="264" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAI-31-Pmy" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title="4"/>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKn-Ku-WHD" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="93" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title="5"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dso-Wk-cWj" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="186" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title="6"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cUo-QP-zs6">
+                                                <rect key="frame" x="0.0" y="160" width="264" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCQ-aK-2La" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title="7"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfi-Yr-jvs" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="93" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title="8"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKq-93-mNh" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="186" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title="9"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ros-32-Wl9">
+                                                <rect key="frame" x="0.0" y="240" width="264" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za0-Zo-KHy" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title="."/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjq-15-skv" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="93" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title="0"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XM5-Ve-qCO" customClass="DecimalPadButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <rect key="frame" x="186" y="0.0" width="78" height="65"/>
+                                                        <state key="normal" title=" " image="arrow.backward" catalog="system"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="e49-7V-1I8" firstAttribute="height" secondItem="PWR-lI-O0h" secondAttribute="height" id="08T-XT-mDh"/>
+                                            <constraint firstItem="e49-7V-1I8" firstAttribute="width" secondItem="ros-32-Wl9" secondAttribute="width" id="IhD-4P-EG1"/>
+                                            <constraint firstItem="e49-7V-1I8" firstAttribute="height" secondItem="ros-32-Wl9" secondAttribute="height" id="Qbb-zP-IZY"/>
+                                            <constraint firstItem="e49-7V-1I8" firstAttribute="width" secondItem="PWR-lI-O0h" secondAttribute="width" id="Un5-xF-OZZ"/>
+                                            <constraint firstItem="PCQ-aK-2La" firstAttribute="height" secondItem="GAI-31-Pmy" secondAttribute="height" id="gFu-AX-Y2H"/>
+                                            <constraint firstItem="e49-7V-1I8" firstAttribute="width" secondItem="cUo-QP-zs6" secondAttribute="width" id="v3k-Jp-zl2"/>
+                                            <constraint firstItem="e49-7V-1I8" firstAttribute="height" secondItem="cUo-QP-zs6" secondAttribute="height" id="w0q-61-3Io"/>
+                                            <constraint firstItem="PCQ-aK-2La" firstAttribute="width" secondItem="GAI-31-Pmy" secondAttribute="width" id="wWS-W9-f4B"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="6ts-NU-zrq"/>
+                                    <constraint firstItem="fQ7-iw-oRn" firstAttribute="centerX" secondItem="VgV-dr-28c" secondAttribute="centerX" id="gMa-Zu-YoY"/>
+                                    <constraint firstItem="fQ7-iw-oRn" firstAttribute="centerY" secondItem="VgV-dr-28c" secondAttribute="centerY" id="saR-VH-J1k"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9VG-5t-Za1"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" button="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="9VG-5t-Za1" firstAttribute="trailing" secondItem="VgV-dr-28c" secondAttribute="trailing" id="6io-sQ-Z7C"/>
+                            <constraint firstItem="9VG-5t-Za1" firstAttribute="bottom" secondItem="VgV-dr-28c" secondAttribute="bottom" id="Kp1-B0-4cp"/>
+                            <constraint firstItem="VgV-dr-28c" firstAttribute="leading" secondItem="9VG-5t-Za1" secondAttribute="leading" id="cKv-uV-6l3"/>
+                            <constraint firstItem="9VG-5t-Za1" firstAttribute="bottom" secondItem="VgV-dr-28c" secondAttribute="bottom" id="cSp-oH-2Dy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JOk-gK-Dta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3858.8888888888887" y="227.40740740740739"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kqv-Af-wc4">
             <objects>
                 <navigationController id="pHk-Mk-N1Q" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yIw-rh-B4N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2An-T1-2ZF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="759.5" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -251,25 +381,25 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="uGN-Mc-iQa" customClass="SettingsTableVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="puz-wS-dk1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="settingsCell" textLabel="FTt-uq-60D" imageView="Nwo-4H-WbM" style="IBUITableViewCellStyleDefault" id="WJ9-lJ-mYA" customClass="SettingsCell" customModule="HomeStreaming_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="45"/>
+                                <rect key="frame" x="16" y="55.5" width="288" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WJ9-lJ-mYA" id="JhH-Zi-zOS">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FTt-uq-60D">
-                                            <rect key="frame" x="59" y="0.0" width="295" height="45"/>
+                                            <rect key="frame" x="55" y="0.0" width="217" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="wifi" catalog="system" id="Nwo-4H-WbM">
-                                            <rect key="frame" x="21" y="14.666666666666664" width="22" height="15.333333333333334"/>
+                                            <rect key="frame" x="17.25" y="14.5" width="21.5" height="15.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -299,7 +429,7 @@
             <objects>
                 <navigationController id="XCQ-dz-Bgr" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cRW-gh-T6e">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -330,7 +460,7 @@
                 <navigationController id="x70-ro-8gL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="QZJ-lS-RQx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIf-Tr-OIJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -346,7 +476,7 @@
             <objects>
                 <collectionViewController id="0CX-FP-qJ0" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wOG-ev-Mq5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mFg-43-bCX">
@@ -376,11 +506,65 @@
             </objects>
             <point key="canvasLocation" x="1593" y="1607"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6Vs-1o-1d4">
+            <objects>
+                <viewController id="ejI-5T-mv0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LR3-Tm-A5S">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nWl-Yt-z8C"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byt-Cn-5uz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250" y="-683"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="FKn-Ku-WHD">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="GAI-31-Pmy">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="PCQ-aK-2La">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Rfi-Yr-jvs">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="XM5-Ve-qCO">
+            <size key="intrinsicContentSize" width="28" height="19"/>
+        </designable>
+        <designable name="dso-Wk-cWj">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="oyv-Am-caw">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="qrD-fn-w4a">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="rKq-93-mNh">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="wUL-8x-1Pd">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="xjq-15-skv">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="za0-Zo-KHy">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="XBT-Z4-Au9"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
@@ -389,8 +573,17 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="subtitle" width="512" height="512"/>
         <image name="wifi" catalog="system" width="128" height="92"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

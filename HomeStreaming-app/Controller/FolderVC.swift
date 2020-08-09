@@ -9,6 +9,7 @@ import UIKit
 import Differ
 
 private let reuseIdentifier = "Cell"
+typealias loadComplete = () ->Void
 
 class FolderVC: UIViewController {
     
@@ -68,10 +69,13 @@ class FolderVC: UIViewController {
     }
     
     
-    private func loadItems(reloadData: Bool? = true){
+    private func loadItems(reloadData: Bool? = true, onLoadComplete: loadComplete? = nil){
         ClientService.instance.get() { (data) in
             self.updateData(to: data, reloadTable: reloadData)
             self.endRefresh()
+            if let loadComplete = onLoadComplete{
+                loadComplete()
+            }
         } onError: { (error) in
             self.invalidQueryError(error)
         }
@@ -79,22 +83,18 @@ class FolderVC: UIViewController {
     
     @objc private func refresh() {
         let hash = currentFolder?.hash
-        print("old Hash\(hash)")
         ClientService.instance.refresh() { (response) in
             print(response)
-            let newHash = hash
-            self.loadItems(reloadData: false)
-            
-            if let newHash = newHash{
-                print("new hash: \(newHash)")
-                if let rootFolder = self.rootFolder{
-                    if newHash == rootFolder.hash{
-                        return;
+            self.loadItems(reloadData: false) {
+                if let hash = hash{
+                    if let rootFolder = self.rootFolder{
+                        if hash == rootFolder.hash{
+                            return;
+                        }
+                        self.loadFolder(rootFolder.items, withHash: hash)
                     }
-                    self.loadFolder(rootFolder.items, withHash: newHash)
                 }
             }
-            
         } onError: { (error) in
             self.invalidQueryError(error)
             print(error)

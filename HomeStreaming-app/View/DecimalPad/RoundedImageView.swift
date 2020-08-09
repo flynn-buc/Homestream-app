@@ -9,6 +9,7 @@ import UIKit
 
 @IBDesignable
 class RoundedImageView: UIImageView {
+    //Configure a slightly rounded image for decimal pad
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 5

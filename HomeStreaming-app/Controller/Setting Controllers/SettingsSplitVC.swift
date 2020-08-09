@@ -13,9 +13,9 @@ class SettingsSplitVC: UISplitViewController, UISplitViewControllerDelegate {
         super.awakeFromNib()
         self.delegate = self
         self.preferredDisplayMode = UISplitViewController.DisplayMode.oneBesideSecondary
-        // Initialization code
     }
     
+    //Display master view on IOS, not Detail View
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }

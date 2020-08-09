@@ -8,17 +8,17 @@
 import UIKit
 
 class FavoritesButton: UIButton {
-    private var item: Item!
+    private var item: FilesystemItem!
     
     func refresh(){
         set(isFavorite: item.isFavorite)
     }
     
-    func setItem(item: inout Item){
+    func setItem(item: inout FilesystemItem){
         self.item = item
     }
     
-    func getItem()->Item{
+    func getItem()->FilesystemItem{
         return self.item
     }
     

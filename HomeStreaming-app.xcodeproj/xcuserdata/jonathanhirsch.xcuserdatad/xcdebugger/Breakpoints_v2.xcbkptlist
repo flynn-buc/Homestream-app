@@ -39,17 +39,25 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "06C1896A-51E4-4E70-82E7-4B6140B23D0E"
+            uuid = "0733B62E-B1BC-478F-A093-44AABFB8FB69"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HomeStreaming-app/Service/ClientService.swift"
+            filePath = "HomeStreaming-app/Controller/MovieCollectionVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "get(foldersAndFilesAt:onSuccess:onError:)"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "findFolder(_:withHash:)"
             landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "bt">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

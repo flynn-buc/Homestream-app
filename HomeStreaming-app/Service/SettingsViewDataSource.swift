@@ -7,11 +7,9 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 class SettingsViewDataSource{
     static let instance = SettingsViewDataSource()
-    //private let config = UIImage.SymbolConfiguration(weight: .light)
     
     
     private var systemSection = [SettingsCellModel] ()
@@ -21,7 +19,6 @@ class SettingsViewDataSource{
     /*
      Section 1:
      */
-    
     
     private var sections = [[SettingsCellModel]]()
     private var sectionTitle = ["System", "Streaming"]
@@ -41,29 +38,19 @@ class SettingsViewDataSource{
     private var menuItems = [[[SettingsOptionCellModel]]]()
     
      private init(){
-        
-        
         systemSection = [connection, login]
-        
         streamingSection = [video, audio, subtitle]
         
         let networkItems = NetworkItems().getItems()
         let loginItems = LoginItems().getItems()
         let systemItems = [networkItems, loginItems]
         
-        
-        
         let audioItems = AudioItems().getItems()
         let videoItems = VideoItems().getItems()
         let subtitleItems = SubtitleItems().getItems()
-        
-        
         let streamingItems = [audioItems, videoItems, subtitleItems]
         
-        
         menuItems = [systemItems, streamingItems]
-        
-        
         
         sections.append(systemSection)
         sections.append(streamingSection)
@@ -83,12 +70,7 @@ class SettingsViewDataSource{
     }
 }
 
-
-
-
-
-
-class Items{
+class MenuItems{
     private var items = [SettingsOptionCellModel]()
     func getItems() ->[SettingsOptionCellModel]{
         return items
@@ -99,25 +81,19 @@ class Items{
     }
 }
 
-
-
-
-class NetworkItems: Items{
+class NetworkItems: MenuItems{
 
     private let localIP = TextSettingsOptionCellModel(title: "Local Server IP:", key: .localIP)
     private let port = TextSettingsOptionCellModel(title: "Port:", key: .port)
     private let remoteAccess = SwitchSettingsOptionCellModel(title: "Enable Remote Access:", key: .enableRemoteAccess)
     private let remoteIP = TextSettingsOptionCellModel(title: "Remote Server IP:", key: .remoteIP, keyIfDisplayed: .enableRemoteAccess)
     
-     init(){
-
-       // let preferences = UserPreferences(context: managedContext)
+    init(){
         super.init(items: [localIP, port, remoteAccess, remoteIP])
-       
     }
 }
 
-class LoginItems: Items{
+class LoginItems: MenuItems{
 
     private let useLoginItem = SwitchSettingsOptionCellModel(title: "Enable Authentication", key: .enableAuthentication)
     private let username = TextSettingsOptionCellModel(title: "Username: ", key: .username, keyIfDisplayed: .enableAuthentication)
@@ -127,19 +103,19 @@ class LoginItems: Items{
     }
 }
 
-class VideoItems: Items{
+class VideoItems: MenuItems{
      init(){
         super.init(items: [])
     }
 }
 
-class AudioItems: Items{
+class AudioItems: MenuItems{
      init(){
         super.init(items: [])
     }
 }
 
-class SubtitleItems: Items{
+class SubtitleItems: MenuItems{
      init(){
         super.init(items: [])
     }

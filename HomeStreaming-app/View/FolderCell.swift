@@ -19,37 +19,34 @@ class FolderCell: UICollectionViewCell {
     @IBOutlet weak var folderName: UILabel!
     @IBOutlet weak var favoritesButton: FavoritesButton!
     
-    func setup(folder: inout Item, index: Int){
+    func setup(filesystemItem: inout FilesystemItem, index: Int){
         
-        switch folder.type {
-        case .movie: fallthrough
-        case .subtitle:
-            configure(file: folder)
-            break;
-        default:
+        if let file = filesystemItem as? File{
+            configure(file: file)
+        }
+        if let folder = filesystemItem as? Folder{
             configure(folder: folder)
-            break;
         }
         
-        folderButton.type = folder.type;
-        folderName.text = folder.name
-        folderButton.setTitle(folder.name, for: .normal)
+        folderButton.type = filesystemItem.type;
+        folderName.text = filesystemItem.name
+        folderButton.setTitle(filesystemItem.name, for: .normal)
         folderButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         folderButton.tag = index
-        favoritesButton.setItem(item: &folder)
-        favoritesButton.set(isFavorite: folder.isFavorite)
+        favoritesButton.setItem(item: &filesystemItem)
+        favoritesButton.set(isFavorite: filesystemItem.isFavorite)
     }
     
-    func configure(folder: Item){
+    func configure(folder: Folder){
         folderButton.setImage(UIImage(named: "folder.png"), for: .normal)
         folderButton.setImage(UIImage(named: "folder_highlighted.png"), for: .selected)
 
         folderButton.isEnabled = true
     }
     
-    func configure(file folder: Item){
+    func configure(file: File){
         var imageName = "videoFile.png"
-        if (folder.type == .subtitle){
+        if (file.type == .subtitle){
             imageName = "subtitle.png"
         }
 

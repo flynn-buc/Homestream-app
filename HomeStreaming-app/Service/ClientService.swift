@@ -16,20 +16,19 @@ typealias OnGetFoldersAndFilesSuccess = (MessageData) -> Void
 typealias OnGetFileSuccess = (ServerFile) -> Void
 typealias OnAPIFailure = (String) -> Void
 typealias onRefreshSuccess = (String) -> Void
+typealias genericClosure<T> = (T) -> Void
 
 class ClientService: NSObject{
     static let instance = ClientService()
     
+    let session = URLSession(configuration: .default)
     var URL_BASE = "http://\(IP):\(port)"
-    
-    
     
     override init(){
         super.init()
         updateAddress()
     }
-    
-    
+    // Update address from settings
     func updateAddress(){
         if let userData = UserDefaults.init(suiteName: "User Data"){
             guard let IP = userData.string(forKey: UserDefaultKey.localIP.rawValue) else{return}
@@ -37,111 +36,68 @@ class ClientService: NSObject{
             setCustomAddress(ip: IP, port: port)
         }
     }
-    
+    // set custom address to be used for API Calls
     func setCustomAddress(ip: String, port: String){
         self.URL_BASE = "http://\(ip):\(port)"
     }
     
-    let session = URLSession(configuration: .default)
+   // Generic call 'Get' call to server
+    private func genericGet<T>(url: URL, decodingObjectSuccess: T.Type, onSuccess: @escaping genericClosure<T>, onError: @escaping OnAPIFailure) where T: Codable{
+        print("URL::: \(url.absoluteString)") // print url Used
+        let task = session.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    
+                    onError("error there: \(error.localizedDescription)")
+                    return
+                }
+                guard let data = data, let response = response as? HTTPURLResponse else{
+                    onError("Invalid Data or Response")
+                    return}
+                
+                do{
+                    if response.statusCode == 200{ // success
+                        let response = try JSONDecoder().decode(decodingObjectSuccess, from: data)
+                        onSuccess(response)
+                    } else { // non success
+                        let err = try JSONDecoder().decode(APIError.self, from: data)
+                        onError(err.message)
+                    }
+                }catch{
+                    onError("error here: \(error.localizedDescription)")
+                }
+            }
+        }
+        task.resume()
+    }
     
+    // Server call to retrieve all data
     func get(foldersAndFilesAt path: String? = defaultPath , onSuccess: @escaping OnGetFoldersAndFilesSuccess, onError: @escaping OnAPIFailure){
-        
         let url = URL(string: "\(URL_BASE)\(path!)/")!
-        print("URL::: \(url.absoluteString)")
-        let task = session.dataTask(with: url) { (data, response, error) in
-            
-            DispatchQueue.main.async {
-                if let error = error {
-                    
-                    onError("error: \(error.localizedDescription)")
-                    return
-                }
-                guard let data = data, let response = response as? HTTPURLResponse else{
-                    onError("Invalid Data or Response")
-                    return}
-                
-                do{
-                    if response.statusCode == 200{
-                        let response = try JSONDecoder().decode(MessageData.self, from: data)
-                        onSuccess(response)
-                        // handle success
-                    } else {
-                        let err = try JSONDecoder().decode(APIError.self, from: data)
-                        onError(err.message)
-                    }
-                }catch{
-                    onError("error: \(error.localizedDescription)")
-                }
-            }
+        genericGet(url: url, decodingObjectSuccess: MessageData.self) { (success) in
+            onSuccess(success)
+        } onError: { (error) in
+            onError(error)
         }
-        task.resume()
     }
     
+    // Server call to initiate streaming for a single file
     func get(fileAt path: String, onSuccess: @escaping OnGetFileSuccess, onError: @escaping OnAPIFailure){
-        
         let url = URL(string: "\(URL_BASE)\(path)")!
-        print("URL::: \(url.absoluteString)")
-        let task = session.dataTask(with: url) { (data, response, error) in
-            
-            DispatchQueue.main.async {
-                if let error = error {
-                    
-                    onError("error there: \(error.localizedDescription)")
-                    return
-                }
-                guard let data = data, let response = response as? HTTPURLResponse else{
-                    onError("Invalid Data or Response")
-                    return}
-                
-                do{
-                    if response.statusCode == 200{
-                        
-                        let response = try JSONDecoder().decode(ServerFile.self, from: data)
-                        onSuccess(response)
-                        // handle success
-                    } else {
-                        let err = try JSONDecoder().decode(APIError.self, from: data)
-                        onError(err.message)
-                    }
-                }catch{
-                    onError("error here: \(error.localizedDescription)")
-                }
-            }
+        genericGet(url: url, decodingObjectSuccess: ServerFile.self) { (success) in
+            onSuccess(success)
+        } onError: { (error) in
+            onError(error)
         }
-        task.resume()
     }
     
+    //Server call to refresh data
     func refresh(onSuccess: @escaping OnAPIFailure, onError: @escaping OnAPIFailure){
-        
         let url = URL(string: "\(URL_BASE)/Refresh/")!
-        print("URL::: \(url.absoluteString)")
-        let task = session.dataTask(with: url) { (data, response, error) in
-            
-            DispatchQueue.main.async {
-                if let error = error {
-                    
-                    onError("error there: \(error.localizedDescription)")
-                    return
-                }
-                guard let data = data, let response = response as? HTTPURLResponse else{
-                    onError("Invalid Data or Response")
-                    return}
-                
-                do{
-                    if response.statusCode == 200{
-                        
-                        let response = try JSONDecoder().decode(APIError.self, from: data)
-                        onSuccess(response.message)
-                        // handle success
-                    } else {
-                        let err = try JSONDecoder().decode(APIError.self, from: data)
-                        onError(err.message)
-                    }
-                }catch{
-                    onError("error here: \(error.localizedDescription)")
-                }
-            }
+        genericGet(url: url, decodingObjectSuccess: String.self) { (success) in
+            onSuccess(success)
+        } onError: { (error) in
+            onError(error)
         }
-        task.resume()
     }
 }

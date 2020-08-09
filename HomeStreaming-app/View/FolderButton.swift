@@ -9,6 +9,7 @@ import UIKit
 
 class FolderButton: UIButton {
     
+    //Default type
     var type: FileType = .folder
 
 }

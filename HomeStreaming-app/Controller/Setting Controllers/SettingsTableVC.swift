@@ -8,8 +8,6 @@
 import UIKit
 
 class SettingsTableVC: UITableViewController {
-
-    
     private var sections = [[SettingsCellModel]] ()
     private var sectionNames = [String] ()
     private var menuItems = [[[SettingsOptionCellModel]]]()
@@ -18,29 +16,33 @@ class SettingsTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let cellData = SettingsViewDataSource.instance
-        sections = cellData.getRows()
-        sectionNames = cellData.getSectionNames()
         settingsTable.delegate = self
         settingsTable.dataSource = self
         
-        menuItems = cellData.getMenuItems()
+        let cellData = SettingsViewDataSource.instance
+        sections = cellData.getRows()
+        sectionNames = cellData.getSectionNames()
+        menuItems = cellData.getMenuItems() // get all menu Items
 
-        self.clearsSelectionOnViewWillAppear = true
+        self.clearsSelectionOnViewWillAppear = true // ensure selection is not kept between views
+        
+        // Display initial Detail view if device is iPad
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let initialIndexPath = IndexPath(row: 0, section: 0)
+            self.tableView.selectRow(at: initialIndexPath, animated: true, scrollPosition:UITableView.ScrollPosition.none)
+            self.performSegue(withIdentifier: "showSettingsDetail", sender: initialIndexPath)
+        }
+        
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
-       
         return sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-       
         return sections[section].count
     }
 
@@ -63,10 +65,10 @@ class SettingsTableVC: UITableViewController {
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return false
+        return false // make all cells uneditable
     }
     
+    // Display detailVC for selected cell
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSettingsDetail"{
             if let indexPath = settingsTable.indexPathForSelectedRow{
@@ -76,7 +78,7 @@ class SettingsTableVC: UITableViewController {
                     controller.navigationItem.leftItemsSupplementBackButton = true
                     controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                     controller.menuItems = menuItems[indexPath.section][indexPath.row]
-                    controller.navigationController?.title = cellModel.title
+                    controller.navigationItem.title = cellModel.title
                 }
             }
         }

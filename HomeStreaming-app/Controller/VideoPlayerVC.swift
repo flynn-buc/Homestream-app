@@ -11,13 +11,16 @@ import AVKit
 
 class VideoPlayerVC: AVPlayerViewController, AVPlayerViewControllerDelegate {
 
+    private let dataPref = UserDefaults.init(suiteName: "User Data")
+    
     override class func awakeFromNib() {
         print("in VideoPlayer")
     }
     
     
     func initPlayer(url: String){
-        let url = URL(string:url)
+        guard let ip = dataPref?.string(forKey: UserDefaultKey.localIP.rawValue), let port = dataPref?.string(forKey: UserDefaultKey.port.rawValue) else{return}
+        let url = URL(string: "http://\(ip):\(port)\(url)")
         let player = AVPlayer(url: url!)
         self.player = player
         player.play()

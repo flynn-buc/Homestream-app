@@ -9,128 +9,115 @@ import UIKit
 import Differ
 
 private let reuseIdentifier = "Cell"
+typealias loadComplete = () ->Void
 
 class FolderVC: UIViewController {
     
     @IBOutlet weak var folderCollection: UICollectionView!
-    
-    
     @IBOutlet weak var backBtn: UIBarButtonItem!
-    private var folders: [Item] = []
-    private var currentPath: String = ""
-    private var currentFolder: String = ""
-    private var itemsClicked: [String] = []
-    private var paths: [String] = []
-    private var depth: Int = 0
     
     private let refreshControl = UIRefreshControl()
     
+    private var rootFolder: Folder?
+    private var currentFolder: Folder?
     
     override func viewDidLoad() {
         folderCollection.delegate = self
         folderCollection.dataSource = self
-        loadFolders(path:currentPath)
-        backBtn.isEnabled = false
-        
         folderCollection.addSubview(refreshControl)
+        folderCollection.alwaysBounceVertical = true
+        
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        self.folderCollection.alwaysBounceVertical = true
-    }
-    
-    
-    fileprivate func loadUIWithItems(_ response: MessageData, _ path: String) {
         
-        let oldData = folders
-        
-        var tempFolders = [Item]()
-        for folderName in response.folders.subfolders{
-            tempFolders.append(Item(name: folderName, type: .folder))
-        }
-        
-        self.navigationItem.title = response.currentFolder
-        
-        itemsClicked.append(response.currentFolder)
-        
-        if (path == ""){
-            backBtn.isEnabled = false
-            paths = [""]
-        }else{
-            backBtn.isEnabled = true
-        }
-        
-        
-        
-        for file in response.files.files{
-            if (file.contains(".srt")){
-                tempFolders.append(Item(name: file, type: .subtitle))
-            }else{
-                tempFolders.append(Item(name: file, type: .movie))
-            }
-        }
-        
-        folders = tempFolders
-        self.reloadChanges(from: oldData, to: tempFolders)
+        loadItems()
     }
     
     fileprivate func invalidQueryError(_ message: String) {
-        if message.contains("Invalid Query"){
-            self.paths = []
-            self.depth = 0
-            self.currentPath = ""
-            self.backBtn.isEnabled = false
-            self.currentFolder = ""
-            self.itemsClicked = []
-            self.folders = []
-            self.folderCollection.reloadData()
-        }
+        print("Error: \(message)")
     }
     
-    func loadFolders(path: String){
-        ClientService.instance.get(foldersAndFilesAt: path) { (response) in
-            self.loadUIWithItems(response, path)
-            
-        } onError: { (message) in
-            print(message)
-            self.invalidQueryError(message)
-        }
+    private func updateData(to data: MessageData, reloadTable: Bool? = true){
+        rootFolder = Folder(name: data.currentFolder, type: .folder, hash: data.folders.hash)
+        rootFolder?.addItems(items: loadFiles(serverFiles: data.folders.files, parent: rootFolder!))
+        rootFolder?.addItems(items: loadSubfolders(serverfolders: data.folders.subfolders, parent: rootFolder!))
         
-        for folder in folders{
-            print(folder)
-        }
-    }
-    
-    func displayFile(path: String){
-        ClientService.instance.get(fileAt: path) { (response) in
-            let alert = UIAlertController(title: "Would Play File", message: response.file, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            //self.present(alert, animated: true, completion: nil)
-            guard let videoPlayerVC = self.storyboard?.instantiateViewController(identifier: "videoPlayerVC") as? VideoPlayerVC else {
-                print("failed")
-                return
+        if let rootFolder = rootFolder, let reloadTable = reloadTable{
+            if (reloadTable){
+                loadFolder(rootFolder)
             }
-            
-            print("Path to play:: \(path)")
-            self.present(videoPlayerVC, animated: true, completion: nil)
-            videoPlayerVC.initPlayer(url: "http://nissa.local:3004\(path)/Play/")
-            
-        } onError: { (message) in
-            print(message)
-            self.invalidQueryError(message)
         }
     }
     
+    private func loadSubfolders(serverfolders: [ServerSubfolder], parent: Item) -> [Folder]{
+        var folders: [Folder] = []
+        for serverfolder in serverfolders{
+            let newFolder = Folder(name: serverfolder.name, type: .folder, hash:serverfolder.hash, parent: parent)
+            newFolder.addItems(items: loadSubfolders(serverfolders: serverfolder.subfolders, parent: newFolder))
+            newFolder.addItems(items: loadFiles(serverFiles: serverfolder.files, parent: newFolder))
+            folders.append(newFolder)
+        }
+        return folders
+    }
     
-     @objc private func refresh() {
-        ClientService.instance.refresh { (response) in
-            print(response)
-            self.loadFolders(path: self.currentPath)
+    private func loadFiles(serverFiles: [ServerFile], parent: Item) -> [Item]{
+        var files: [Item] = []
+        for file in serverFiles{
+            let type: FileType = file.name.contains(".srt") ? .subtitle: .movie
+            files.append(Item(name: file.name, type: type, hash: file.hash, parent: parent))
+        }
+        return files
+    }
+    
+    
+    private func loadItems(reloadData: Bool? = true, onLoadComplete: loadComplete? = nil){
+        ClientService.instance.get() { (data) in
+            self.updateData(to: data, reloadTable: reloadData)
             self.endRefresh()
-            
+            if let loadComplete = onLoadComplete{
+                loadComplete()
+            }
         } onError: { (error) in
-            print(error)
             self.invalidQueryError(error)
         }
-        print("reload btn pressed")
+    }
+    
+    @objc private func refresh() {
+        let hash = currentFolder?.hash
+        ClientService.instance.refresh() { (response) in
+            print(response)
+            self.loadItems(reloadData: false) {
+                if let hash = hash{
+                    if let rootFolder = self.rootFolder{
+                        if hash == rootFolder.hash{
+                            return;
+                        }
+                        self.loadFolder(rootFolder.items, withHash: hash)
+                    }
+                }
+            }
+        } onError: { (error) in
+            self.invalidQueryError(error)
+            print(error)
+            self.endRefresh()
+        }
+    }
+    
+    private func loadFolder(_ items: [Item], withHash hash:Int) -> Bool{
+        for item in items{
+            if let folder = item as? Folder{
+                if folder.hash == hash{
+                    self.loadFolder(folder)
+                    print("Found hash: \(folder.name)")
+                    return true;
+                }else{
+                    if loadFolder(folder.items, withHash: hash){
+                        return true;
+                    }
+                }
+            }
+        }
+        
+        return false;
     }
     
     private func endRefresh(){
@@ -142,34 +129,57 @@ class FolderVC: UIViewController {
     }
     
     @IBAction func folderBtnPressed(_ sender: FolderButton) {
-        if sender.type == .folder {
-            depth += 1
-            let nextFolder = sender.title(for: .normal) ?? "Fucked up"
-            print(nextFolder)
-            currentPath = "\(currentPath)/\(path(asURL: nextFolder))"
-            print("current Path: \(currentPath)")
-            paths.append(currentPath)
-            loadFolders(path: currentPath)
-            print(paths)
-        } else{
-            if sender.type == .movie{
-                var pathToDisplay = currentPath
-                pathToDisplay.append("/")
-                pathToDisplay.append(path(asURL: sender.title(for: .normal) ?? "Fucked up"))
-                displayFile(path: pathToDisplay)
-            }
+        if (sender.type == .folder){
+            guard let currentFolder = currentFolder?.items[sender.tag] as? Folder else{return}
+            loadFolder(currentFolder)
+        }else if sender.type == .movie{
+            guard let fileToPlay = currentFolder?.items[sender.tag] as? Item else{return}
+            loadFile(path: fileToPlay.hash)
         }
     }
     
-    
     @IBAction func backBtnPressed(_ sender: Any) {
-        print(backBtn.title ?? "")
-        paths.remove(at: depth)
-        itemsClicked.remove(at: depth)
-        depth -= 1
-        currentPath = paths[depth]
-        loadFolders(path: currentPath)
-        print(paths)
+        guard let parent = currentFolder?.parent as? Folder else {return}
+        loadFolder(parent)
+    }
+    
+    private func loadFile(path: Int){
+        let pathURL = "/\(pathAsURL(path))"
+        ClientService.instance.get(fileAt: pathURL) { (ServerFile) in
+            print("Will Play: \(ServerFile.name)")
+            guard let videoPlayerVC = self.storyboard?.instantiateViewController(identifier: "videoPlayerVC") as? VideoPlayerVC else {
+                print("failed")
+                return
+            }
+            self.present(videoPlayerVC, animated: true, completion: nil)
+            videoPlayerVC.initPlayer(url: "\(pathURL)/Play/")
+            print("Playing...: http://nissal.local:3004\(path)/Play/")
+        } onError: { (message) in
+            print("error: \(message)")
+        }
+    }
+    
+    func pathAsURL (_ pathURL: Int) -> String{
+        return path(asURL: "\(pathURL)")
+    }
+    
+    func pathAsURL(_ pathURL: String) -> String{
+        return pathURL.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
+    }
+    
+    private func loadFolder(_ folder: Folder){
+        let oldFolder = currentFolder
+        currentFolder = folder
+        backBtn.isEnabled = currentFolder?.parent != nil
+        if let currentFolder = currentFolder{
+            self.navigationItem.title = currentFolder.name
+            if let oldItems = oldFolder?.items {
+                print(currentFolder.name)
+                self.reloadChanges(from: oldItems, to: currentFolder.items)
+            }else{
+                self.folderCollection.reloadData()
+            }
+        }
     }
     
     @IBAction func favoritesBtnPressed(_ sender: FavoritesButton) {
@@ -182,25 +192,22 @@ class FolderVC: UIViewController {
     }
 }
 
-
-
-
 extension FolderVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return folders.count
+        return currentFolder?.items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "folderCell", for: indexPath) as? FolderCell{
-            cell.setup(folder: &folders[indexPath.row])
-            print("\(folders[indexPath.row].name) : favorite? \(folders[indexPath.row].isFavorite)")
-            return cell
+            if var item = currentFolder?.items[indexPath.row]{
+                cell.setup(folder: &item, index: indexPath.row)
+                //            print("\(folders[indexPath.row].name) : favorite? \(folders[indexPath.row].isFavorite)")
+                return cell
+            }
         }
-        
         return FolderCell()
     }
-    
     
     func reloadChanges<T: Collection>(from old: T, to new: T) where T.Element: Equatable {
         folderCollection.animateItemChanges(oldData: old, newData: new, updateData:{})
@@ -210,9 +217,8 @@ extension FolderVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         let device = UIDevice.current.model
         var cellSize:CGSize = CGSize(width: 164, height: 152)
         if (device == "iPhone" || device == "iPhone Simulator") {
-           cellSize = CGSize(width: 110, height: 103)
+            cellSize = CGSize(width: 110, height: 103)
         }
-
         return cellSize
     }
 }

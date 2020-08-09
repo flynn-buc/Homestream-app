@@ -19,8 +19,8 @@ class SettingsDetailVC: UITableViewController {
         super.viewDidLoad()
         settingsOptionsTable.delegate = self
         settingsOptionsTable.dataSource = self
-        switchesData = UserDefaults.init(suiteName: "Switch Toggles") // preferences from switches (on/off)
-        userData = UserDefaults.init(suiteName: "User Data") // preferences from textfields (data)
+        switchesData = UserDefaults.init(suiteName: UserDefaultKey.switchSettings) // preferences from switches (on/off)
+        userData = UserDefaults.init(suiteName: UserDefaultKey.userSettings) // preferences from textfields (data)
     }
     
     // Call configure view if segue has set the required model

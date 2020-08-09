@@ -77,6 +77,7 @@ class ClientService: NSObject{
         genericGet(url: url, decodingObjectSuccess: MessageData.self) { (success) in
             onSuccess(success)
         } onError: { (error) in
+            print("Error in getFoldersAndFilesAt")
             onError(error)
         }
     }
@@ -87,6 +88,7 @@ class ClientService: NSObject{
         genericGet(url: url, decodingObjectSuccess: ServerFile.self) { (success) in
             onSuccess(success)
         } onError: { (error) in
+            print("Error in fileAt")
             onError(error)
         }
     }
@@ -94,9 +96,10 @@ class ClientService: NSObject{
     //Server call to refresh data
     func refresh(onSuccess: @escaping OnAPIFailure, onError: @escaping OnAPIFailure){
         let url = URL(string: "\(URL_BASE)/Refresh/")!
-        genericGet(url: url, decodingObjectSuccess: String.self) { (success) in
-            onSuccess(success)
+        genericGet(url: url, decodingObjectSuccess: APIError.self) { (success) in
+            onSuccess(success.message)
         } onError: { (error) in
+            print("Error in Refresh")
             onError(error)
         }
     }

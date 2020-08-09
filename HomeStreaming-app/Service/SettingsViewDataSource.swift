@@ -17,15 +17,14 @@ class SettingsViewDataSource{
     private var SubtitleSection = [SettingsCellModel] ()
     
     /*
-     Section 1:
+     Section 1: Network
      */
     
     private var sections = [[SettingsCellModel]]()
     private var sectionTitle = ["System", "Streaming"]
     
     
-    
-    private let connection = SettingsCellModel(icon: UIImage(systemName: "wifi"), title: "Network")
+    private let network = SettingsCellModel(icon: UIImage(systemName: "wifi"), title: "Network")
     private let login = SettingsCellModel(icon: UIImage(systemName: "lock.fill"), title: "Login")
     
     private let video = SettingsCellModel(icon: UIImage(systemName: "film"), title: "Video")
@@ -33,12 +32,10 @@ class SettingsViewDataSource{
     private let subtitle = SettingsCellModel(icon: UIImage(systemName: "captions.bubble"), title: "Subtitles")
     
   
-    
-    
     private var menuItems = [[[SettingsOptionCellModel]]]()
     
      private init(){
-        systemSection = [connection, login]
+        systemSection = [network, login]
         streamingSection = [video, audio, subtitle]
         
         let networkItems = NetworkItems().getItems()
@@ -70,7 +67,7 @@ class SettingsViewDataSource{
     }
 }
 
-class MenuItems{
+private class MenuItems{
     private var items = [SettingsOptionCellModel]()
     func getItems() ->[SettingsOptionCellModel]{
         return items
@@ -81,7 +78,7 @@ class MenuItems{
     }
 }
 
-class NetworkItems: MenuItems{
+private class NetworkItems: MenuItems{
 
     private let localIP = TextSettingsOptionCellModel(title: "Local Server IP:", key: .localIP)
     private let port = TextSettingsOptionCellModel(title: "Port:", key: .port)
@@ -93,7 +90,7 @@ class NetworkItems: MenuItems{
     }
 }
 
-class LoginItems: MenuItems{
+private class LoginItems: MenuItems{
 
     private let useLoginItem = SwitchSettingsOptionCellModel(title: "Enable Authentication", key: .enableAuthentication)
     private let username = TextSettingsOptionCellModel(title: "Username: ", key: .username, keyIfDisplayed: .enableAuthentication)
@@ -103,19 +100,19 @@ class LoginItems: MenuItems{
     }
 }
 
-class VideoItems: MenuItems{
+private class VideoItems: MenuItems{
      init(){
         super.init(items: [])
     }
 }
 
-class AudioItems: MenuItems{
+private class AudioItems: MenuItems{
      init(){
         super.init(items: [])
     }
 }
 
-class SubtitleItems: MenuItems{
+private class SubtitleItems: MenuItems{
      init(){
         super.init(items: [])
     }

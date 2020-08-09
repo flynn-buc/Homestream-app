@@ -9,7 +9,7 @@ import UIKit
 import Differ
 
 private let reuseIdentifier = "Cell"
-typealias loadComplete = () ->Void
+typealias loadComplete = () -> Void
 
 class MovieCollectionVC: UIViewController {
     
@@ -31,7 +31,7 @@ class MovieCollectionVC: UIViewController {
         loadDataFromServer()
     }
     
-    fileprivate func invalidQueryError(_ message: String) {
+    private func invalidQueryError(_ message: String) {
         print("Error: \(message)")
     }
     
@@ -84,18 +84,24 @@ class MovieCollectionVC: UIViewController {
         }
     }
     
-    //Refresh data,
+    //Refresh data, reload previous folder after refresh if it exists, or reload root folder
     @objc private func refresh() {
         let hash = currentFolder?.hash
         ClientService.instance.refresh() { (response) in
             print(response)
+            // load data from server, using completion to load root folder or current folder if it exists
             self.loadDataFromServer(reloadData: false) {
                 if let hash = hash{
                     if let rootFolder = self.rootFolder{
+                        var folder: Folder
                         if hash == rootFolder.hash{
-                            return;
+                            folder = rootFolder // skip searching if previous folder was root
+                        }else{
+                            print("In Other")
+                            folder = self.findFolder(rootFolder.items, withHash: hash) ?? rootFolder
                         }
-                        _ = self.findFolder(rootFolder.items, withHash: hash)
+                        print("Found Folder: \(folder.name)")
+                        self.setupCollectionView(withFolder: folder)
                     }
                 }
             }
@@ -125,27 +131,27 @@ class MovieCollectionVC: UIViewController {
         }
     }
     
-    private func findFolder(_ items: [FilesystemItem], withHash hash:Int) -> Bool{
+    //returns folder from given collection with hash, or nil if it doesn't exist
+    private func findFolder(_ items: [FilesystemItem], withHash hash:Int) -> Folder?{
         for item in items{
             if let folder = item as? Folder{
                 if folder.hash == hash{
-                    self.setupCollectionView(withFolder: folder)
-                    print("Found hash: \(folder.name)")
-                    return true;
+                    return folder
                 }else{
-                    if findFolder(folder.items, withHash: hash){
-                        return true;
+                    if let folder = findFolder(folder.items, withHash: hash){
+                        return folder
                     }
                 }
             }
         }
-        return false;
+        return nil
     }
     
     private func endRefresh(){
         self.refreshControl.endRefreshing()
     }
     
+    //Setup collection view from subfolders found in provided folder
     private func setupCollectionView(withFolder folder: Folder){
         let oldFolder = currentFolder
         currentFolder = folder
@@ -161,11 +167,13 @@ class MovieCollectionVC: UIViewController {
         }
     }
     
-    func pathAsURL (_ pathURL: Any) -> String{
+    //Return path encoded as URL
+    private func pathAsURL (_ pathURL: Any) -> String{
         return pathAsURL(fromString: "\(pathURL)")
     }
     
-    func pathAsURL(fromString path: String) -> String{
+    //Return path from string encoded as URL
+    private func pathAsURL(fromString path: String) -> String{
         return path.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
     }
 }
@@ -179,15 +187,16 @@ extension MovieCollectionVC{
     }
     
     @IBAction func folderBtnPressed(_ sender: FolderButton) {
-        if (sender.type == .folder){
+        if (sender.type == .folder){ // show enclosing folder if button clicked was folder
             guard let currentFolder = currentFolder?.items[sender.tag] as? Folder else{return}
             setupCollectionView(withFolder: currentFolder)
-        }else if sender.type == .movie{
+        }else if sender.type == .movie{ // handle displaying movie if button clicked was movie
             guard let fileToPlay = currentFolder?.items[sender.tag] as? File else{return}
             displayVideo(fromHash: fileToPlay.hash)
         }
     }
 
+    // if current folder has a parent, load parent folder (only root should fail here)
     @IBAction func backBtnPressed(_ sender: Any) {
         guard let parent = currentFolder?.parent as? Folder else {return}
         setupCollectionView(withFolder: parent)
@@ -218,7 +227,7 @@ extension MovieCollectionVC: UICollectionViewDelegate, UICollectionViewDataSourc
         folderCollection.animateItemChanges(oldData: old, newData: new, updateData:{})
     }
     
-    //Adjust cell size for iphone
+    //Adjust cell size for iphones
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var cellSize:CGSize = CGSize(width: 164, height: 152)
         if UIDevice.current.userInterfaceIdiom == .phone{

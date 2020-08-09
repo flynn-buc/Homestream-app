@@ -20,8 +20,8 @@ class SettingsOptionCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        switchesData = UserDefaults.init(suiteName: "Switch Toggles") // preferences from switches (on/off)
-        userData = UserDefaults.init(suiteName: "User Data") // preferences from textfields (data)
+        switchesData = UserDefaults.init(suiteName: UserDefaultKey.switchSettings) // preferences from switches (on/off)
+        userData = UserDefaults.init(suiteName: UserDefaultKey.userSettings) // preferences from textfields (data)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

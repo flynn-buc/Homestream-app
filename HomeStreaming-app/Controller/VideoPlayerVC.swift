@@ -11,7 +11,7 @@ import AVKit
 
 class VideoPlayerVC: AVPlayerViewController, AVPlayerViewControllerDelegate {
 
-    private let dataPref = UserDefaults.init(suiteName: "User Data")
+    private let dataPref = UserDefaults.init(suiteName: UserDefaultKey.userSettings)
     
     override class func awakeFromNib() {
         print("in VideoPlayer")

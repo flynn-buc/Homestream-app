@@ -125,7 +125,6 @@ class MovieCollectionVC: UIViewController {
             
             self.present(videoPlayerVC, animated: true, completion: nil)
             videoPlayerVC.initPlayer(url: "\(pathURL)/Play/")
-            print("Playing...: http://nissal.local:3004\(hash)/Play/")
         } onError: { (message) in
             print("error: \(message)")
         }

@@ -15,13 +15,10 @@ class SettingsOptionCell: UITableViewCell {
     private var userData: UserDefaults!
     
     private var component: UIControl!
-    private var key: UserDefaultKey!
+    internal var key: UserDefaultKey!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        switchesData = UserDefaults.init(suiteName: UserDefaultKey.switchSettings) // preferences from switches (on/off)
-        userData = UserDefaults.init(suiteName: UserDefaultKey.userSettings) // preferences from textfields (data)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,42 +51,26 @@ class SettingsOptionCell: UITableViewCell {
             
         }
         
-        // If cell should be hidden from a switch, get the key from preferences and set the current value
-        if let hasDisplayOption = cellModel.keyIfDisplayed{
-            enable(shouldEnable: switchesData.bool(forKey: hasDisplayOption.rawValue))
+        // If cell should be hidden due to a switch toggle, get the key from preferences and set the current value
+        if let hasDisplayOption = cellModel.keyIfDisplayed, let shouldEnable = UserPrefs.data.bool(forSwitchKey: hasDisplayOption){
+            enable(shouldEnable: shouldEnable)
         }
     }
 }
 
 // Extensions relating to a text field component
-extension SettingsOptionCell: UITextFieldDelegate {
+extension SettingsOptionCell {
     
     //UITextField display configuration
     private func configureUITextField(_ component: UITextField, _ cellModel: SettingsOptionCellModel) {
         component.text = userData.string(forKey: self.key.rawValue) // get text from user preferences
-        component.delegate = self
+        //component.delegate = self
         component.textColor = .systemBlue
         component.leftAnchor.constraint(equalTo: self.label.rightAnchor).isActive = true
         component.textAlignment = .right
         component.clearButtonMode = .whileEditing
         component.autocorrectionType = .no
         component.attributedPlaceholder = NSAttributedString(string: getNSAttributtedString(for: cellModel.key))
-    }
-    
-    // Change color to black when editing begings
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.textColor = UIColor.black
-    }
-    
-    //Change color back to system blue when editing ends
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.textColor = UIColor.systemBlue
-
-        // Once text is updated, save text to preferences if it is not nil
-        if let text = textField.text{
-            userData.set(text, forKey: key.rawValue)
-            ClientService.instance.updateAddress()
-        }
     }
     
     // return component reference as UITextField to caller
@@ -122,8 +103,9 @@ extension SettingsOptionCell{
     // Callback option from the switch, reload data (in case switch toggles cell visibility
     @objc func switchToggled(cellSwitch: UISwitch){
         switchesData.set(cellSwitch.isOn, forKey: key.rawValue)
-        guard let parent = superview?.superview as? UITableView else {return}
-        parent.reloadData()
+        if let parent = superview?.superview as? UITableView {
+            parent.reloadData()
+        }
     }
 }
 
@@ -134,12 +116,7 @@ extension SettingsOptionCell {
         component.isEnabled = shouldEnable
         if let component = self.component as? UITextField {
             self.label.isEnabled = shouldEnable
-            if (shouldEnable){
-                component.textColor = UIColor.systemBlue
-            }else{
-                print("should disable color)")
-                component.textColor = UIColor.lightGray
-            }
+            component.textColor = shouldEnable ? UIColor.systemBlue : UIColor.lightGray
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SettingsViewDataSource{
+final class SettingsViewDataSource{
     static let instance = SettingsViewDataSource()
     
     
@@ -78,7 +78,7 @@ private class MenuItems{
     }
 }
 
-private class NetworkItems: MenuItems{
+final private class NetworkItems: MenuItems{
 
     private let localIP = TextSettingsOptionCellModel(title: "Local Server IP:", key: .localIP)
     private let port = TextSettingsOptionCellModel(title: "Port:", key: .port)
@@ -90,7 +90,7 @@ private class NetworkItems: MenuItems{
     }
 }
 
-private class LoginItems: MenuItems{
+final private class LoginItems: MenuItems{
 
     private let useLoginItem = SwitchSettingsOptionCellModel(title: "Enable Authentication", key: .enableAuthentication)
     private let username = TextSettingsOptionCellModel(title: "Username: ", key: .username, keyIfDisplayed: .enableAuthentication)
@@ -100,19 +100,19 @@ private class LoginItems: MenuItems{
     }
 }
 
-private class VideoItems: MenuItems{
+final private class VideoItems: MenuItems{
      init(){
         super.init(items: [])
     }
 }
 
-private class AudioItems: MenuItems{
+final private class AudioItems: MenuItems{
      init(){
         super.init(items: [])
     }
 }
 
-private class SubtitleItems: MenuItems{
+final private class SubtitleItems: MenuItems{
      init(){
         super.init(items: [])
     }

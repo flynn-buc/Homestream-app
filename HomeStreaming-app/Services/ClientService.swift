@@ -18,7 +18,7 @@ typealias OnAPIFailure = (String) -> Void
 typealias onRefreshSuccess = (String) -> Void
 typealias genericClosure<T> = (T) -> Void
 
-class ClientService: NSObject{
+final class ClientService: NSObject{
     static let instance = ClientService()
     
     let session = URLSession(configuration: .default)

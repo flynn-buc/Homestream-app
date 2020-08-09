@@ -11,16 +11,12 @@ class SettingsDetailVC: UITableViewController {
     
     
     @IBOutlet var settingsOptionsTable: UITableView!
-    private var switchesData: UserDefaults!
-    private var userData: UserDefaults!
     
     private var text: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsOptionsTable.delegate = self
         settingsOptionsTable.dataSource = self
-        switchesData = UserDefaults.init(suiteName: UserDefaultKey.switchSettings) // preferences from switches (on/off)
-        userData = UserDefaults.init(suiteName: UserDefaultKey.userSettings) // preferences from textfields (data)
     }
     
     // Call configure view if segue has set the required model

@@ -28,16 +28,8 @@ extension UserPrefs{
     }
     
     //SwitchGetters
-    func string(forSwitchKey key: UserDefaultKey) -> String?{
-        return string(forKey: key, from: switchesData)
-    }
-    
     func bool(forSwitchKey key: UserDefaultKey) ->Bool?{
         return bool(forKey: key, from: switchesData)
-    }
-    
-    func int(forSwitchKey key:UserDefaultKey) -> Int? {
-        return int(forKey: key, from: switchesData)
     }
     
     //UserGetters

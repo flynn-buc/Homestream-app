@@ -49,12 +49,23 @@ class SettingsDetailVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "settingsOptionCell") as? SettingsOptionCell{
-            if let menuItems = menuItems{
-                menuItems[indexPath.row].component.tag = indexPath.row
-                cell.updateViews(cellModel: menuItems[indexPath.row])
-                return cell
+        if let menuItems = menuItems{
+            let cellModel = menuItems[indexPath.row]
+            cellModel.component.tag = indexPath.row
+            menuItems[indexPath.row].component.tag = indexPath.row
+            if let textField = cellModel.component as? UITextField{
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "settingsOptionTextCell") as? SettingsOptionTextfieldCell{
+                    cell.updateViews(cellModel: cellModel, textField: textField)
+                    return cell
+                }
             }
+            if let uiSwitch = cellModel.component as? UISwitch{
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "settingsOptionSwitchCell") as? SettingsOptionSwitchCell{
+                    cell.updateViews(cellModel: cellModel, uiSwitch: uiSwitch)
+                    return cell
+                }
+            }
+            
         }
         return SettingsOptionCell()
     }
@@ -65,9 +76,10 @@ class SettingsDetailVC: UITableViewController {
     
     // Set UITextField in selected cell to be first responder when cell is selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? SettingsOptionCell {
-            cell.getComponentIfTextField()?.isHidden = false
-            cell.getComponentIfTextField()?.becomeFirstResponder()
+        if let cell = tableView.cellForRow(at: indexPath) as? SettingsOptionTextfieldCell,
+           let component = cell.getComponent() as? UITextField{
+            component.isHidden = false
+            component.becomeFirstResponder()
         }
     }
 }

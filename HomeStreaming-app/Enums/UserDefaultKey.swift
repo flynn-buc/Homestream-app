@@ -21,6 +21,5 @@ enum UserDefaultKey: String{
     case username = "username"
     case password = "password"
     
-    static let userSettings = "User Data"
-    static let switchSettings = "Switch Toggles"
+    
 }

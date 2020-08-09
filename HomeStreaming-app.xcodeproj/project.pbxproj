@@ -16,6 +16,8 @@
 		CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */; };
 		CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77288724D0D4C300586EED /* VideoPlayerVC.swift */; };
 		CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99207524DB757800641CA3 /* UserDefaultKey.swift */; };
+		CE9B238824DDEA8F0042D2E0 /* ServerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */; };
+		CE9B238A24DDEAE30042D2E0 /* FolderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238924DDEAE30042D2E0 /* FolderVC.swift */; };
 		CEA7E15924D9FACF005E5E95 /* SettingsOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7E15824D9FACF005E5E95 /* SettingsOptionCell.swift */; };
 		CEA7E15B24DA5AA8005E5E95 /* SettingsSplitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7E15A24DA5AA8005E5E95 /* SettingsSplitVC.swift */; };
 		CEA7E15F24DA5C09005E5E95 /* SettingsOptionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7E15E24DA5C09005E5E95 /* SettingsOptionCellModel.swift */; };
@@ -33,16 +35,13 @@
 		CEE9815724C1445900CF9428 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815624C1445900CF9428 /* ClientService.swift */; };
 		CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815A24C148E900CF9428 /* MessageData.swift */; };
 		CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815F24C16F5F00CF9428 /* FolderCell.swift */; };
-		CEE9816324C171B600CF9428 /* FolderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816224C171B600CF9428 /* FolderVC.swift */; };
 		CEE9816624C224F100CF9428 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816524C224F100CF9428 /* APIError.swift */; };
-		CEE9816824C22A9500CF9428 /* Subfolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816724C22A9500CF9428 /* Subfolders.swift */; };
-		CEE9816C24C2654B00CF9428 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816B24C2654B00CF9428 /* Files.swift */; };
+		CEE9816824C22A9500CF9428 /* ServerSubfolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816724C22A9500CF9428 /* ServerSubfolder.swift */; };
 		CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816E24C2A51000CF9428 /* FileType.swift */; };
 		CEE9817324C2A59600CF9428 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817224C2A59600CF9428 /* Item.swift */; };
 		CEE9817524C2DD3700CF9428 /* FolderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817424C2DD3700CF9428 /* FolderButton.swift */; };
 		CEE9817824C2E18C00CF9428 /* Differ in Frameworks */ = {isa = PBXBuildFile; productRef = CEE9817724C2E18C00CF9428 /* Differ */; };
 		CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */; };
-		CEE9817E24C4C12D00CF9428 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817D24C4C12D00CF9428 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +71,8 @@
 		CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewDataSource.swift; sourceTree = "<group>"; };
 		CE77288724D0D4C300586EED /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
 		CE99207524DB757800641CA3 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
+		CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFile.swift; sourceTree = "<group>"; };
+		CE9B238924DDEAE30042D2E0 /* FolderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderVC.swift; sourceTree = "<group>"; };
 		CEA7E15824D9FACF005E5E95 /* SettingsOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionCell.swift; sourceTree = "<group>"; };
 		CEA7E15A24DA5AA8005E5E95 /* SettingsSplitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSplitVC.swift; sourceTree = "<group>"; };
 		CEA7E15E24DA5C09005E5E95 /* SettingsOptionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionCellModel.swift; sourceTree = "<group>"; };
@@ -94,15 +95,12 @@
 		CEE9815624C1445900CF9428 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
 		CEE9815A24C148E900CF9428 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		CEE9815F24C16F5F00CF9428 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
-		CEE9816224C171B600CF9428 /* FolderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderVC.swift; sourceTree = "<group>"; };
 		CEE9816524C224F100CF9428 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		CEE9816724C22A9500CF9428 /* Subfolders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subfolders.swift; sourceTree = "<group>"; };
-		CEE9816B24C2654B00CF9428 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		CEE9816724C22A9500CF9428 /* ServerSubfolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSubfolder.swift; sourceTree = "<group>"; };
 		CEE9816E24C2A51000CF9428 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		CEE9817224C2A59600CF9428 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CEE9817424C2DD3700CF9428 /* FolderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderButton.swift; sourceTree = "<group>"; };
 		CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
-		CEE9817D24C4C12D00CF9428 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +238,7 @@
 			children = (
 				CEA7E15C24DA5B9B005E5E95 /* Setting Controllers */,
 				CED045B224C1160D00334E7F /* ViewController.swift */,
-				CEE9816224C171B600CF9428 /* FolderVC.swift */,
+				CE9B238924DDEAE30042D2E0 /* FolderVC.swift */,
 				CE77288724D0D4C300586EED /* VideoPlayerVC.swift */,
 			);
 			path = Controller;
@@ -282,10 +280,9 @@
 			isa = PBXGroup;
 			children = (
 				CEE9815A24C148E900CF9428 /* MessageData.swift */,
-				CEE9816724C22A9500CF9428 /* Subfolders.swift */,
-				CEE9816B24C2654B00CF9428 /* Files.swift */,
+				CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */,
+				CEE9816724C22A9500CF9428 /* ServerSubfolder.swift */,
 				CEE9816524C224F100CF9428 /* APIError.swift */,
-				CEE9817D24C4C12D00CF9428 /* File.swift */,
 			);
 			path = ServerModel;
 			sourceTree = "<group>";
@@ -439,14 +436,12 @@
 				CED045B324C1160D00334E7F /* ViewController.swift in Sources */,
 				CE62E9D724D8C89B008F3D26 /* SettingsDetailVC.swift in Sources */,
 				CEA7E15B24DA5AA8005E5E95 /* SettingsSplitVC.swift in Sources */,
-				CEE9816C24C2654B00CF9428 /* Files.swift in Sources */,
-				CEE9816324C171B600CF9428 /* FolderVC.swift in Sources */,
 				CE31A35924DC92CF00FCBDF6 /* DecimalPadButton.swift in Sources */,
-				CEE9816824C22A9500CF9428 /* Subfolders.swift in Sources */,
+				CEE9816824C22A9500CF9428 /* ServerSubfolder.swift in Sources */,
 				CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */,
 				CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */,
 				CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */,
-				CEE9817E24C4C12D00CF9428 /* File.swift in Sources */,
+				CE9B238824DDEA8F0042D2E0 /* ServerFile.swift in Sources */,
 				CEE9817524C2DD3700CF9428 /* FolderButton.swift in Sources */,
 				CEB8014C24DCCE090035DBDB /* ServerAddressField.swift in Sources */,
 				CE324ADF24D89D6B0069D52A /* RoundedImageView.swift in Sources */,
@@ -463,6 +458,7 @@
 				CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */,
 				CE324AE124D8A1130069D52A /* SettingsTableVC.swift in Sources */,
 				CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */,
+				CE9B238A24DDEAE30042D2E0 /* FolderVC.swift in Sources */,
 				CEE9815724C1445900CF9428 /* ClientService.swift in Sources */,
 				CEE9816624C224F100CF9428 /* APIError.swift in Sources */,
 			);

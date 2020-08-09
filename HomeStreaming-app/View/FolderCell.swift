@@ -19,7 +19,7 @@ class FolderCell: UICollectionViewCell {
     @IBOutlet weak var folderName: UILabel!
     @IBOutlet weak var favoritesButton: FavoritesButton!
     
-    func setup(folder: inout Item){
+    func setup(folder: inout Item, index: Int){
         
         switch folder.type {
         case .movie: fallthrough
@@ -35,6 +35,7 @@ class FolderCell: UICollectionViewCell {
         folderName.text = folder.name
         folderButton.setTitle(folder.name, for: .normal)
         folderButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        folderButton.tag = index
         favoritesButton.setItem(item: &folder)
         favoritesButton.set(isFavorite: folder.isFavorite)
     }

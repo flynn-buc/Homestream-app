@@ -6,12 +6,10 @@
 //
 
 import Foundation
-import SocketIO
 
 struct MessageData: Codable{
     let message: String
     let path: String
     let currentFolder: String
-    let folders: Subfolders
-    let files: Files
+    let folders: ServerSubfolder
 }

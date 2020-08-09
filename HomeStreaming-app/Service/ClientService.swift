@@ -10,9 +10,10 @@ import SocketIO
 
 let IP = "nissa.local"
 let port = 3004
+let defaultPath = "/get-data"
 
 typealias OnGetFoldersAndFilesSuccess = (MessageData) -> Void
-typealias OnGetFileSuccess = (File) -> Void
+typealias OnGetFileSuccess = (ServerFile) -> Void
 typealias OnAPIFailure = (String) -> Void
 typealias onRefreshSuccess = (String) -> Void
 
@@ -20,6 +21,7 @@ class ClientService: NSObject{
     static let instance = ClientService()
     
     var URL_BASE = "http://\(IP):\(port)"
+    
     
     
     override init(){
@@ -42,9 +44,9 @@ class ClientService: NSObject{
     
     let session = URLSession(configuration: .default)
     
-    func get(foldersAndFilesAt path: String, onSuccess: @escaping OnGetFoldersAndFilesSuccess, onError: @escaping OnAPIFailure){
+    func get(foldersAndFilesAt path: String? = defaultPath , onSuccess: @escaping OnGetFoldersAndFilesSuccess, onError: @escaping OnAPIFailure){
         
-        let url = URL(string: "\(URL_BASE)\(path)/")!
+        let url = URL(string: "\(URL_BASE)\(path!)/")!
         print("URL::: \(url.absoluteString)")
         let task = session.dataTask(with: url) { (data, response, error) in
             
@@ -60,7 +62,6 @@ class ClientService: NSObject{
                 
                 do{
                     if response.statusCode == 200{
-                        
                         let response = try JSONDecoder().decode(MessageData.self, from: data)
                         onSuccess(response)
                         // handle success
@@ -95,7 +96,7 @@ class ClientService: NSObject{
                 do{
                     if response.statusCode == 200{
                         
-                        let response = try JSONDecoder().decode(File.self, from: data)
+                        let response = try JSONDecoder().decode(ServerFile.self, from: data)
                         onSuccess(response)
                         // handle success
                     } else {
@@ -110,7 +111,7 @@ class ClientService: NSObject{
         task.resume()
     }
     
-    func refresh(onSuccess: @escaping onRefreshSuccess, onError: @escaping OnAPIFailure){
+    func refresh(onSuccess: @escaping OnAPIFailure, onError: @escaping OnAPIFailure){
         
         let url = URL(string: "\(URL_BASE)/Refresh/")!
         print("URL::: \(url.absoluteString)")
@@ -142,6 +143,5 @@ class ClientService: NSObject{
             }
         }
         task.resume()
-        
     }
 }

@@ -501,44 +501,6 @@
             <point key="canvasLocation" x="-736" y="1866"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="FKn-Ku-WHD">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="GAI-31-Pmy">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="PCQ-aK-2La">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="Rfi-Yr-jvs">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="XM5-Ve-qCO">
-            <size key="intrinsicContentSize" width="28" height="19"/>
-        </designable>
-        <designable name="dso-Wk-cWj">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="oyv-Am-caw">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="qrD-fn-w4a">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="rKq-93-mNh">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="wUL-8x-1Pd">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="xjq-15-skv">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="za0-Zo-KHy">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="XBT-Z4-Au9"/>
     </inferredMetricsTieBreakers>

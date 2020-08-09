@@ -10,10 +10,10 @@ import Foundation
 
 final class UserPrefs{
     static let data = UserPrefs()
-    private static let userSettings = "User Data"
+    private static let textSettings = "User Data"
     private static let switchSettings = "Switch Toggles"
     private let switchesData = UserDefaults.init(suiteName: switchSettings) // preferences from switches (on/off)
-    private let userData = UserDefaults.init(suiteName: userSettings) // preferences from textfields (data)
+    private let userData = UserDefaults.init(suiteName: textSettings) // preferences from textfields (data)
 }
 
 //Public
@@ -23,7 +23,7 @@ extension UserPrefs{
         set(data, forKey: key, from: switchesData)
     }
     
-    func set(_ data: Any, forUserKey key: UserDefaultKey){
+    func set(_ data: Any, forTextKey key: UserDefaultKey){
         set(data, forKey: key, from: userData)
     }
     
@@ -41,15 +41,15 @@ extension UserPrefs{
     }
     
     //UserGetters
-    func string(forUserKey key: UserDefaultKey) -> String?{
+    func string(forTextKey key: UserDefaultKey) -> String?{
         return string(forKey: key, from: userData)
     }
     
-    func bool(forUserKey key: UserDefaultKey) ->Bool?{
+    func bool(forTextKey key: UserDefaultKey) ->Bool?{
         return bool(forKey: key, from: userData)
     }
     
-    func int(forUserKey key:UserDefaultKey) -> Int? {
+    func int(forTextKey key:UserDefaultKey) -> Int? {
         return int(forKey: key, from: userData)
     }
 }

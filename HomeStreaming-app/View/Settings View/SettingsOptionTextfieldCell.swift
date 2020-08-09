@@ -33,7 +33,7 @@ extension SettingsOptionTextfieldCell: UITextFieldDelegate{
         
         // Once text is updated, save text to preferences if it is not nil
         if let text = textField.text{
-            UserPrefs.data.set(text, forUserKey: key)
+            UserPrefs.data.set(text, forTextKey: key)
             ClientService.instance.updateAddress()
         }
     }

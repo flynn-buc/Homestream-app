@@ -54,7 +54,7 @@ class ClientService: NSObject{
                 guard let data = data, let response = response as? HTTPURLResponse else{
                     onError("Invalid Data or Response")
                     return}
-                
+                print(String(bytes: data, encoding: .utf8))
                 do{
                     if response.statusCode == 200{ // success
                         let response = try JSONDecoder().decode(decodingObjectSuccess, from: data)

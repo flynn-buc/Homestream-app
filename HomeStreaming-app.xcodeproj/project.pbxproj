@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */; };
+		CE2EC9EE24E08FB7006CE956 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9ED24E08FB7006CE956 /* Folder.swift */; };
+		CE2EC9F024E08FBB006CE956 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EF24E08FBB006CE956 /* File.swift */; };
 		CE31A35924DC92CF00FCBDF6 /* DecimalPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31A35824DC92CF00FCBDF6 /* DecimalPadButton.swift */; };
 		CE324ADF24D89D6B0069D52A /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324ADE24D89D6B0069D52A /* RoundedImageView.swift */; };
 		CE324AE124D8A1130069D52A /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324AE024D8A1130069D52A /* SettingsTableVC.swift */; };
@@ -15,6 +18,7 @@
 		CE62E9D724D8C89B008F3D26 /* SettingsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62E9D624D8C89B008F3D26 /* SettingsDetailVC.swift */; };
 		CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */; };
 		CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77288724D0D4C300586EED /* VideoPlayerVC.swift */; };
+		CE78F44724E0806D000F004F /* SettingsOptionTextfieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78F44624E0806D000F004F /* SettingsOptionTextfieldCell.swift */; };
 		CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99207524DB757800641CA3 /* UserDefaultKey.swift */; };
 		CE9B238824DDEA8F0042D2E0 /* ServerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */; };
 		CE9B238A24DDEAE30042D2E0 /* MovieCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */; };
@@ -24,7 +28,6 @@
 		CEB8014C24DCCE090035DBDB /* ServerAddressField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8014B24DCCE090035DBDB /* ServerAddressField.swift */; };
 		CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045AE24C1160D00334E7F /* AppDelegate.swift */; };
 		CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045B024C1160D00334E7F /* SceneDelegate.swift */; };
-		CED045B324C1160D00334E7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045B224C1160D00334E7F /* ViewController.swift */; };
 		CED045B624C1160D00334E7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED045B424C1160D00334E7F /* Main.storyboard */; };
 		CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED045B724C1160D00334E7F /* HomeStreaming_app.xcdatamodeld */; };
 		CED045BB24C1160E00334E7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED045BA24C1160E00334E7F /* Assets.xcassets */; };
@@ -32,6 +35,7 @@
 		CED045C924C1160E00334E7F /* HomeStreaming_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045C824C1160E00334E7F /* HomeStreaming_appTests.swift */; };
 		CED045D424C1160E00334E7F /* HomeStreaming_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */; };
 		CED045E324C1163400334E7F /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = CED045E224C1163400334E7F /* SocketIO */; };
+		CED31D9724E099F400A87E33 /* SettingsOptionSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31D9624E099F400A87E33 /* SettingsOptionSwitchCell.swift */; };
 		CEE9815724C1445900CF9428 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815624C1445900CF9428 /* ClientService.swift */; };
 		CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815A24C148E900CF9428 /* MessageData.swift */; };
 		CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815F24C16F5F00CF9428 /* FolderCell.swift */; };
@@ -62,6 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrefs.swift; sourceTree = "<group>"; };
+		CE2EC9ED24E08FB7006CE956 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		CE2EC9EF24E08FBB006CE956 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		CE31A35824DC92CF00FCBDF6 /* DecimalPadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalPadButton.swift; sourceTree = "<group>"; };
 		CE324ADE24D89D6B0069D52A /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		CE324AE024D8A1130069D52A /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
@@ -70,6 +77,7 @@
 		CE62E9D624D8C89B008F3D26 /* SettingsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailVC.swift; sourceTree = "<group>"; };
 		CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewDataSource.swift; sourceTree = "<group>"; };
 		CE77288724D0D4C300586EED /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
+		CE78F44624E0806D000F004F /* SettingsOptionTextfieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionTextfieldCell.swift; sourceTree = "<group>"; };
 		CE99207524DB757800641CA3 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFile.swift; sourceTree = "<group>"; };
 		CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionVC.swift; sourceTree = "<group>"; };
@@ -80,7 +88,6 @@
 		CED045AB24C1160D00334E7F /* HomeStreaming-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeStreaming-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED045AE24C1160D00334E7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED045B024C1160D00334E7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CED045B224C1160D00334E7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CED045B524C1160D00334E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CED045B824C1160D00334E7F /* HomeStreaming_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeStreaming_app.xcdatamodel; sourceTree = "<group>"; };
 		CED045BA24C1160E00334E7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 		CED045CF24C1160E00334E7F /* HomeStreaming-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeStreaming-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStreaming_appUITests.swift; sourceTree = "<group>"; };
 		CED045D524C1160E00334E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED31D9624E099F400A87E33 /* SettingsOptionSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionSwitchCell.swift; sourceTree = "<group>"; };
 		CEE9815624C1445900CF9428 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
 		CEE9815A24C148E900CF9428 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		CEE9815F24C16F5F00CF9428 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
@@ -130,6 +138,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2EC9F124E09418006CE956 /* SettingsOptionCellClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7E15824D9FACF005E5E95 /* SettingsOptionCell.swift */,
+				CE78F44624E0806D000F004F /* SettingsOptionTextfieldCell.swift */,
+				CED31D9624E099F400A87E33 /* SettingsOptionSwitchCell.swift */,
+			);
+			path = SettingsOptionCellClasses;
+			sourceTree = "<group>";
+		};
 		CE324AE424D8A2BE0069D52A /* SettingsModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,13 +157,14 @@
 			path = SettingsModel;
 			sourceTree = "<group>";
 		};
-		CE83ED5924C117B000D86436 /* Service */ = {
+		CE83ED5924C117B000D86436 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				CEE9815624C1445900CF9428 /* ClientService.swift */,
 				CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */,
+				CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CEA7E15C24DA5B9B005E5E95 /* Setting Controllers */ = {
@@ -161,8 +180,8 @@
 		CEA7E15D24DA5BB5005E5E95 /* Settings View */ = {
 			isa = PBXGroup;
 			children = (
+				CE2EC9F124E09418006CE956 /* SettingsOptionCellClasses */,
 				CE324AE224D8A1400069D52A /* SettingsCell.swift */,
-				CEA7E15824D9FACF005E5E95 /* SettingsOptionCell.swift */,
 				CEB8014B24DCCE090035DBDB /* ServerAddressField.swift */,
 			);
 			path = "Settings View";
@@ -209,7 +228,7 @@
 			children = (
 				CEB8014624DCC9DF0035DBDB /* Extensions */,
 				CEE9816D24C2A50300CF9428 /* Enums */,
-				CE83ED5924C117B000D86436 /* Service */,
+				CE83ED5924C117B000D86436 /* Services */,
 				CEE9815524C1435800CF9428 /* Model */,
 				CEE9815424C1435300CF9428 /* View */,
 				CEE9815324C1434C00CF9428 /* Controller */,
@@ -246,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA7E15C24DA5B9B005E5E95 /* Setting Controllers */,
-				CED045B224C1160D00334E7F /* ViewController.swift */,
 				CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */,
 				CE77288724D0D4C300586EED /* VideoPlayerVC.swift */,
 			);
@@ -299,6 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				CEE9817224C2A59600CF9428 /* FilesystemItem.swift */,
+				CE2EC9ED24E08FB7006CE956 /* Folder.swift */,
+				CE2EC9EF24E08FBB006CE956 /* File.swift */,
 			);
 			path = LocalModel;
 			sourceTree = "<group>";
@@ -441,11 +461,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED045B324C1160D00334E7F /* ViewController.swift in Sources */,
+				CED31D9724E099F400A87E33 /* SettingsOptionSwitchCell.swift in Sources */,
 				CE62E9D724D8C89B008F3D26 /* SettingsDetailVC.swift in Sources */,
 				CEA7E15B24DA5AA8005E5E95 /* SettingsSplitVC.swift in Sources */,
 				CE31A35924DC92CF00FCBDF6 /* DecimalPadButton.swift in Sources */,
 				CEE9816824C22A9500CF9428 /* ServerSubfolder.swift in Sources */,
+				CE2EC9F024E08FBB006CE956 /* File.swift in Sources */,
 				CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */,
 				CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */,
 				CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */,
@@ -457,8 +478,11 @@
 				CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */,
 				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
 				CEE9817324C2A59600CF9428 /* FilesystemItem.swift in Sources */,
+				CE2EC9EE24E08FB7006CE956 /* Folder.swift in Sources */,
 				CEA7E15924D9FACF005E5E95 /* SettingsOptionCell.swift in Sources */,
+				CE78F44724E0806D000F004F /* SettingsOptionTextfieldCell.swift in Sources */,
 				CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */,
+				CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */,
 				CE324AE624D8A2D20069D52A /* SettingsCellModel.swift in Sources */,
 				CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */,
 				CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */,

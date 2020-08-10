@@ -9,7 +9,7 @@ import Foundation
 /*
  Filesystem item used to define an object to be displayed
  */
-class FilesystemItem: Equatable {
+internal class FilesystemItem: Equatable {
     let name: String
     let type: FileType
     var isFavorite = false
@@ -28,31 +28,4 @@ class FilesystemItem: Equatable {
     }
 }
 
-// File object, can be movie or subtitle
-class File: FilesystemItem{
-    
-}
 
-//Folder object, olds an array of Filesystem
-class Folder: FilesystemItem{
-    public private(set) var items: [FilesystemItem] = []
-    
-    init(name: String, type: FileType, hash: Int, parent: FilesystemItem? = nil, files: [FilesystemItem]? = nil){
-        if let files = files{
-            self.items = files
-        }
-        
-        super.init(name: name, type: type, hash: hash, parent: parent)
-    }
-    
-    func addItem(item: FilesystemItem){
-        items.append(item)
-    }
-    
-    // Add colletion of items
-    func addItems(items: [FilesystemItem]){
-        self.items.append(contentsOf: items)
-    }
-    
-    
-}

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		437864EC13D10EEAEC217461 /* Pods_HomeStreaming_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E503681D0B1592F7D9BFA /* Pods_HomeStreaming_app.framework */; };
+		5556FDC955448F2E03159C71 /* Pods_HomeStreaming_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */; };
+		ADC485A9BC833287207CEF82 /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414A08E2D442CE48EE8992FA /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework */; };
 		CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */; };
 		CE2EC9EE24E08FB7006CE956 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9ED24E08FB7006CE956 /* Folder.swift */; };
 		CE2EC9F024E08FBB006CE956 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EF24E08FBB006CE956 /* File.swift */; };
@@ -46,6 +49,7 @@
 		CEE9817524C2DD3700CF9428 /* FolderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817424C2DD3700CF9428 /* FolderButton.swift */; };
 		CEE9817824C2E18C00CF9428 /* Differ in Frameworks */ = {isa = PBXBuildFile; productRef = CEE9817724C2E18C00CF9428 /* Differ */; };
 		CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */; };
+		CEF2B2B124E23B7A002302DA /* header.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF2B2B024E23B7A002302DA /* header.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40B48120E9C037BA87290CD7 /* Pods-HomeStreaming-app-HomeStreaming-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app-HomeStreaming-appUITests.release.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app-HomeStreaming-appUITests/Pods-HomeStreaming-app-HomeStreaming-appUITests.release.xcconfig"; sourceTree = "<group>"; };
+		414A08E2D442CE48EE8992FA /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeStreaming_app_HomeStreaming_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		451E503681D0B1592F7D9BFA /* Pods_HomeStreaming_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeStreaming_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A11EFEC26FD6A09993524C /* Pods-HomeStreaming-app-HomeStreaming-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app-HomeStreaming-appUITests.debug.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app-HomeStreaming-appUITests/Pods-HomeStreaming-app-HomeStreaming-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D62EB398C05FD9F7821A379 /* Pods-HomeStreaming-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-appTests.release.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-appTests/Pods-HomeStreaming-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		74BF33FEEC6AD589864ABE41 /* Pods-HomeStreaming-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app.debug.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app/Pods-HomeStreaming-app.debug.xcconfig"; sourceTree = "<group>"; };
+		7B762CA728F91A3F69BC874B /* Pods-HomeStreaming-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app.release.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app/Pods-HomeStreaming-app.release.xcconfig"; sourceTree = "<group>"; };
+		C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeStreaming_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrefs.swift; sourceTree = "<group>"; };
 		CE2EC9ED24E08FB7006CE956 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		CE2EC9EF24E08FBB006CE956 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -109,6 +121,9 @@
 		CEE9817224C2A59600CF9428 /* FilesystemItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesystemItem.swift; sourceTree = "<group>"; };
 		CEE9817424C2DD3700CF9428 /* FolderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderButton.swift; sourceTree = "<group>"; };
 		CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
+		CEF2B2AF24E23B79002302DA /* HomeStreaming-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeStreaming-app-Bridging-Header.h"; sourceTree = "<group>"; };
+		CEF2B2B024E23B7A002302DA /* header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = header.m; sourceTree = "<group>"; };
+		D5884BBA19E24D400492B4E3 /* Pods-HomeStreaming-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-appTests.debug.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-appTests/Pods-HomeStreaming-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +133,7 @@
 			files = (
 				CEE9817824C2E18C00CF9428 /* Differ in Frameworks */,
 				CED045E324C1163400334E7F /* SocketIO in Frameworks */,
+				437864EC13D10EEAEC217461 /* Pods_HomeStreaming_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5556FDC955448F2E03159C71 /* Pods_HomeStreaming_appTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +149,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC485A9BC833287207CEF82 /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E5F5C113B656555AC974774 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				451E503681D0B1592F7D9BFA /* Pods_HomeStreaming_app.framework */,
+				414A08E2D442CE48EE8992FA /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework */,
+				C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A75306C7A15CEB5D744A5F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74BF33FEEC6AD589864ABE41 /* Pods-HomeStreaming-app.debug.xcconfig */,
+				7B762CA728F91A3F69BC874B /* Pods-HomeStreaming-app.release.xcconfig */,
+				49A11EFEC26FD6A09993524C /* Pods-HomeStreaming-app-HomeStreaming-appUITests.debug.xcconfig */,
+				40B48120E9C037BA87290CD7 /* Pods-HomeStreaming-app-HomeStreaming-appUITests.release.xcconfig */,
+				D5884BBA19E24D400492B4E3 /* Pods-HomeStreaming-appTests.debug.xcconfig */,
+				5D62EB398C05FD9F7821A379 /* Pods-HomeStreaming-appTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE2EC9F124E09418006CE956 /* SettingsOptionCellClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +251,8 @@
 				CED045C724C1160E00334E7F /* HomeStreaming-appTests */,
 				CED045D224C1160E00334E7F /* HomeStreaming-appUITests */,
 				CED045AC24C1160D00334E7F /* Products */,
+				7A75306C7A15CEB5D744A5F4 /* Pods */,
+				5E5F5C113B656555AC974774 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,6 +282,8 @@
 				CED045BC24C1160E00334E7F /* LaunchScreen.storyboard */,
 				CED045BF24C1160E00334E7F /* Info.plist */,
 				CED045B724C1160D00334E7F /* HomeStreaming_app.xcdatamodeld */,
+				CEF2B2B024E23B7A002302DA /* header.m */,
+				CEF2B2AF24E23B79002302DA /* HomeStreaming-app-Bridging-Header.h */,
 			);
 			path = "HomeStreaming-app";
 			sourceTree = "<group>";
@@ -330,6 +375,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CED045D824C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-app" */;
 			buildPhases = (
+				FE12925C7594ED9F66A55B55 /* [CP] Check Pods Manifest.lock */,
 				CED045A724C1160D00334E7F /* Sources */,
 				CED045A824C1160D00334E7F /* Frameworks */,
 				CED045A924C1160D00334E7F /* Resources */,
@@ -351,6 +397,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CED045DB24C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-appTests" */;
 			buildPhases = (
+				1C6C73D07990BA227A37D997 /* [CP] Check Pods Manifest.lock */,
 				CED045C024C1160E00334E7F /* Sources */,
 				CED045C124C1160E00334E7F /* Frameworks */,
 				CED045C224C1160E00334E7F /* Resources */,
@@ -369,6 +416,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CED045DE24C1160E00334E7F /* Build configuration list for PBXNativeTarget "HomeStreaming-appUITests" */;
 			buildPhases = (
+				C0382031861F9145A4362481 /* [CP] Check Pods Manifest.lock */,
 				CED045CB24C1160E00334E7F /* Sources */,
 				CED045CC24C1160E00334E7F /* Frameworks */,
 				CED045CD24C1160E00334E7F /* Resources */,
@@ -394,6 +442,7 @@
 				TargetAttributes = {
 					CED045AA24C1160D00334E7F = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 					CED045C324C1160E00334E7F = {
 						CreatedOnToolsVersion = 12.0;
@@ -456,6 +505,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C6C73D07990BA227A37D997 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeStreaming-appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0382031861F9145A4362481 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeStreaming-app-HomeStreaming-appUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE12925C7594ED9F66A55B55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeStreaming-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CED045A724C1160D00334E7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -482,6 +600,7 @@
 				CEA7E15924D9FACF005E5E95 /* SettingsOptionCell.swift in Sources */,
 				CE78F44724E0806D000F004F /* SettingsOptionTextfieldCell.swift in Sources */,
 				CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */,
+				CEF2B2B124E23B7A002302DA /* header.m in Sources */,
 				CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */,
 				CE324AE624D8A2D20069D52A /* SettingsCellModel.swift in Sources */,
 				CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */,
@@ -665,11 +784,14 @@
 		};
 		CED045D924C1160E00334E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74BF33FEEC6AD589864ABE41 /* Pods-HomeStreaming-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "HomeStreaming-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -678,6 +800,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeStreaming-app/HomeStreaming-app-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -685,11 +809,14 @@
 		};
 		CED045DA24C1160E00334E7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B762CA728F91A3F69BC874B /* Pods-HomeStreaming-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "HomeStreaming-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -698,6 +825,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeStreaming-app/HomeStreaming-app-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -705,6 +833,7 @@
 		};
 		CED045DC24C1160E00334E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5884BBA19E24D400492B4E3 /* Pods-HomeStreaming-appTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -727,6 +856,7 @@
 		};
 		CED045DD24C1160E00334E7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D62EB398C05FD9F7821A379 /* Pods-HomeStreaming-appTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -749,6 +879,7 @@
 		};
 		CED045DF24C1160E00334E7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49A11EFEC26FD6A09993524C /* Pods-HomeStreaming-app-HomeStreaming-appUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -769,6 +900,7 @@
 		};
 		CED045E024C1160E00334E7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40B48120E9C037BA87290CD7 /* Pods-HomeStreaming-app-HomeStreaming-appUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

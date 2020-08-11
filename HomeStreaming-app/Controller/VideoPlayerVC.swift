@@ -6,11 +6,14 @@
 //
 
 import UIKit
-import AVFoundation
-import AVKit
 
-class VideoPlayerVC: AVPlayerViewController, AVPlayerViewControllerDelegate {
 
+class VideoPlayerVC: UIViewController {
+
+    let player: VLCMediaPlayer = {
+           let player = VLCMediaPlayer()
+           return player
+       }()
     
     override class func awakeFromNib() {
         print("in VideoPlayer")
@@ -18,12 +21,14 @@ class VideoPlayerVC: AVPlayerViewController, AVPlayerViewControllerDelegate {
     
     
     func initPlayer(url: String){
-        guard let ip = UserPrefs.data.string(forTextKey: .localIP), let port = UserPrefs.data.string(forTextKey: .port) else{return}
-        let url = URL(string: "http://\(ip):\(port)\(url)")
-        print("Playing: \(String(describing: url?.absoluteString))")
-        let player = AVPlayer(url: url!)
-        self.player = player
-        player.play()
-        
-    }
+            guard let ip = UserPrefs.data.string(forTextKey: .localIP), let port = UserPrefs.data.string(forTextKey: .port) else{return}
+            let url = URL(string: "http://\(ip):\(port)\(url)")
+            
+            if let url = url{
+                player.media = VLCMedia(url: url)
+                player.drawable = self.view
+                print("Playing: \(String(describing: url.absoluteString))")
+                player.play()
+            }
+        }
 }

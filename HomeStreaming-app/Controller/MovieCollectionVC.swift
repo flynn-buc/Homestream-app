@@ -122,7 +122,8 @@ class MovieCollectionVC: UIViewController {
                 print("failed")
                 return
             }
-            
+            videoPlayerVC.modalPresentationStyle = .fullScreen
+            videoPlayerVC.modalTransitionStyle = .crossDissolve
             self.present(videoPlayerVC, animated: true, completion: nil)
             videoPlayerVC.initPlayer(url: "\(pathURL)/Play/")
             print("Playing...: http://nissa.local:3004/\(hash)/Play/")

@@ -10,6 +10,7 @@
 		437864EC13D10EEAEC217461 /* Pods_HomeStreaming_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E503681D0B1592F7D9BFA /* Pods_HomeStreaming_app.framework */; };
 		5556FDC955448F2E03159C71 /* Pods_HomeStreaming_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */; };
 		ADC485A9BC833287207CEF82 /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414A08E2D442CE48EE8992FA /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework */; };
+		CE017D2A24E2965D007EEF38 /* SmallSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE017D2924E2965D007EEF38 /* SmallSlider.swift */; };
 		CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */; };
 		CE2EC9EE24E08FB7006CE956 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9ED24E08FB7006CE956 /* Folder.swift */; };
 		CE2EC9F024E08FBB006CE956 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EF24E08FBB006CE956 /* File.swift */; };
@@ -50,6 +51,7 @@
 		CEE9817824C2E18C00CF9428 /* Differ in Frameworks */ = {isa = PBXBuildFile; productRef = CEE9817724C2E18C00CF9428 /* Differ */; };
 		CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */; };
 		CEF2B2B124E23B7A002302DA /* header.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF2B2B024E23B7A002302DA /* header.m */; };
+		CEF2B2B324E26B76002302DA /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2B2B224E26B76002302DA /* RoundedUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,7 @@
 		74BF33FEEC6AD589864ABE41 /* Pods-HomeStreaming-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app.debug.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app/Pods-HomeStreaming-app.debug.xcconfig"; sourceTree = "<group>"; };
 		7B762CA728F91A3F69BC874B /* Pods-HomeStreaming-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app.release.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app/Pods-HomeStreaming-app.release.xcconfig"; sourceTree = "<group>"; };
 		C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeStreaming_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE017D2924E2965D007EEF38 /* SmallSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSlider.swift; sourceTree = "<group>"; };
 		CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrefs.swift; sourceTree = "<group>"; };
 		CE2EC9ED24E08FB7006CE956 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		CE2EC9EF24E08FBB006CE956 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 		CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
 		CEF2B2AF24E23B79002302DA /* HomeStreaming-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeStreaming-app-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEF2B2B024E23B7A002302DA /* header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = header.m; sourceTree = "<group>"; };
+		CEF2B2B224E26B76002302DA /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		D5884BBA19E24D400492B4E3 /* Pods-HomeStreaming-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-appTests.debug.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-appTests/Pods-HomeStreaming-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -324,6 +328,8 @@
 				CEE9817424C2DD3700CF9428 /* FolderButton.swift */,
 				CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */,
 				CEB97DB424DFA02F001C7EBA /* DecimalPad */,
+				CEF2B2B224E26B76002302DA /* RoundedUIView.swift */,
+				CE017D2924E2965D007EEF38 /* SmallSlider.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -597,6 +603,7 @@
 				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
 				CEE9817324C2A59600CF9428 /* FilesystemItem.swift in Sources */,
 				CE2EC9EE24E08FB7006CE956 /* Folder.swift in Sources */,
+				CEF2B2B324E26B76002302DA /* RoundedUIView.swift in Sources */,
 				CEA7E15924D9FACF005E5E95 /* SettingsOptionCell.swift in Sources */,
 				CE78F44724E0806D000F004F /* SettingsOptionTextfieldCell.swift in Sources */,
 				CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */,
@@ -607,6 +614,7 @@
 				CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */,
 				CE324AE324D8A1400069D52A /* SettingsCell.swift in Sources */,
 				CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */,
+				CE017D2A24E2965D007EEF38 /* SmallSlider.swift in Sources */,
 				CE324AE124D8A1130069D52A /* SettingsTableVC.swift in Sources */,
 				CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */,
 				CE9B238A24DDEAE30042D2E0 /* MovieCollectionVC.swift in Sources */,
@@ -717,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -772,7 +780,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -840,7 +848,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
 				INFOPLIST_FILE = "HomeStreaming-appTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -863,7 +871,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
 				INFOPLIST_FILE = "HomeStreaming-appTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

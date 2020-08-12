@@ -123,7 +123,8 @@ class MovieCollectionVC: UIViewController {
                 return
             }
             videoPlayerVC.modalPresentationStyle = .fullScreen
-            videoPlayerVC.modalTransitionStyle = .crossDissolve
+            videoPlayerVC.modalTransitionStyle = .coverVertical
+            videoPlayerVC.view.backgroundColor = UIColor.black
             self.present(videoPlayerVC, animated: true, completion: nil)
             videoPlayerVC.initPlayer(url: "\(pathURL)/Play/")
             print("Playing...: http://nissa.local:3004/\(hash)/Play/")

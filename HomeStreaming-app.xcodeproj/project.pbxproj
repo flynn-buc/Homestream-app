@@ -10,6 +10,9 @@
 		437864EC13D10EEAEC217461 /* Pods_HomeStreaming_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E503681D0B1592F7D9BFA /* Pods_HomeStreaming_app.framework */; };
 		5556FDC955448F2E03159C71 /* Pods_HomeStreaming_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */; };
 		ADC485A9BC833287207CEF82 /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414A08E2D442CE48EE8992FA /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework */; };
+		CE017D2A24E2965D007EEF38 /* SmallSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE017D2924E2965D007EEF38 /* SmallSlider.swift */; };
+		CE123FDB24E4831600831FE9 /* VideoInfoPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE123FDA24E4831600831FE9 /* VideoInfoPopupVC.swift */; };
+		CE123FDF24E4854400831FE9 /* VideoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE123FDE24E4854400831FE9 /* VideoInfoCell.swift */; };
 		CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */; };
 		CE2EC9EE24E08FB7006CE956 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9ED24E08FB7006CE956 /* Folder.swift */; };
 		CE2EC9F024E08FBB006CE956 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EF24E08FBB006CE956 /* File.swift */; };
@@ -18,6 +21,7 @@
 		CE324AE124D8A1130069D52A /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324AE024D8A1130069D52A /* SettingsTableVC.swift */; };
 		CE324AE324D8A1400069D52A /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324AE224D8A1400069D52A /* SettingsCell.swift */; };
 		CE324AE624D8A2D20069D52A /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324AE524D8A2D20069D52A /* SettingsCellModel.swift */; };
+		CE5FFE7C24E667C3006AC476 /* VideoPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6DD4BC24E666AC0003C84B /* VideoPlayer.storyboard */; };
 		CE62E9D724D8C89B008F3D26 /* SettingsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62E9D624D8C89B008F3D26 /* SettingsDetailVC.swift */; };
 		CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */; };
 		CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77288724D0D4C300586EED /* VideoPlayerVC.swift */; };
@@ -25,6 +29,9 @@
 		CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99207524DB757800641CA3 /* UserDefaultKey.swift */; };
 		CE9B238824DDEA8F0042D2E0 /* ServerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */; };
 		CE9B238A24DDEAE30042D2E0 /* MovieCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */; };
+		CE9E63E424E4FC7B000ABE45 /* SystemVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E63E324E4FC7B000ABE45 /* SystemVolumeView.swift */; };
+		CEA011E024E5DBA200F5DB69 /* Notification.Name Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */; };
+		CEA011E224E5F9C100F5DB69 /* VideoSettingsPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA011E124E5F9C100F5DB69 /* VideoSettingsPopupVC.swift */; };
 		CEA7E15924D9FACF005E5E95 /* SettingsOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7E15824D9FACF005E5E95 /* SettingsOptionCell.swift */; };
 		CEA7E15B24DA5AA8005E5E95 /* SettingsSplitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7E15A24DA5AA8005E5E95 /* SettingsSplitVC.swift */; };
 		CEA7E15F24DA5C09005E5E95 /* SettingsOptionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7E15E24DA5C09005E5E95 /* SettingsOptionCellModel.swift */; };
@@ -38,6 +45,7 @@
 		CED045C924C1160E00334E7F /* HomeStreaming_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045C824C1160E00334E7F /* HomeStreaming_appTests.swift */; };
 		CED045D424C1160E00334E7F /* HomeStreaming_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */; };
 		CED045E324C1163400334E7F /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = CED045E224C1163400334E7F /* SocketIO */; };
+		CED27A6E24E6355E00C905F5 /* CustomActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED27A6D24E6355E00C905F5 /* CustomActivityVC.swift */; };
 		CED31D9724E099F400A87E33 /* SettingsOptionSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31D9624E099F400A87E33 /* SettingsOptionSwitchCell.swift */; };
 		CEE9815724C1445900CF9428 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815624C1445900CF9428 /* ClientService.swift */; };
 		CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815A24C148E900CF9428 /* MessageData.swift */; };
@@ -50,6 +58,7 @@
 		CEE9817824C2E18C00CF9428 /* Differ in Frameworks */ = {isa = PBXBuildFile; productRef = CEE9817724C2E18C00CF9428 /* Differ */; };
 		CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */; };
 		CEF2B2B124E23B7A002302DA /* header.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF2B2B024E23B7A002302DA /* header.m */; };
+		CEF2B2B324E26B76002302DA /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2B2B224E26B76002302DA /* RoundedUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +87,9 @@
 		74BF33FEEC6AD589864ABE41 /* Pods-HomeStreaming-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app.debug.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app/Pods-HomeStreaming-app.debug.xcconfig"; sourceTree = "<group>"; };
 		7B762CA728F91A3F69BC874B /* Pods-HomeStreaming-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app.release.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app/Pods-HomeStreaming-app.release.xcconfig"; sourceTree = "<group>"; };
 		C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeStreaming_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE017D2924E2965D007EEF38 /* SmallSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSlider.swift; sourceTree = "<group>"; };
+		CE123FDA24E4831600831FE9 /* VideoInfoPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoPopupVC.swift; sourceTree = "<group>"; };
+		CE123FDE24E4854400831FE9 /* VideoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoCell.swift; sourceTree = "<group>"; };
 		CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrefs.swift; sourceTree = "<group>"; };
 		CE2EC9ED24E08FB7006CE956 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		CE2EC9EF24E08FBB006CE956 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -87,12 +99,16 @@
 		CE324AE224D8A1400069D52A /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		CE324AE524D8A2D20069D52A /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
 		CE62E9D624D8C89B008F3D26 /* SettingsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailVC.swift; sourceTree = "<group>"; };
+		CE6DD4BC24E666AC0003C84B /* VideoPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VideoPlayer.storyboard; path = "/Users/jonathanhirsch/Documents/Projects/Homestream-app/HomeStreaming-app/VideoPlayer.storyboard"; sourceTree = "<absolute>"; };
 		CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewDataSource.swift; sourceTree = "<group>"; };
 		CE77288724D0D4C300586EED /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
 		CE78F44624E0806D000F004F /* SettingsOptionTextfieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionTextfieldCell.swift; sourceTree = "<group>"; };
 		CE99207524DB757800641CA3 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFile.swift; sourceTree = "<group>"; };
 		CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionVC.swift; sourceTree = "<group>"; };
+		CE9E63E324E4FC7B000ABE45 /* SystemVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemVolumeView.swift; sourceTree = "<group>"; };
+		CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name Extension.swift"; sourceTree = "<group>"; };
+		CEA011E124E5F9C100F5DB69 /* VideoSettingsPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSettingsPopupVC.swift; sourceTree = "<group>"; };
 		CEA7E15824D9FACF005E5E95 /* SettingsOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionCell.swift; sourceTree = "<group>"; };
 		CEA7E15A24DA5AA8005E5E95 /* SettingsSplitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSplitVC.swift; sourceTree = "<group>"; };
 		CEA7E15E24DA5C09005E5E95 /* SettingsOptionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionCellModel.swift; sourceTree = "<group>"; };
@@ -111,6 +127,7 @@
 		CED045CF24C1160E00334E7F /* HomeStreaming-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HomeStreaming-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED045D324C1160E00334E7F /* HomeStreaming_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStreaming_appUITests.swift; sourceTree = "<group>"; };
 		CED045D524C1160E00334E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED27A6D24E6355E00C905F5 /* CustomActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityVC.swift; sourceTree = "<group>"; };
 		CED31D9624E099F400A87E33 /* SettingsOptionSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionSwitchCell.swift; sourceTree = "<group>"; };
 		CEE9815624C1445900CF9428 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
 		CEE9815A24C148E900CF9428 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
@@ -123,6 +140,7 @@
 		CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
 		CEF2B2AF24E23B79002302DA /* HomeStreaming-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeStreaming-app-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEF2B2B024E23B7A002302DA /* header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = header.m; sourceTree = "<group>"; };
+		CEF2B2B224E26B76002302DA /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		D5884BBA19E24D400492B4E3 /* Pods-HomeStreaming-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-appTests.debug.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-appTests/Pods-HomeStreaming-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +197,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE123FD924E482BB00831FE9 /* Video Player Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE77288724D0D4C300586EED /* VideoPlayerVC.swift */,
+				CE123FDA24E4831600831FE9 /* VideoInfoPopupVC.swift */,
+				CEA011E124E5F9C100F5DB69 /* VideoSettingsPopupVC.swift */,
+			);
+			path = "Video Player Controllers";
+			sourceTree = "<group>";
+		};
+		CE123FDC24E484F500831FE9 /* Movie Collection Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9815F24C16F5F00CF9428 /* FolderCell.swift */,
+				CEE9817424C2DD3700CF9428 /* FolderButton.swift */,
+				CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */,
+			);
+			path = "Movie Collection Views";
+			sourceTree = "<group>";
+		};
+		CE123FDD24E4850F00831FE9 /* Video Player Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE017D2924E2965D007EEF38 /* SmallSlider.swift */,
+				CE123FDE24E4854400831FE9 /* VideoInfoCell.swift */,
+				CE9E63E324E4FC7B000ABE45 /* SystemVolumeView.swift */,
+			);
+			path = "Video Player Views";
+			sourceTree = "<group>";
+		};
 		CE2EC9F124E09418006CE956 /* SettingsOptionCellClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,19 +266,20 @@
 			path = "Setting Controllers";
 			sourceTree = "<group>";
 		};
-		CEA7E15D24DA5BB5005E5E95 /* Settings View */ = {
+		CEA7E15D24DA5BB5005E5E95 /* Settings Views */ = {
 			isa = PBXGroup;
 			children = (
 				CE2EC9F124E09418006CE956 /* SettingsOptionCellClasses */,
 				CE324AE224D8A1400069D52A /* SettingsCell.swift */,
 				CEB8014B24DCCE090035DBDB /* ServerAddressField.swift */,
 			);
-			path = "Settings View";
+			path = "Settings Views";
 			sourceTree = "<group>";
 		};
 		CEB8014624DCC9DF0035DBDB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,11 +321,12 @@
 				CEB8014624DCC9DF0035DBDB /* Extensions */,
 				CEE9816D24C2A50300CF9428 /* Enums */,
 				CE83ED5924C117B000D86436 /* Services */,
-				CEE9815524C1435800CF9428 /* Model */,
-				CEE9815424C1435300CF9428 /* View */,
-				CEE9815324C1434C00CF9428 /* Controller */,
+				CEE9815524C1435800CF9428 /* Models */,
+				CEE9815424C1435300CF9428 /* Views */,
+				CEE9815324C1434C00CF9428 /* Controllers */,
 				CED045AE24C1160D00334E7F /* AppDelegate.swift */,
 				CED045B024C1160D00334E7F /* SceneDelegate.swift */,
+				CE6DD4BC24E666AC0003C84B /* VideoPlayer.storyboard */,
 				CED045B424C1160D00334E7F /* Main.storyboard */,
 				CED045BA24C1160E00334E7F /* Assets.xcassets */,
 				CED045BC24C1160E00334E7F /* LaunchScreen.storyboard */,
@@ -306,36 +356,37 @@
 			path = "HomeStreaming-appUITests";
 			sourceTree = "<group>";
 		};
-		CEE9815324C1434C00CF9428 /* Controller */ = {
+		CEE9815324C1434C00CF9428 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE123FD924E482BB00831FE9 /* Video Player Controllers */,
 				CEA7E15C24DA5B9B005E5E95 /* Setting Controllers */,
 				CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */,
-				CE77288724D0D4C300586EED /* VideoPlayerVC.swift */,
+				CED27A6D24E6355E00C905F5 /* CustomActivityVC.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		CEE9815424C1435300CF9428 /* View */ = {
+		CEE9815424C1435300CF9428 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7E15D24DA5BB5005E5E95 /* Settings View */,
-				CEE9815F24C16F5F00CF9428 /* FolderCell.swift */,
-				CEE9817424C2DD3700CF9428 /* FolderButton.swift */,
-				CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */,
+				CE123FDD24E4850F00831FE9 /* Video Player Views */,
+				CE123FDC24E484F500831FE9 /* Movie Collection Views */,
+				CEA7E15D24DA5BB5005E5E95 /* Settings Views */,
 				CEB97DB424DFA02F001C7EBA /* DecimalPad */,
+				CEF2B2B224E26B76002302DA /* RoundedUIView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		CEE9815524C1435800CF9428 /* Model */ = {
+		CEE9815524C1435800CF9428 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CE324AE424D8A2BE0069D52A /* SettingsModel */,
 				CEE9817124C2A58B00CF9428 /* LocalModel */,
 				CEE9817024C2A57F00CF9428 /* ServerModel */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CEE9816D24C2A50300CF9428 /* Enums */ = {
@@ -483,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5FFE7C24E667C3006AC476 /* VideoPlayer.storyboard in Resources */,
 				CED045BE24C1160E00334E7F /* LaunchScreen.storyboard in Resources */,
 				CED045BB24C1160E00334E7F /* Assets.xcassets in Resources */,
 				CED045B624C1160D00334E7F /* Main.storyboard in Resources */,
@@ -589,29 +641,37 @@
 				CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */,
 				CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */,
 				CE9B238824DDEA8F0042D2E0 /* ServerFile.swift in Sources */,
+				CEA011E224E5F9C100F5DB69 /* VideoSettingsPopupVC.swift in Sources */,
+				CED27A6E24E6355E00C905F5 /* CustomActivityVC.swift in Sources */,
 				CEE9817524C2DD3700CF9428 /* FolderButton.swift in Sources */,
 				CEB8014C24DCCE090035DBDB /* ServerAddressField.swift in Sources */,
 				CE324ADF24D89D6B0069D52A /* RoundedImageView.swift in Sources */,
 				CEA7E15F24DA5C09005E5E95 /* SettingsOptionCellModel.swift in Sources */,
 				CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */,
 				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
+				CE123FDF24E4854400831FE9 /* VideoInfoCell.swift in Sources */,
 				CEE9817324C2A59600CF9428 /* FilesystemItem.swift in Sources */,
 				CE2EC9EE24E08FB7006CE956 /* Folder.swift in Sources */,
+				CEF2B2B324E26B76002302DA /* RoundedUIView.swift in Sources */,
 				CEA7E15924D9FACF005E5E95 /* SettingsOptionCell.swift in Sources */,
+				CEA011E024E5DBA200F5DB69 /* Notification.Name Extension.swift in Sources */,
 				CE78F44724E0806D000F004F /* SettingsOptionTextfieldCell.swift in Sources */,
 				CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */,
 				CEF2B2B124E23B7A002302DA /* header.m in Sources */,
 				CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */,
+				CE123FDB24E4831600831FE9 /* VideoInfoPopupVC.swift in Sources */,
 				CE324AE624D8A2D20069D52A /* SettingsCellModel.swift in Sources */,
 				CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */,
 				CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */,
 				CE324AE324D8A1400069D52A /* SettingsCell.swift in Sources */,
 				CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */,
+				CE017D2A24E2965D007EEF38 /* SmallSlider.swift in Sources */,
 				CE324AE124D8A1130069D52A /* SettingsTableVC.swift in Sources */,
 				CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */,
 				CE9B238A24DDEAE30042D2E0 /* MovieCollectionVC.swift in Sources */,
 				CEE9815724C1445900CF9428 /* ClientService.swift in Sources */,
 				CEE9816624C224F100CF9428 /* APIError.swift in Sources */,
+				CE9E63E424E4FC7B000ABE45 /* SystemVolumeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,7 +777,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -772,7 +832,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -792,12 +852,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
 				ENABLE_BITCODE = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "HomeStreaming-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HomeStreaming-app/HomeStreaming-app-Bridging-Header.h";
@@ -817,12 +879,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
 				ENABLE_BITCODE = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "HomeStreaming-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "jh.HomeStreaming-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HomeStreaming-app/HomeStreaming-app-Bridging-Header.h";
@@ -840,7 +904,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
 				INFOPLIST_FILE = "HomeStreaming-appTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -863,7 +927,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL3D2R8VQP;
 				INFOPLIST_FILE = "HomeStreaming-appTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

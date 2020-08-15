@@ -104,30 +104,65 @@ final class ClientService: NSObject{
     }
     
     
-    func post(file: File){
+    
+    func play(file: File, onSuccess: @escaping OnGetFileSuccess, onError: @escaping OnAPIFailure){
         let url = URL(string: "\(URL_BASE)/\(file.hash)/")!
-        
-        //let fileToSend = ServerFile(name: file.name, hash: file.hash, isFavorite: file.isFavorite, playbackPosition: file.playbackPosition)
-        
-        
-        let fileDic = ["Type": "File" ,"name":file.name, "hash": file.hash, "isFavorite": file.isFavorite, "playbackPosition": file.playbackPosition] as [String : Any]
-        let jsonData = try? JSONSerialization.data(withJSONObject: fileDic, options: .prettyPrinted)
-        let parsedObject = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments)
-        let valideJSon = JSONSerialization.isValidJSONObject(parsedObject)
-        if (valideJSon){
-            print("Valid")
-        }
-        
-        print(url.absoluteString)
-        
-        print(parsedObject)
+        let fileDic = ["address": "\(URL_BASE)"]
         
         var request = URLRequest(url: url)
-        //let session = URLSession.shared
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parsedObject, options: .fragmentsAllowed) else{return}
+        guard let httpBody = getHTTPBody(dictionnary: fileDic) else{return}
+        request.httpBody = httpBody
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    onError("error there: \(error.localizedDescription)")
+                    return
+                }
+                guard let data = data, let response = response as? HTTPURLResponse else{
+                    onError("Invalid Data or Response")
+                    return}
+                
+                do{
+                    if response.statusCode == 200{ // success
+                        let response = try JSONDecoder().decode(ServerFile.self, from: data)
+                        onSuccess(response)
+                    } else { // non success
+                        let err = try JSONDecoder().decode(APIError.self, from: data)
+                        onError(err.message)
+                    }
+                }catch{
+                    onError("error here: \(error.localizedDescription)")
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
+    
+    private func getHTTPBody(dictionnary: [String: Any]) -> Data?{
+        let jsonData = try? JSONSerialization.data(withJSONObject: dictionnary, options: .prettyPrinted)
+        let parsedObject = try! JSONSerialization.jsonObject(with: jsonData!, options: .fragmentsAllowed)
+        print(parsedObject)
+        return try?JSONSerialization.data(withJSONObject: parsedObject, options: .fragmentsAllowed)
+    }
+    
+    func patch(file: File){
+        let url = URL(string: "\(URL_BASE)/\(file.hash)/")!
+        let fileDic = ["Type": "File" ,"name":file.name, "hash": file.hash, "isFavorite": file.isFavorite, "playbackPosition": file.playbackPosition] as [String : Any]
+        
+        print(url.absoluteString)
+        
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        guard let httpBody = getHTTPBody(dictionnary: fileDic) else{return}
         request.httpBody = httpBody
         
         

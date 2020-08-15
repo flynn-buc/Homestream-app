@@ -11,7 +11,7 @@ import Differ
 private let reuseIdentifier = "Cell"
 typealias loadComplete = () -> Void
 
-class MovieCollectionVC: UIViewController {
+class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
     
     @IBOutlet weak var folderCollection: UICollectionView!
     @IBOutlet weak var backBtn: UIBarButtonItem!
@@ -118,7 +118,7 @@ class MovieCollectionVC: UIViewController {
     // appropriate file info
     private func displayVideo(for file: File){
         let pathURL = "/\(pathAsURL(file.hash))" // convert file hash to URL
-        ClientService.instance.get(fileAt: pathURL) { (serverFile) in
+        ClientService.instance.play(file: file) { (serverFile) in
             print("Will Play: \(serverFile.name)")
             guard let videoPlayerVC = self.storyboard?.instantiateViewController(identifier: "videoPlayerVC") as? VideoPlayerVC else {
                 print("failed")
@@ -130,6 +130,7 @@ class MovieCollectionVC: UIViewController {
             videoPlayerVC.modalPresentationStyle = .fullScreen
             videoPlayerVC.modalTransitionStyle = .coverVertical
             videoPlayerVC.view.backgroundColor = UIColor.black
+            videoPlayerVC.delegate = self
             self.present(videoPlayerVC, animated: true, completion: nil)
             videoPlayerVC.initPlayer(url: "\(pathURL)/Play/", fileHash: file.hash, beginningTimestamp: file.playbackPosition)
             print("Playing...: http://nissa.local:3004/\(file.hash)/Play/")
@@ -138,13 +139,13 @@ class MovieCollectionVC: UIViewController {
         }
     }
     
-    func moviePaused(timestamp: Int, hash: Int){
+    func saveTimestamp(timestamp: Int, hash: Int){
         print("Here!")
         if let file = currentPlayingMovie{
             if hash == file.hash{
                 file.setPlaybackPosition(playbackPosition: timestamp)
                 print("Time stamp: \(timestamp)")
-                ClientService.instance.post(file: file)
+                ClientService.instance.patch(file: file)
             }
         }
     }
@@ -223,7 +224,7 @@ extension MovieCollectionVC{
     @IBAction func favoritesBtnPressed(_ sender: FavoritesButton) {
         sender.set(isFavorite: !sender.isFavorite())
         if let file = sender.getItem() as? File{
-            ClientService.instance.post(file: file)
+            ClientService.instance.patch(file: file)
         }
     }
 }

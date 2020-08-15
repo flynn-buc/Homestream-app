@@ -29,6 +29,7 @@
 		CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99207524DB757800641CA3 /* UserDefaultKey.swift */; };
 		CE9B238824DDEA8F0042D2E0 /* ServerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */; };
 		CE9B238A24DDEAE30042D2E0 /* MovieCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */; };
+		CE9DE9F724E7EBC7005B54F0 /* VideoPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DE9F624E7EBC7005B54F0 /* VideoPlayerDelegate.swift */; };
 		CE9E63E424E4FC7B000ABE45 /* SystemVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E63E324E4FC7B000ABE45 /* SystemVolumeView.swift */; };
 		CEA011E024E5DBA200F5DB69 /* Notification.Name Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */; };
 		CEA011E224E5F9C100F5DB69 /* VideoSettingsPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA011E124E5F9C100F5DB69 /* VideoSettingsPopupVC.swift */; };
@@ -106,6 +107,7 @@
 		CE99207524DB757800641CA3 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFile.swift; sourceTree = "<group>"; };
 		CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionVC.swift; sourceTree = "<group>"; };
+		CE9DE9F624E7EBC7005B54F0 /* VideoPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerDelegate.swift; sourceTree = "<group>"; };
 		CE9E63E324E4FC7B000ABE45 /* SystemVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemVolumeView.swift; sourceTree = "<group>"; };
 		CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name Extension.swift"; sourceTree = "<group>"; };
 		CEA011E124E5F9C100F5DB69 /* VideoSettingsPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSettingsPopupVC.swift; sourceTree = "<group>"; };
@@ -256,6 +258,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		CE9DE9F524E7EAC0005B54F0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CE9DE9F624E7EBC7005B54F0 /* VideoPlayerDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CEA7E15C24DA5B9B005E5E95 /* Setting Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +328,7 @@
 		CED045AD24C1160D00334E7F /* HomeStreaming-app */ = {
 			isa = PBXGroup;
 			children = (
+				CE9DE9F524E7EAC0005B54F0 /* Protocols */,
 				CEB8014624DCC9DF0035DBDB /* Extensions */,
 				CEE9816D24C2A50300CF9428 /* Enums */,
 				CE83ED5924C117B000D86436 /* Services */,
@@ -660,6 +671,7 @@
 				CEF2B2B124E23B7A002302DA /* header.m in Sources */,
 				CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */,
 				CE123FDB24E4831600831FE9 /* VideoInfoPopupVC.swift in Sources */,
+				CE9DE9F724E7EBC7005B54F0 /* VideoPlayerDelegate.swift in Sources */,
 				CE324AE624D8A2D20069D52A /* SettingsCellModel.swift in Sources */,
 				CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */,
 				CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */,

@@ -9,4 +9,6 @@ import Foundation
 struct ServerFile: Codable{
     let name: String
     let hash: Int
+    let isFavorite: Bool
+    let playbackPosition: Int
 }

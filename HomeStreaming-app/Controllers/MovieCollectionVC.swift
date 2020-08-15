@@ -38,7 +38,7 @@ class MovieCollectionVC: UIViewController {
     // Updates data used to display folders
     // If reloadTable is nil or false, caller must update data manually
     private func updateData(to data: MessageData, reloadTable: Bool? = true){
-        rootFolder = Folder(name: data.currentFolder, type: .folder, hash: data.folders.hash)
+        rootFolder = Folder(name: data.currentFolder, type: .folder, hash: data.folders.hash, isFavorite: data.folders.isFavorite)
         rootFolder?.addItems(items: loadServerData(from_files: data.folders.files, parent: rootFolder!))
         rootFolder?.addItems(items: loadServerData(from_subfolders:data.folders.subfolders, parent: rootFolder!))
         
@@ -53,7 +53,7 @@ class MovieCollectionVC: UIViewController {
     private func loadServerData(from_subfolders serverfolders: [ServerSubfolder], parent: FilesystemItem) -> [Folder]{
         var folders: [Folder] = []
         for serverfolder in serverfolders{
-            let newFolder = Folder(name: serverfolder.name, type: .folder, hash:serverfolder.hash, parent: parent)
+            let newFolder = Folder(name: serverfolder.name, type: .folder, hash:serverfolder.hash, isFavorite: serverfolder.isFavorite, parent: parent)
             newFolder.addItems(items: loadServerData(from_subfolders: serverfolder.subfolders, parent: newFolder))
             newFolder.addItems(items: loadServerData(from_files: serverfolder.files, parent: newFolder))
             folders.append(newFolder)
@@ -66,7 +66,7 @@ class MovieCollectionVC: UIViewController {
         var files: [File] = []
         for file in serverFiles{
             let type: FileType = file.name.contains(".srt") ? .subtitle: .movie
-            files.append(File(name: file.name, type: type, hash: file.hash, parent: parent))
+            files.append(File(name: file.name, type: type, hash: file.hash, isFavorite: file.isFavorite, parent: parent, playbackPosition: file.playbackPosition))
         }
         return files
     }
@@ -206,6 +206,9 @@ extension MovieCollectionVC{
     
     @IBAction func favoritesBtnPressed(_ sender: FavoritesButton) {
         sender.set(isFavorite: !sender.isFavorite())
+        if let file = sender.getItem() as? File{
+            ClientService.instance.post(file: file)
+        }
     }
 }
 

@@ -418,15 +418,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaA-NZ-Kbb" customClass="FavoritesButton" customModule="HomeStreaming_app" customModuleProvider="target">
-                                                    <rect key="frame" x="130" y="5" width="29" height="29"/>
+                                                    <rect key="frame" x="126" y="3" width="35" height="35"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="29" id="15g-FY-kXH"/>
-                                                        <constraint firstAttribute="height" constant="29" id="azv-OT-VEd"/>
+                                                        <constraint firstAttribute="width" constant="35" id="15g-FY-kXH"/>
+                                                        <constraint firstAttribute="height" constant="35" id="azv-OT-VEd"/>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemRedColor"/>
                                                     <state key="normal">
                                                         <color key="titleColor" red="0.8411795661" green="0.28270526130000001" blue="0.1245664168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <imageReference key="image" image="heart" catalog="system" symbolScale="default"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="27"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="favoritesBtnPressed:" destination="aaR-wM-spg" eventType="touchUpInside" id="rJf-sy-fVB"/>
@@ -435,10 +436,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Sag-1P-WBl" secondAttribute="trailing" constant="5" id="0jq-Ec-Wi5"/>
-                                                <constraint firstAttribute="trailing" secondItem="IaA-NZ-Kbb" secondAttribute="trailing" constant="5" id="Bj3-fV-w9f"/>
+                                                <constraint firstAttribute="trailing" secondItem="IaA-NZ-Kbb" secondAttribute="trailing" constant="3" id="Bj3-fV-w9f"/>
                                                 <constraint firstAttribute="bottom" secondItem="Sag-1P-WBl" secondAttribute="bottom" constant="5" id="N3m-jS-YYd"/>
                                                 <constraint firstItem="Sag-1P-WBl" firstAttribute="leading" secondItem="tQ0-EK-18T" secondAttribute="leading" constant="5" id="kKP-CU-tZA"/>
-                                                <constraint firstItem="IaA-NZ-Kbb" firstAttribute="top" secondItem="tQ0-EK-18T" secondAttribute="top" constant="5" id="wGT-HM-i2t"/>
+                                                <constraint firstItem="IaA-NZ-Kbb" firstAttribute="top" secondItem="tQ0-EK-18T" secondAttribute="top" constant="3" id="wGT-HM-i2t"/>
                                                 <constraint firstItem="Sag-1P-WBl" firstAttribute="top" secondItem="tQ0-EK-18T" secondAttribute="top" constant="5" id="xpt-PZ-eX2"/>
                                             </constraints>
                                         </collectionViewCellContentView>

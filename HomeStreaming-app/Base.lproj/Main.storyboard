@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -37,6 +38,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="3lX-Ok-7sy" kind="relationship" relationship="viewControllers" id="FVK-Ec-iON"/>
@@ -262,6 +264,7 @@
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="wifi" catalog="system" id="Nwo-4H-WbM">
                                             <rect key="frame" x="17.25" y="14.5" width="21.5" height="15.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="tintColor" name="AccentColor"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -465,6 +468,7 @@
                     <tabBarItem key="tabBarItem" title="Files" image="folder.fill" catalog="system" selectedImage="folder.fill" id="OI4-sD-qtq"/>
                     <navigationItem key="navigationItem" title="Folder List" id="IVx-xo-B8J">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="t1k-W7-dLA">
+                            <color key="tintColor" name="AccentColor"/>
                             <connections>
                                 <action selector="backBtnPressed:" destination="aaR-wM-spg" id="JnE-Iu-S3g"/>
                             </connections>
@@ -478,6 +482,7 @@
                                     <action selector="reloadBtnPressed:" destination="aaR-wM-spg" eventType="touchUpInside" id="y9w-fB-39u"/>
                                 </connections>
                             </button>
+                            <color key="tintColor" name="AccentColor"/>
                             <connections>
                                 <action selector="reloadBtnPressed:" destination="aaR-wM-spg" id="f7y-wj-Pd5"/>
                             </connections>
@@ -548,7 +553,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Bb9-Q0-3f3"/>
+        <segue reference="XBT-Z4-Au9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
@@ -560,6 +565,9 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="subtitle" width="512" height="512"/>
         <image name="wifi" catalog="system" width="128" height="92"/>
+        <namedColor name="AccentColor">
+            <color red="0.36899998784065247" green="0.36100000143051147" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

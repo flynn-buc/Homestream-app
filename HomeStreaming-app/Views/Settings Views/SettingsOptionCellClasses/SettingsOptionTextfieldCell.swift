@@ -24,7 +24,7 @@ class SettingsOptionTextfieldCell: SettingsOptionCell {
     private func configureUITextField(_ component: UITextField, _ cellModel: SettingsOptionCellModel) {
         component.text = UserPrefs.data.string(forTextKey: cellModel.key) // get text from user preferences
         component.delegate = self
-        component.textColor = .systemBlue
+        component.textColor = .systemIndigo
         component.leftAnchor.constraint(equalTo: self.label.rightAnchor).isActive = true
         component.textAlignment = .right
         component.clearButtonMode = .whileEditing
@@ -52,7 +52,7 @@ class SettingsOptionTextfieldCell: SettingsOptionCell {
             super.enable(shouldEnable)
             if let textField = super.getComponent() as? UITextField{
                 self.label.isEnabled = shouldEnable
-                textField.textColor = shouldEnable ? UIColor.systemBlue : UIColor.lightGray
+                textField.textColor = shouldEnable ? UIColor.systemIndigo : UIColor.lightGray
             }
         }
     }
@@ -62,11 +62,14 @@ extension SettingsOptionTextfieldCell: UITextFieldDelegate{
     // Change color to black when editing begings
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.textColor = UIColor.black
+        if traitCollection.userInterfaceStyle == .dark{
+            textField.textColor = UIColor.white
+        }
     }
     
     //Change color back to system blue when editing ends
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.textColor = UIColor.systemBlue
+        textField.textColor = UIColor.systemIndigo
         
         // Once text is updated, save text to preferences if it is not nil
         if let text = textField.text{

@@ -37,6 +37,8 @@ class VideoPlayerVC: UIViewController {
     private var sliderIsBeingDragged = false
     private var volumeSliderVisible = true
     private var volumeSliderWidth: CGFloat = 0.0
+    private var fileHash: Int = 0
+    private var beginningTimestamp: Float = 0
     
     private let player: VLCMediaPlayer = {
         let player = VLCMediaPlayer()
@@ -68,11 +70,13 @@ class VideoPlayerVC: UIViewController {
     }
     
     
-    func initPlayer(url: String){
+    func initPlayer(url: String, fileHash: Int, beginningTimestamp: Int){
         guard let ip = UserPrefs.data.string(forTextKey: .localIP),
               let port = UserPrefs.data.string(forTextKey: .port),
               let url = URL(string: "http://\(ip):\(port)\(url)") else{return}
         
+        self.fileHash = fileHash
+        self.beginningTimestamp = Float(beginningTimestamp) / 10000.0
         let media = VLCMedia(url: url)
         media.delegate = self
         player.media = media
@@ -81,7 +85,11 @@ class VideoPlayerVC: UIViewController {
         print("Playing: \(String(describing: url.absoluteString))")
         playButton.setImage(UIImage(systemName: "pause"), for:.normal)
         
+
         player.play()
+        pausePlayback()
+        player.position = self.beginningTimestamp
+        resumePlayback()
     }
     
     
@@ -171,6 +179,14 @@ class VideoPlayerVC: UIViewController {
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        if let presenter = presentingViewController as? UITabBarController{
+            if let presenter = presenter.viewControllers?[0] as? UINavigationController{
+                if let presenter = presenter.topViewController as? MovieCollectionVC{
+                    print("Not here")
+                    presenter.moviePaused(timestamp: Int(player.position * 10000), hash: fileHash)
+                }
+            }
+        }
         super.dismiss(animated: flag) {
             self.scheduleFadeout()
         }

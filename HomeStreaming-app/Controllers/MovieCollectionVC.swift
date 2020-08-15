@@ -21,6 +21,8 @@ class MovieCollectionVC: UIViewController {
     private var rootFolder: Folder? // represent root folder sent by server
     private var currentFolder: Folder? // represent currently selected folder
     
+    private var currentPlayingMovie: File?
+    
     override func viewDidLoad() {
         folderCollection.delegate = self
         folderCollection.dataSource = self
@@ -114,22 +116,36 @@ class MovieCollectionVC: UIViewController {
     
     // Tell server to load video, then call VideoPlayerVC with
     // appropriate file info
-    private func displayVideo(fromHash hash: Int){
-        let pathURL = "/\(pathAsURL(hash))" // convert file hash to URL
-        ClientService.instance.get(fileAt: pathURL) { (ServerFile) in
-            print("Will Play: \(ServerFile.name)")
+    private func displayVideo(for file: File){
+        let pathURL = "/\(pathAsURL(file.hash))" // convert file hash to URL
+        ClientService.instance.get(fileAt: pathURL) { (serverFile) in
+            print("Will Play: \(serverFile.name)")
             guard let videoPlayerVC = self.storyboard?.instantiateViewController(identifier: "videoPlayerVC") as? VideoPlayerVC else {
                 print("failed")
                 return
             }
+            file.setPlaybackPosition(playbackPosition: serverFile.playbackPosition)
+            file.setFavorite(favorite: serverFile.isFavorite)
+            self.currentPlayingMovie = file
             videoPlayerVC.modalPresentationStyle = .fullScreen
             videoPlayerVC.modalTransitionStyle = .coverVertical
             videoPlayerVC.view.backgroundColor = UIColor.black
             self.present(videoPlayerVC, animated: true, completion: nil)
-            videoPlayerVC.initPlayer(url: "\(pathURL)/Play/")
-            print("Playing...: http://nissa.local:3004/\(hash)/Play/")
+            videoPlayerVC.initPlayer(url: "\(pathURL)/Play/", fileHash: file.hash, beginningTimestamp: file.playbackPosition)
+            print("Playing...: http://nissa.local:3004/\(file.hash)/Play/")
         } onError: { (message) in
             print("error: \(message)")
+        }
+    }
+    
+    func moviePaused(timestamp: Int, hash: Int){
+        print("Here!")
+        if let file = currentPlayingMovie{
+            if hash == file.hash{
+                file.setPlaybackPosition(playbackPosition: timestamp)
+                print("Time stamp: \(timestamp)")
+                ClientService.instance.post(file: file)
+            }
         }
     }
     
@@ -194,7 +210,7 @@ extension MovieCollectionVC{
             setupCollectionView(withFolder: currentFolder)
         }else if sender.type == .movie{ // handle displaying movie if button clicked was movie
             guard let fileToPlay = currentFolder?.items[sender.tag] as? File else{return}
-            displayVideo(fromHash: fileToPlay.hash)
+            displayVideo(for: fileToPlay)
         }
     }
 

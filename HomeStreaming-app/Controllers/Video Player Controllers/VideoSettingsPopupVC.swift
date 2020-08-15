@@ -36,11 +36,6 @@ class VideoSettingsPopupVC: UITableViewController {
     
     
     func initView(player: VLCMediaPlayer){
-        
-        
-        
-        
-        
         audioDelay = player.currentAudioPlaybackDelay
         subtitleDelay = player.currentVideoSubTitleDelay
         self.player = player

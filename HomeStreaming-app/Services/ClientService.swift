@@ -41,13 +41,12 @@ final class ClientService: NSObject{
         self.URL_BASE = "http://\(ip):\(port)"
     }
     
-   // Generic call 'Get' call to server
+    // Generic call 'Get' call to server
     private func genericGet<T>(url: URL, decodingObjectSuccess: T.Type, onSuccess: @escaping genericClosure<T>, onError: @escaping OnAPIFailure) where T: Codable{
         print("URL::: \(url.absoluteString)") // print url Used
         let task = session.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
-                    
                     onError("error there: \(error.localizedDescription)")
                     return
                 }
@@ -102,5 +101,60 @@ final class ClientService: NSObject{
             print("Error in Refresh")
             onError(error)
         }
+    }
+    
+    
+    func post(file: File){
+        let url = URL(string: "\(URL_BASE)/\(file.hash)/")!
+        
+        //let fileToSend = ServerFile(name: file.name, hash: file.hash, isFavorite: file.isFavorite, playbackPosition: file.playbackPosition)
+        
+        
+        let fileDic = ["Type": "File" ,"name":file.name, "hash": file.hash, "isFavorite": file.isFavorite, "playbackPosition": file.playbackPosition] as [String : Any]
+        let jsonData = try? JSONSerialization.data(withJSONObject: fileDic, options: .prettyPrinted)
+        let parsedObject = try! JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments)
+        let valideJSon = JSONSerialization.isValidJSONObject(parsedObject)
+        if (valideJSon){
+            print("Valid")
+        }
+        
+        print(url.absoluteString)
+        
+        print(parsedObject)
+        
+        var request = URLRequest(url: url)
+        //let session = URLSession.shared
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parsedObject, options: .fragmentsAllowed) else{return}
+        request.httpBody = httpBody
+        
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("error there: \(error.localizedDescription)")
+                    return
+                }
+                guard let data = data, let response = response as? HTTPURLResponse else{
+                    print("Invalid Data or Response")
+                    return}
+                
+                do{
+                    if response.statusCode == 200{ // success
+                        let response = try JSONDecoder().decode(APIError.self, from: data)
+                        print(response.message)
+                    } else { // non success
+                        let err = try JSONDecoder().decode(APIError.self, from: data)
+                        print(err.message)
+                    }
+                }catch{
+                    print("error here: \(error.localizedDescription)")
+                }
+            }
+            
+        }
+        task.resume()
     }
 }

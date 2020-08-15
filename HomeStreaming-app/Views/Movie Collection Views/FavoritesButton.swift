@@ -23,7 +23,7 @@ class FavoritesButton: UIButton {
     }
     
     func set(isFavorite: Bool){
-        item.isFavorite = isFavorite
+        item.setFavorite(favorite: isFavorite)
         if (isFavorite){
             self.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{

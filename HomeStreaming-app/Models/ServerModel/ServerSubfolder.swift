@@ -10,6 +10,7 @@ struct ServerSubfolder: Codable{
     let name: String
     let path: String
     let hash: Int
+    let isFavorite: Bool
     let files: [ServerFile]
     let subfolders: [ServerSubfolder]
     }

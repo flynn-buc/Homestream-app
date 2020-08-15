@@ -6,26 +6,24 @@
 //
 
 import UIKit
-import Differ
 
 private let reuseIdentifier = "Cell"
 typealias loadComplete = () -> Void
 
-class MovieCollectionVC: UIViewController, UICollectionViewDelegate, VideoPlayerDelegate {
+class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
     
     @IBOutlet weak var folderCollection: UICollectionView!
     @IBOutlet weak var backBtn: UIBarButtonItem!
     
     private let refreshControl = UIRefreshControl()
 
-
     private let filesDataSource =  FilesDataSource()
+    private let collectionViewDelegateLayout = CollectionViewDelegateWithLayout()
     private var currentPlayingMovie: File?
     
     override func viewDidLoad() {
-        folderCollection.delegate = self
         folderCollection.dataSource = filesDataSource
-        
+        folderCollection.delegate = collectionViewDelegateLayout
         folderCollection.addSubview(refreshControl)
         folderCollection.alwaysBounceVertical = true // required for refresh control
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged) // selector for refresh when collection view is pulled down
@@ -55,21 +53,19 @@ class MovieCollectionVC: UIViewController, UICollectionViewDelegate, VideoPlayer
     
     //Refresh data, reload previous folder after refresh if it exists, or reload root folder
     @objc private func refresh() {
-        let hash = filesDataSource.getCurrentFolder()?.hash
+        let hash = filesDataSource.currentFolder?.hash
         ClientService.instance.refresh() { (response) in
             print(response)
             // load data from server, using completion to load root folder or current folder if it exists
             self.loadDataFromServer(reloadData: false) {
                 if let hash = hash{
-                    if let rootFolder = self.filesDataSource.getRootFolder(){
+                    if let rootFolder = self.filesDataSource.rootFolder{
                         var folder: Folder
                         if hash == rootFolder.hash{
                             folder = rootFolder // skip searching if previous folder was root
                         }else{
-                            print("In Other")
                             folder = self.findFolder(rootFolder.items, withHash: hash) ?? rootFolder
                         }
-                        print("Found Folder: \(folder.name)")
                         self.setupCollectionView(withFolder: folder)
                     }
                 }
@@ -84,7 +80,7 @@ class MovieCollectionVC: UIViewController, UICollectionViewDelegate, VideoPlayer
     // Tell server to load video, then call VideoPlayerVC with
     // appropriate file info
     private func displayVideo(for file: File){
-        let pathURL = "/\(pathAsURL(file.hash))" // convert file hash to URL
+        let pathURL = "/\(String.pathAsURL(file.hash))" // convert file hash to URL
         ClientService.instance.play(file: file) { (serverFile) in
             print("Will Play: \(serverFile.name)")
             guard let videoPlayerVC = self.storyboard?.instantiateViewController(identifier: "videoPlayerVC") as? VideoPlayerVC else {
@@ -139,52 +135,40 @@ class MovieCollectionVC: UIViewController, UICollectionViewDelegate, VideoPlayer
     
     //Setup collection view from subfolders found in provided folder
     private func setupCollectionView(withFolder folder: Folder){
-        let oldFolder = currentFolder
-        currentFolder = folder
-        backBtn.isEnabled = currentFolder?.parent != nil
-        if let currentFolder = currentFolder{
+        backBtn.isEnabled = folder.parent != nil
+        let oldFolder = filesDataSource.currentFolder
+        filesDataSource.updateCurrentFolder(to: folder)
+        if let currentFolder = filesDataSource.currentFolder{
             self.navigationItem.title = currentFolder.name
             if let oldItems = oldFolder?.items {
                 print(currentFolder.name)
-                self.reloadChanges(from: oldItems, to: currentFolder.items)
+                folderCollection.reloadChanges(from: oldItems, to: currentFolder.items)
             }else{
                 self.folderCollection.reloadData()
             }
         }
-    }
-    
-    //Return path encoded as URL
-    private func pathAsURL (_ pathURL: Any) -> String{
-        return pathAsURL(fromString: "\(pathURL)")
-    }
-    
-    //Return path from string encoded as URL
-    private func pathAsURL(fromString path: String) -> String{
-        return path.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
     }
 }
 
 
 //Etension for IBActions
 extension MovieCollectionVC{
-    
     @IBAction func reloadBtnPressed(_ sender: Any) {
         refresh()
     }
-    
     @IBAction func folderBtnPressed(_ sender: FolderButton) {
         if (sender.type == .folder){ // show enclosing folder if button clicked was folder
-            guard let currentFolder = filesDataSource.getCurrentFolder()?.items[sender.tag] as? Folder else{return}
+            guard let currentFolder = filesDataSource.currentFolder?.items[sender.tag] as? Folder else{return}
             setupCollectionView(withFolder: currentFolder)
         }else if sender.type == .movie{ // handle displaying movie if button clicked was movie
-            guard let fileToPlay = filesDataSource.getCurrentFolder()?.items[sender.tag] as? File else{return}
+            guard let fileToPlay = filesDataSource.currentFolder?.items[sender.tag] as? File else{return}
             displayVideo(for: fileToPlay)
         }
     }
 
     // if current folder has a parent, load parent folder (only root should fail here)
     @IBAction func backBtnPressed(_ sender: Any) {
-        guard let parent = filesDataSource.getCurrentFolder()?.parent as? Folder else {return}
+        guard let parent = filesDataSource.currentFolder?.parent as? Folder else {return}
         setupCollectionView(withFolder: parent)
     }
     
@@ -193,16 +177,5 @@ extension MovieCollectionVC{
         if let file = sender.getItem() as? File{
             ClientService.instance.patch(file: file)
         }
-    }
-}
-
-extension MovieCollectionVC: UICollectionViewDelegateFlowLayout{
-    //Adjust cell size for iphones
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var cellSize:CGSize = CGSize(width: 164, height: 152)
-        if UIDevice.current.userInterfaceIdiom == .phone{
-            cellSize = CGSize(width: 110, height: 103)
-        }
-        return cellSize
     }
 }

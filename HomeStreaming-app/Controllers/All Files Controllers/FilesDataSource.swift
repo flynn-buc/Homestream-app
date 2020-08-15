@@ -8,8 +8,8 @@
 import UIKit
 
 class FilesDataSource: NSObject, UICollectionViewDataSource {
-    private var rootFolder: Folder? // represent root folder sent by server
-    private var currentFolder: Folder? // represent currently selected folder
+    public private(set) var rootFolder: Folder? // represent root folder sent by server
+    public private(set) var currentFolder: Folder? // represent currently selected folder
     
     
     // Updates data used to display folders
@@ -47,7 +47,6 @@ class FilesDataSource: NSObject, UICollectionViewDataSource {
         return files
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentFolder?.items.count ?? 0
     }
@@ -62,16 +61,12 @@ class FilesDataSource: NSObject, UICollectionViewDataSource {
         return FolderCell()
     }
     
-    func getCurrentFolder()->Folder?{
-        return currentFolder
-    }
-    
-    func getRootFolder()->Folder?{
-        return rootFolder
-    }
-    
-    func updateRootFolder(rootFolder: Folder){
+    func updateRootFolder(to rootFolder: Folder){
         self.rootFolder = rootFolder
+    }
+    
+    func updateCurrentFolder(to currentFolder: Folder){
+        self.currentFolder = currentFolder
     }
     
 }

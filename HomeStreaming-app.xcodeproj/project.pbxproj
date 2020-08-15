@@ -21,11 +21,14 @@
 		CE324AE124D8A1130069D52A /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324AE024D8A1130069D52A /* SettingsTableVC.swift */; };
 		CE324AE324D8A1400069D52A /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324AE224D8A1400069D52A /* SettingsCell.swift */; };
 		CE324AE624D8A2D20069D52A /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324AE524D8A2D20069D52A /* SettingsCellModel.swift */; };
+		CE38432524E8938200DC8FA8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38432424E8938200DC8FA8 /* StringExtension.swift */; };
+		CE38432A24E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38432924E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift */; };
 		CE5FFE7C24E667C3006AC476 /* VideoPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6DD4BC24E666AC0003C84B /* VideoPlayer.storyboard */; };
 		CE62E9D724D8C89B008F3D26 /* SettingsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62E9D624D8C89B008F3D26 /* SettingsDetailVC.swift */; };
 		CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */; };
 		CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77288724D0D4C300586EED /* VideoPlayerVC.swift */; };
 		CE78F44724E0806D000F004F /* SettingsOptionTextfieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78F44624E0806D000F004F /* SettingsOptionTextfieldCell.swift */; };
+		CE8A069D24E8A8180041C0DB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A069C24E8A8180041C0DB /* DataManager.swift */; };
 		CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99207524DB757800641CA3 /* UserDefaultKey.swift */; };
 		CE9B238824DDEA8F0042D2E0 /* ServerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */; };
 		CE9B238A24DDEAE30042D2E0 /* MovieCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */; };
@@ -101,11 +104,14 @@
 		CE324AE024D8A1130069D52A /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
 		CE324AE224D8A1400069D52A /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		CE324AE524D8A2D20069D52A /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
+		CE38432424E8938200DC8FA8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		CE38432924E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateWithLayout.swift; sourceTree = "<group>"; };
 		CE62E9D624D8C89B008F3D26 /* SettingsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailVC.swift; sourceTree = "<group>"; };
 		CE6DD4BC24E666AC0003C84B /* VideoPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VideoPlayer.storyboard; path = "/Users/jonathanhirsch/Documents/Projects/Homestream-app/HomeStreaming-app/VideoPlayer.storyboard"; sourceTree = "<absolute>"; };
 		CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewDataSource.swift; sourceTree = "<group>"; };
 		CE77288724D0D4C300586EED /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
 		CE78F44624E0806D000F004F /* SettingsOptionTextfieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionTextfieldCell.swift; sourceTree = "<group>"; };
+		CE8A069C24E8A8180041C0DB /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CE99207524DB757800641CA3 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFile.swift; sourceTree = "<group>"; };
 		CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionVC.swift; sourceTree = "<group>"; };
@@ -273,8 +279,10 @@
 		CE9DE9FB24E87AF1005B54F0 /* All Files Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE8A069C24E8A8180041C0DB /* DataManager.swift */,
 				CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */,
 				CE9DE9FE24E87BC7005B54F0 /* FilesDataSource.swift */,
+				CE38432924E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift */,
 			);
 			path = "All Files Controllers";
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 			children = (
 				CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */,
 				CEF7382F24E88BEC00B71A78 /* UICollectionViewExtension.swift */,
+				CE38432424E8938200DC8FA8 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -660,10 +669,12 @@
 				CED31D9724E099F400A87E33 /* SettingsOptionSwitchCell.swift in Sources */,
 				CE62E9D724D8C89B008F3D26 /* SettingsDetailVC.swift in Sources */,
 				CEA7E15B24DA5AA8005E5E95 /* SettingsSplitVC.swift in Sources */,
+				CE8A069D24E8A8180041C0DB /* DataManager.swift in Sources */,
 				CE31A35924DC92CF00FCBDF6 /* DecimalPadButton.swift in Sources */,
 				CEE9816824C22A9500CF9428 /* ServerSubfolder.swift in Sources */,
 				CE2EC9F024E08FBB006CE956 /* File.swift in Sources */,
 				CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */,
+				CE38432A24E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift in Sources */,
 				CE77288824D0D4C300586EED /* VideoPlayerVC.swift in Sources */,
 				CE99207624DB757800641CA3 /* UserDefaultKey.swift in Sources */,
 				CE9B238824DDEA8F0042D2E0 /* ServerFile.swift in Sources */,
@@ -688,6 +699,7 @@
 				CE123FDB24E4831600831FE9 /* VideoInfoPopupVC.swift in Sources */,
 				CE9DE9F724E7EBC7005B54F0 /* VideoPlayerDelegate.swift in Sources */,
 				CE324AE624D8A2D20069D52A /* SettingsCellModel.swift in Sources */,
+				CE38432524E8938200DC8FA8 /* StringExtension.swift in Sources */,
 				CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */,
 				CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */,
 				CE324AE324D8A1400069D52A /* SettingsCell.swift in Sources */,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnD-vL-u9F">
-    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
@@ -18,7 +18,7 @@
                 <navigationController id="3lX-Ok-7sy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="aPe-Jw-J6B"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIl-b7-SSP">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -56,22 +56,22 @@
             <objects>
                 <tableViewController id="ObT-5z-hXE" customClass="SettingsDetailVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="m4f-z9-yuy">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsOptionSwitchCell" id="dol-JW-qIH" customClass="SettingsOptionSwitchCell" customModule="HomeStreaming_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.5" width="794" height="45"/>
+                                <rect key="frame" x="16" y="55.5" width="288" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dol-JW-qIH" id="6Dt-gZ-4pJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="794" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsOptionTextCell" id="NxY-DS-ka0" customClass="SettingsOptionTextfieldCell" customModule="HomeStreaming_app" customModuleProvider="target">
-                                <rect key="frame" x="20" y="100.5" width="794" height="45"/>
+                                <rect key="frame" x="16" y="100.5" width="288" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NxY-DS-ka0" id="bdC-Hg-55Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="794" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -96,14 +96,14 @@
             <objects>
                 <viewController id="7b1-aJ-AdH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="01d-Ui-joa">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgV-dr-28c">
-                                <rect key="frame" x="0.0" y="809" width="834" height="320"/>
+                                <rect key="frame" x="0.0" y="199" width="320" height="320"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fQ7-iw-oRn">
-                                        <rect key="frame" x="285" y="7.5" width="264" height="305"/>
+                                        <rect key="frame" x="28" y="7.5" width="264" height="305"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="e49-7V-1I8">
                                                 <rect key="frame" x="0.0" y="0.0" width="264" height="65"/>
@@ -228,7 +228,7 @@
                 <navigationController id="pHk-Mk-N1Q" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yIw-rh-B4N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2An-T1-2ZF">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -244,7 +244,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="uGN-Mc-iQa" customClass="SettingsTableVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="puz-wS-dk1">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="settingsCell" textLabel="FTt-uq-60D" imageView="Nwo-4H-WbM" style="IBUITableViewCellStyleDefault" id="WJ9-lJ-mYA" customClass="SettingsCell" customModule="HomeStreaming_app" customModuleProvider="target">
@@ -293,7 +293,7 @@
             <objects>
                 <navigationController id="XCQ-dz-Bgr" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cRW-gh-T6e">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -324,7 +324,7 @@
                 <navigationController id="x70-ro-8gL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="QZJ-lS-RQx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIf-Tr-OIJ">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -340,7 +340,7 @@
             <objects>
                 <collectionViewController id="0CX-FP-qJ0" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wOG-ev-Mq5">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mFg-43-bCX">
@@ -375,11 +375,11 @@
             <objects>
                 <viewController id="aaR-wM-spg" customClass="MovieCollectionVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9J-1W-MWX">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SQf-O9-NPx">
-                                <rect key="frame" x="5" y="55" width="824" height="1069"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SQf-O9-NPx">
+                                <rect key="frame" x="5" y="49" width="310" height="465"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6xO-CF-Jel">
                                     <size key="itemSize" width="164" height="152"/>
@@ -389,7 +389,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="folderCell" id="b4Q-ax-49g" customClass="FolderCell" customModule="HomeStreaming_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="164" height="177"/>
+                                        <rect key="frame" x="73" y="0.0" width="164" height="177"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tQ0-EK-18T">
                                             <rect key="frame" x="0.0" y="0.0" width="164" height="177"/>
@@ -398,7 +398,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Sag-1P-WBl">
                                                     <rect key="frame" x="5" y="5" width="154" height="167"/>
                                                     <subviews>
-                                                        <button opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZL-61-Y5K" customClass="FolderButton" customModule="HomeStreaming_app" customModuleProvider="target">
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZL-61-Y5K" customClass="FolderButton" customModule="HomeStreaming_app" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="154" height="127"/>
                                                             <state key="normal" image="subtitle"/>
                                                             <connections>
@@ -421,10 +421,14 @@
                                                     </constraints>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaA-NZ-Kbb" customClass="FavoritesButton" customModule="HomeStreaming_app" customModuleProvider="target">
-                                                    <rect key="frame" x="126" y="3" width="35" height="35"/>
+                                                    <rect key="frame" x="132" y="5" width="20" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="35" id="15g-FY-kXH"/>
-                                                        <constraint firstAttribute="height" constant="35" id="azv-OT-VEd"/>
+                                                        <constraint firstAttribute="width" constant="20" id="15g-FY-kXH">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="35"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="height" constant="18" id="azv-OT-VEd">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="35"/>
+                                                        </constraint>
                                                     </constraints>
                                                     <color key="tintColor" systemColor="systemRedColor"/>
                                                     <state key="normal">
@@ -439,10 +443,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Sag-1P-WBl" secondAttribute="trailing" constant="5" id="0jq-Ec-Wi5"/>
-                                                <constraint firstAttribute="trailing" secondItem="IaA-NZ-Kbb" secondAttribute="trailing" constant="3" id="Bj3-fV-w9f"/>
+                                                <constraint firstAttribute="trailing" secondItem="IaA-NZ-Kbb" secondAttribute="trailing" constant="12" id="Bj3-fV-w9f">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="3"/>
+                                                </constraint>
                                                 <constraint firstAttribute="bottom" secondItem="Sag-1P-WBl" secondAttribute="bottom" constant="5" id="N3m-jS-YYd"/>
                                                 <constraint firstItem="Sag-1P-WBl" firstAttribute="leading" secondItem="tQ0-EK-18T" secondAttribute="leading" constant="5" id="kKP-CU-tZA"/>
-                                                <constraint firstItem="IaA-NZ-Kbb" firstAttribute="top" secondItem="tQ0-EK-18T" secondAttribute="top" constant="3" id="wGT-HM-i2t"/>
+                                                <constraint firstItem="IaA-NZ-Kbb" firstAttribute="top" secondItem="tQ0-EK-18T" secondAttribute="top" constant="5" id="wGT-HM-i2t">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="3"/>
+                                                </constraint>
                                                 <constraint firstItem="Sag-1P-WBl" firstAttribute="top" secondItem="tQ0-EK-18T" secondAttribute="top" constant="5" id="xpt-PZ-eX2"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -476,7 +484,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="KFi-GZ-Sv4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nL2-rh-cU8">
-                                <rect key="frame" x="742" y="14" width="72" height="22"/>
+                                <rect key="frame" x="232" y="11" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow.triangle.2.circlepath"/>
                                 <connections>

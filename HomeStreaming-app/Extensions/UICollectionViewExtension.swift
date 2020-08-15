@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Differ
 extension UICollectionView{
     //Animate cell refresh
     func reloadChanges<T: Collection>(from old: T, to new: T) where T.Element: Equatable {

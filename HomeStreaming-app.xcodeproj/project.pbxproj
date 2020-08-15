@@ -58,8 +58,10 @@
 		CEE9817524C2DD3700CF9428 /* FolderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817424C2DD3700CF9428 /* FolderButton.swift */; };
 		CEE9817824C2E18C00CF9428 /* Differ in Frameworks */ = {isa = PBXBuildFile; productRef = CEE9817724C2E18C00CF9428 /* Differ */; };
 		CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817A24C3700E00CF9428 /* FavoritesButton.swift */; };
+		CEE9C46324E881B100E4B7C8 /* FilesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DE9FE24E87BC7005B54F0 /* FilesDataSource.swift */; };
 		CEF2B2B124E23B7A002302DA /* header.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF2B2B024E23B7A002302DA /* header.m */; };
 		CEF2B2B324E26B76002302DA /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2B2B224E26B76002302DA /* RoundedUIView.swift */; };
+		CEF7383024E88BEC00B71A78 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7382F24E88BEC00B71A78 /* UICollectionViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,7 @@
 		CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFile.swift; sourceTree = "<group>"; };
 		CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionVC.swift; sourceTree = "<group>"; };
 		CE9DE9F624E7EBC7005B54F0 /* VideoPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerDelegate.swift; sourceTree = "<group>"; };
+		CE9DE9FE24E87BC7005B54F0 /* FilesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDataSource.swift; sourceTree = "<group>"; };
 		CE9E63E324E4FC7B000ABE45 /* SystemVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemVolumeView.swift; sourceTree = "<group>"; };
 		CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name Extension.swift"; sourceTree = "<group>"; };
 		CEA011E124E5F9C100F5DB69 /* VideoSettingsPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSettingsPopupVC.swift; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		CEF2B2AF24E23B79002302DA /* HomeStreaming-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeStreaming-app-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEF2B2B024E23B7A002302DA /* header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = header.m; sourceTree = "<group>"; };
 		CEF2B2B224E26B76002302DA /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
+		CEF7382F24E88BEC00B71A78 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		D5884BBA19E24D400492B4E3 /* Pods-HomeStreaming-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-appTests.debug.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-appTests/Pods-HomeStreaming-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,6 +270,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		CE9DE9FB24E87AF1005B54F0 /* All Files Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */,
+				CE9DE9FE24E87BC7005B54F0 /* FilesDataSource.swift */,
+			);
+			path = "All Files Controllers";
+			sourceTree = "<group>";
+		};
 		CEA7E15C24DA5B9B005E5E95 /* Setting Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */,
+				CEF7382F24E88BEC00B71A78 /* UICollectionViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,9 +384,9 @@
 		CEE9815324C1434C00CF9428 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE9DE9FB24E87AF1005B54F0 /* All Files Controllers */,
 				CE123FD924E482BB00831FE9 /* Video Player Controllers */,
 				CEA7E15C24DA5B9B005E5E95 /* Setting Controllers */,
-				CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */,
 				CED27A6D24E6355E00C905F5 /* CustomActivityVC.swift */,
 			);
 			path = Controllers;
@@ -642,6 +656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF7383024E88BEC00B71A78 /* UICollectionViewExtension.swift in Sources */,
 				CED31D9724E099F400A87E33 /* SettingsOptionSwitchCell.swift in Sources */,
 				CE62E9D724D8C89B008F3D26 /* SettingsDetailVC.swift in Sources */,
 				CEA7E15B24DA5AA8005E5E95 /* SettingsSplitVC.swift in Sources */,
@@ -676,6 +691,7 @@
 				CEE9817B24C3700E00CF9428 /* FavoritesButton.swift in Sources */,
 				CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */,
 				CE324AE324D8A1400069D52A /* SettingsCell.swift in Sources */,
+				CEE9C46324E881B100E4B7C8 /* FilesDataSource.swift in Sources */,
 				CED045AF24C1160D00334E7F /* AppDelegate.swift in Sources */,
 				CE017D2A24E2965D007EEF38 /* SmallSlider.swift in Sources */,
 				CE324AE124D8A1130069D52A /* SettingsTableVC.swift in Sources */,

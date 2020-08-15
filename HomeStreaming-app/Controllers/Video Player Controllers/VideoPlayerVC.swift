@@ -12,9 +12,7 @@ import AVKit
 class VideoPlayerVC: UIViewController {
     
     private let ANIMATION_DURATION = 0.50
-    
-    
-    
+
     @IBOutlet weak var volumeUpButton: UIButton!
     @IBOutlet weak var volumeSliderView: UIView!
     @IBOutlet weak var bottomView: UIView!
@@ -28,9 +26,10 @@ class VideoPlayerVC: UIViewController {
             self.playerView.backgroundColor = UIColor.black
         }
     }
-    
+    var delegate: VideoPlayerDelegate?
+    private weak var fadeOutTimer: Timer?
+    private weak var timestampTimer: Timer?
     private var mpVolumeView: SystemVolumeView?
-    private var timer = Timer()
     private var hasStarted = false;
     private var controlsAreVisible: Bool = false
     private var statusBarHidden: Bool = true
@@ -48,6 +47,8 @@ class VideoPlayerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        extendedLayoutIncludesOpaqueBars = true
         mpVolumeView = SystemVolumeView(frame: volumeSliderView.bounds)
         if let mpVolumeView = mpVolumeView{
             mpVolumeView.frame.size = volumeSliderView.frame.size
@@ -90,6 +91,8 @@ class VideoPlayerVC: UIViewController {
         pausePlayback()
         player.position = self.beginningTimestamp
         resumePlayback()
+        timestampTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(saveTimestamp), userInfo: nil, repeats: true)
+        timestampTimer?.tolerance = 3.0
     }
     
     
@@ -123,6 +126,13 @@ class VideoPlayerVC: UIViewController {
     
     func setStatusBar(hidden: Bool, delay: TimeInterval = 0.0) {
         statusBarHidden = hidden
+        
+        if (hidden){
+            self.additionalSafeAreaInsets.top = 20
+        }else{
+            self.additionalSafeAreaInsets.top = 0
+        }
+        
         UIView.animate(withDuration: ANIMATION_DURATION, delay: delay, animations: {
             self.setNeedsStatusBarAppearanceUpdate()
         }) { (success: Bool) in
@@ -178,15 +188,15 @@ class VideoPlayerVC: UIViewController {
         scheduleFadeout()
     }
     
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        if let presenter = presentingViewController as? UITabBarController{
-            if let presenter = presenter.viewControllers?[0] as? UINavigationController{
-                if let presenter = presenter.topViewController as? MovieCollectionVC{
-                    print("Not here")
-                    presenter.moviePaused(timestamp: Int(player.position * 10000), hash: fileHash)
-                }
-            }
+    @objc func saveTimestamp(){
+        if let delegate = delegate{
+            delegate.saveTimestamp(timestamp: Int(player.position * 10000), hash: fileHash)
         }
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+       saveTimestamp()
+        timestampTimer?.invalidate()
         super.dismiss(animated: flag) {
             self.scheduleFadeout()
         }
@@ -195,7 +205,6 @@ class VideoPlayerVC: UIViewController {
 
 // Animations
 extension VideoPlayerVC {
-    
     private func fadeInThenFadeOut(view: UIView, duration: TimeInterval, delay: TimeInterval = 0, completion: @escaping ()->Void){
         controlsAreVisible = true
         if player.isPlaying{
@@ -226,20 +235,18 @@ extension VideoPlayerVC {
     }
     
     private func cancelAnimations() {
-        timer.invalidate()
-        timer = Timer()
+        fadeOutTimer?.invalidate()
         mediaControlsView.layer.removeAllAnimations()
     }
     
     private func scheduleFadeout(){
-        timer.invalidate()
-        timer = Timer()
-        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(fadeOutControls), userInfo: nil, repeats: false)
-        timer.tolerance = 0.2
+        fadeOutTimer?.invalidate()
+        fadeOutTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(fadeOutControls), userInfo: nil, repeats: false)
+        fadeOutTimer?.tolerance = 0.2
     }
     
     @objc func fadeOutControls(){
-        if timer.isValid{
+        if fadeOutTimer != nil{
             fadeOut(view: mediaControlsView, duration: ANIMATION_DURATION) { (finished) in
                 self.controlsAreVisible = false
             }
@@ -310,6 +317,12 @@ extension VideoPlayerVC: VLCMediaDelegate, VLCMediaPlayerDelegate{
                 fadeInThenFadeOut(view: mediaControlsView, duration: ANIMATION_DURATION, delay: 1) {
                     self.controlsAreVisible = false
                 }
+            }
+        }
+        else{
+            if player.position > 0.995 && !player.isPlaying{
+                //player.position = 0
+                dismiss(animated: true)
             }
         }
     }
@@ -412,5 +425,4 @@ extension VideoPlayerVC{
         }
         
     }
-    
 }

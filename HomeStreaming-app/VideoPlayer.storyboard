@@ -23,40 +23,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D58-gG-JT1">
-                                        <rect key="frame" x="0.0" y="10" width="414" height="726"/>
+                                        <rect key="frame" x="0.0" y="15" width="414" height="721"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="MDI-Od-hBK">
-                                                <rect key="frame" x="117" y="343" width="180" height="40"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="MDI-Od-hBK">
+                                                <rect key="frame" x="102" y="340.66666666666669" width="210" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Z4-aJ-LH5">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="gobackward.15" catalog="system">
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" scale="large" weight="thin"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="55" scale="large" weight="light"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="rewind15BtnPressed:" destination="XXL-iJ-Uvn" eventType="touchUpInside" id="X2a-fi-KL0"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRU-3E-jW4">
-                                                        <rect key="frame" x="70" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="85" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="rRU-3E-jW4" secondAttribute="height" id="tFq-vW-glp"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="pause" catalog="system">
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" scale="large" weight="light"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="55" scale="large" weight="regular"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="playPauseBtnPressed:" destination="XXL-iJ-Uvn" eventType="touchUpInside" id="Ig8-D0-dNG"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6p-KB-Tij">
-                                                        <rect key="frame" x="140" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="170" y="0.0" width="40" height="40"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="goforward.30" catalog="system">
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" scale="large" weight="thin"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="55" scale="large" weight="light"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="forward30BtnPressed:" destination="XXL-iJ-Uvn" eventType="touchUpInside" id="OXg-e0-efE"/>
@@ -78,22 +78,22 @@
                                                         <include reference="HxL-YL-VuZ"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=compact-widthClass=regular" spacing="50">
+                                                <variation key="heightClass=compact-widthClass=regular" spacing="55">
                                                     <mask key="constraints">
                                                         <include reference="HxL-YL-VuZ"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact" spacing="30">
+                                                <variation key="heightClass=regular-widthClass=compact" spacing="45">
                                                     <mask key="constraints">
                                                         <include reference="HxL-YL-VuZ"/>
                                                     </mask>
                                                 </variation>
                                             </stackView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Pa-eW-CYu">
-                                                <rect key="frame" x="5" y="637" width="404" height="45"/>
+                                                <rect key="frame" x="5" y="632" width="404" height="45"/>
                                                 <subviews>
                                                     <slider opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UVR-oy-gjA" customClass="SmallSlider" customModule="HomeStreaming_app" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="0.0" width="328" height="46"/>
+                                                        <rect key="frame" x="8" y="0.0" width="338.66666666666669" height="46"/>
                                                         <color key="tintColor" systemColor="systemIndigoColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="EyQ-ze-7Hf"/>
@@ -108,7 +108,7 @@
                                                         </connections>
                                                     </slider>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="nnQ-6e-elA">
-                                                        <rect key="frame" x="343" y="0.0" width="61" height="45"/>
+                                                        <rect key="frame" x="353.66666666666669" y="0.0" width="50.333333333333314" height="45"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtO-X2-81s">
                                                                 <rect key="frame" x="0.0" y="0.0" width="27.666666666666668" height="45"/>
@@ -121,9 +121,9 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbH-Iy-Dwf">
-                                                                <rect key="frame" x="36.666666666666686" y="0.0" width="24.333333333333329" height="45"/>
+                                                                <rect key="frame" x="36.666666666666629" y="0.0" width="13.666666666666664" height="45"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="gearshape" catalog="system">
+                                                                <state key="normal" image="gearshape">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="medium" weight="regular"/>
                                                                 </state>
                                                                 <connections>
@@ -145,7 +145,7 @@
                                                 </constraints>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRK-g2-Kfn">
-                                                <rect key="frame" x="5" y="10" width="404" height="45"/>
+                                                <rect key="frame" x="5" y="0.0" width="404" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftB-mQ-8Ol">
                                                         <rect key="frame" x="-10" y="0.0" width="45" height="45"/>
@@ -162,9 +162,9 @@
                                                         <rect key="frame" x="284" y="0.0" width="120" height="45"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTs-G7-Hc8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="45"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="18.666666666666668" height="45"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="speaker.wave.3" catalog="system">
+                                                                <state key="normal" image="speaker.wave.3">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="medium" weight="regular"/>
                                                                 </state>
                                                                 <connections>
@@ -172,7 +172,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VA-Jk-hJG">
-                                                                <rect key="frame" x="39" y="0.0" width="25.333333333333329" height="45"/>
+                                                                <rect key="frame" x="25.666666666666686" y="0.0" width="29" height="45"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal">
                                                                     <imageReference key="image" image="captions.bubble" catalog="system" symbolScale="medium"/>
@@ -180,7 +180,7 @@
                                                                 </state>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYE-eZ-pk7">
-                                                                <rect key="frame" x="71.333333333333314" y="0.0" width="21.333333333333329" height="45"/>
+                                                                <rect key="frame" x="61.666666666666679" y="0.0" width="24.666666666666664" height="45"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="info.circle" catalog="system">
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="19" scale="medium" weight="regular"/>
@@ -192,7 +192,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIh-aq-Shh">
-                                                                <rect key="frame" x="99.666666666666686" y="0.0" width="20.333333333333329" height="45"/>
+                                                                <rect key="frame" x="93.333333333333314" y="0.0" width="26.666666666666671" height="45"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal">
                                                                     <imageReference key="image" image="arrow.up.left.and.arrow.down.right" catalog="system" symbolScale="medium"/>
@@ -248,7 +248,7 @@
                                                 </variation>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qU8-Yr-bCw">
-                                                <rect key="frame" x="-10" y="685" width="157" height="18"/>
+                                                <rect key="frame" x="-10" y="680" width="157" height="18"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hw-SF-h4l">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="18"/>
@@ -302,7 +302,7 @@
                                             <constraint firstItem="zRK-g2-Kfn" firstAttribute="height" secondItem="UVR-oy-gjA" secondAttribute="height" id="cY9-j1-wnJ"/>
                                             <constraint firstItem="zRK-g2-Kfn" firstAttribute="top" secondItem="D58-gG-JT1" secondAttribute="top" constant="15" id="jT1-Us-lFu"/>
                                             <constraint firstAttribute="bottom" secondItem="qU8-Yr-bCw" secondAttribute="bottom" constant="23" id="tsE-we-ez7"/>
-                                            <constraint firstItem="zRK-g2-Kfn" firstAttribute="top" secondItem="D58-gG-JT1" secondAttribute="top" constant="10" id="wdk-n8-2iw"/>
+                                            <constraint firstItem="zRK-g2-Kfn" firstAttribute="top" secondItem="D58-gG-JT1" secondAttribute="top" id="wdk-n8-2iw"/>
                                             <constraint firstItem="qU8-Yr-bCw" firstAttribute="leading" secondItem="1Pa-eW-CYu" secondAttribute="leading" constant="-15" id="xud-o0-S7H"/>
                                         </constraints>
                                         <variation key="default">
@@ -339,7 +339,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
-                                    <constraint firstItem="D58-gG-JT1" firstAttribute="top" secondItem="hxj-0Z-i6i" secondAttribute="top" constant="10" id="WGx-aj-dsA"/>
+                                    <constraint firstItem="D58-gG-JT1" firstAttribute="top" secondItem="hxj-0Z-i6i" secondAttribute="top" constant="15" id="WGx-aj-dsA"/>
                                     <constraint firstAttribute="trailing" secondItem="D58-gG-JT1" secondAttribute="trailing" id="ZpB-SS-l9T"/>
                                     <constraint firstItem="D58-gG-JT1" firstAttribute="leading" secondItem="hxj-0Z-i6i" secondAttribute="leading" id="hou-Zd-tgl"/>
                                     <constraint firstAttribute="bottom" secondItem="D58-gG-JT1" secondAttribute="bottom" id="ikQ-x8-eCU"/>
@@ -352,12 +352,12 @@
                             <constraint firstItem="hxj-0Z-i6i" firstAttribute="leading" secondItem="r0K-cl-ZWf" secondAttribute="leading" id="RZ8-tz-3El"/>
                             <constraint firstItem="hxj-0Z-i6i" firstAttribute="trailing" secondItem="r0K-cl-ZWf" secondAttribute="trailing" id="ThN-Ls-rw5"/>
                             <constraint firstAttribute="bottom" secondItem="hxj-0Z-i6i" secondAttribute="bottom" id="eZM-lM-izP"/>
-                            <constraint firstItem="hxj-0Z-i6i" firstAttribute="top" secondItem="A96-3X-2cK" secondAttribute="top" id="m2U-r5-Sm6"/>
+                            <constraint firstItem="hxj-0Z-i6i" firstAttribute="top" secondItem="A96-3X-2cK" secondAttribute="top" id="ect-a5-1nQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="1Pa-eW-CYu" id="Twv-aN-gf6"/>
-                        <outlet property="mediaControlsView" destination="D58-gG-JT1" id="II1-9L-sBF"/>
+                        <outlet property="mediaControlsView" destination="D58-gG-JT1" id="cT7-3a-lDh"/>
                         <outlet property="playButton" destination="rRU-3E-jW4" id="5ko-DA-0nb"/>
                         <outlet property="playerView" destination="hxj-0Z-i6i" id="1Jv-zL-Mmk"/>
                         <outlet property="timeElapsedLbl" destination="0hw-SF-h4l" id="Pa2-v4-wui"/>
@@ -641,14 +641,14 @@
         <image name="airplayvideo" catalog="system" width="128" height="98"/>
         <image name="arrow.up.left.and.arrow.down.right" catalog="system" width="128" height="115"/>
         <image name="captions.bubble" catalog="system" width="128" height="110"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="gearshape" width="14" height="14"/>
         <image name="gobackward.15" catalog="system" width="121" height="128"/>
         <image name="goforward.30" catalog="system" width="121" height="128"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="pause" catalog="system" width="88" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="speaker.wave.3" catalog="system" width="128" height="85"/>
+        <image name="speaker.wave.3" width="17" height="13"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

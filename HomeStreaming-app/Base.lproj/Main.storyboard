@@ -244,18 +244,18 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="uGN-Mc-iQa" customClass="SettingsTableVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="puz-wS-dk1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="settingsCell" textLabel="FTt-uq-60D" imageView="Nwo-4H-WbM" style="IBUITableViewCellStyleDefault" id="WJ9-lJ-mYA" customClass="SettingsCell" customModule="HomeStreaming_app" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="settingsCell" textLabel="FTt-uq-60D" imageView="Nwo-4H-WbM" style="IBUITableViewCellStyleDefault" id="WJ9-lJ-mYA" customClass="SettingsCell" customModule="HomeStreaming_app" customModuleProvider="target">
                                 <rect key="frame" x="16" y="55.5" width="288" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WJ9-lJ-mYA" id="JhH-Zi-zOS">
-                                    <rect key="frame" x="0.0" y="0.0" width="288" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="261" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FTt-uq-60D">
-                                            <rect key="frame" x="55" y="0.0" width="217" height="45"/>
+                                            <rect key="frame" x="55" y="0.0" width="198" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -308,7 +308,7 @@
         <scene sceneID="UNt-aM-RcL">
             <objects>
                 <splitViewController id="fTi-g2-PXv" customClass="SettingsSplitVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="pXN-BU-yQ1"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" id="pXN-BU-yQ1"/>
                     <connections>
                         <segue destination="XCQ-dz-Bgr" kind="relationship" relationship="masterViewController" id="MAC-0f-yGC"/>
                         <segue destination="pHk-Mk-N1Q" kind="relationship" relationship="detailViewController" id="Bb9-Q0-3f3"/>
@@ -467,7 +467,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Files" image="folder.fill" catalog="system" selectedImage="folder.fill" id="OI4-sD-qtq"/>
                     <navigationItem key="navigationItem" title="Folder List" id="IVx-xo-B8J">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="t1k-W7-dLA">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="t1k-W7-dLA">
+                            <imageReference key="image" image="chevron.backward" symbolScale="large"/>
                             <color key="tintColor" name="AccentColor"/>
                             <connections>
                                 <action selector="backBtnPressed:" destination="aaR-wM-spg" id="JnE-Iu-S3g"/>
@@ -477,7 +478,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nL2-rh-cU8">
                                 <rect key="frame" x="742" y="14" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="arrow.triangle.2.circlepath" catalog="system"/>
+                                <state key="normal" image="arrow.triangle.2.circlepath"/>
                                 <connections>
                                     <action selector="reloadBtnPressed:" destination="aaR-wM-spg" eventType="touchUpInside" id="y9w-fB-39u"/>
                                 </connections>
@@ -557,10 +558,10 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
-        <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="arrow.triangle.2.circlepath" width="16" height="13"/>
+        <image name="chevron.backward" width="7" height="11"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="gearshape.fill" width="14" height="14"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="subtitle" width="512" height="512"/>

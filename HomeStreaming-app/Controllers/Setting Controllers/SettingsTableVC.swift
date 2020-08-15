@@ -31,6 +31,12 @@ class SettingsTableVC: UITableViewController {
             let initialIndexPath = IndexPath(row: 0, section: 0)
             self.tableView.selectRow(at: initialIndexPath, animated: true, scrollPosition:UITableView.ScrollPosition.none)
             self.performSegue(withIdentifier: "showSettingsDetail", sender: initialIndexPath)
+            
+            if UIDevice.current.userInterfaceIdiom == .pad{
+                settingsTable.visibleCells.forEach { (cell) in
+                    cell.accessoryType = .none
+                }
+            }
         }
         
         

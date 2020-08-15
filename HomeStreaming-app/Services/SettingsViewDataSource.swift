@@ -28,7 +28,7 @@ final class SettingsViewDataSource{
     private let login = SettingsCellModel(icon: UIImage(systemName: "lock.fill"), title: "Login")
     
     private let video = SettingsCellModel(icon: UIImage(systemName: "film"), title: "Video")
-    private let audio = SettingsCellModel(icon: UIImage(systemName: "speaker.wave.3"), title: "Audio")
+    private let audio = SettingsCellModel(icon: UIImage(named: "speaker.wave.3"), title: "Audio")
     private let subtitle = SettingsCellModel(icon: UIImage(systemName: "captions.bubble"), title: "Subtitles")
     
   

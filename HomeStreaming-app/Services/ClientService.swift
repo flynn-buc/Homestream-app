@@ -103,6 +103,10 @@ final class ClientService: NSObject{
         }
     }
     
+    func getFavorites(onSuccess: @escaping OnGetFoldersAndFilesSuccess, onError: @escaping OnAPIFailure){
+        
+    }
+    
     
     
     func play(file: File, onSuccess: @escaping OnGetFileSuccess, onError: @escaping OnAPIFailure){

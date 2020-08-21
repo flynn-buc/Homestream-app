@@ -46,7 +46,7 @@
                         <segue destination="8LP-E5-h3u" kind="relationship" relationship="viewControllers" id="ZhW-rm-xaa"/>
                         <segue destination="fTi-g2-PXv" kind="relationship" relationship="viewControllers" id="h3Q-3e-zxk"/>
                         <segue destination="7b1-aJ-AdH" kind="relationship" relationship="viewControllers" id="pI8-Pb-7b5"/>
-                        <segue destination="llg-yX-9dc" kind="relationship" relationship="viewControllers" id="Wjn-sl-9d9"/>
+                        <segue destination="JAQ-3V-MpF" kind="relationship" relationship="viewControllers" id="Wjn-sl-9d9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVh-RF-Uat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -58,7 +58,7 @@
             <objects>
                 <tableViewController id="ObT-5z-hXE" customClass="SettingsDetailVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="m4f-z9-yuy">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="990.5" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsOptionSwitchCell" id="dol-JW-qIH" customClass="SettingsOptionSwitchCell" customModule="HomeStreaming_app" customModuleProvider="target">
@@ -263,7 +263,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="uGN-Mc-iQa" customClass="SettingsTableVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="puz-wS-dk1">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="settingsCell" textLabel="FTt-uq-60D" imageView="Nwo-4H-WbM" style="IBUITableViewCellStyleDefault" id="WJ9-lJ-mYA" customClass="SettingsCell" customModule="HomeStreaming_app" customModuleProvider="target">
@@ -336,6 +336,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhX-Qi-xnA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="982" y="-27"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="r1d-To-w4O">
+            <objects>
+                <tableViewController id="MeU-Md-0kg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aIw-Ts-HD7">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="s56-cx-9fU">
+                                <rect key="frame" x="0.0" y="28" width="1366" height="51.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s56-cx-9fU" id="4w7-nG-mhz">
+                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="51.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MeU-Md-0kg" id="CHb-Uq-Quu"/>
+                            <outlet property="delegate" destination="MeU-Md-0kg" id="3jl-yP-LIq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="d80-u5-AS7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLE-pB-ifR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="1132"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="9KO-XR-6lP">
+            <objects>
+                <navigationController id="JAQ-3V-MpF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="c3I-I5-0lE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PLB-FE-zag">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MeU-Md-0kg" kind="relationship" relationship="rootViewController" id="Tko-VQ-wwB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wao-ls-lD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637" y="1132"/>
         </scene>
         <!--Folder List-->
         <scene sceneID="g4v-7n-iLp">
@@ -489,16 +535,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9u-LD-3sS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="180.57553956834533" y="2794.9748743718592"/>
-        </scene>
-        <!--Posters-->
-        <scene sceneID="LwE-nN-HaT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Posters" id="llg-yX-9dc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rGX-Zs-gaT"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AGd-JV-zPt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="637" y="1132"/>
         </scene>
     </scenes>
     <designables>

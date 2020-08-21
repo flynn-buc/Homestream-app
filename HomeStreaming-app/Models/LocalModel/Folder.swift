@@ -27,4 +27,20 @@ class Folder: FilesystemItem{
     func addItems(items: [FilesystemItem]){
         self.items.append(contentsOf: items)
     }
+    
+    //returns folder from given collection with hash, or nil if it doesn't exist
+     func findFolder(withHash hash:Int) -> Folder?{
+        for item in self.items{
+            if let folder = item as? Folder{
+                if folder.hash == hash{
+                    return folder
+                }else{
+                    if let folder = folder.findFolder(withHash: hash){
+                        return folder
+                    }
+                }
+            }
+        }
+        return nil
+    }
 }

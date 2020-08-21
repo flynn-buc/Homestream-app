@@ -1,11 +1,12 @@
 //
-//  FolderController.swift
+//  MovieCollection.swift
 //  HomeStreaming-app
 //
 //  Created by Jonathan Hirsch on 7/16/20.
-//
+// Responsible for handling actions from user interface, passing data requests to DataSource, and displaying changes back on interface
 
 import UIKit
+import NVActivityIndicatorView
 
 private let reuseIdentifier = "Cell"
 typealias loadComplete = () -> Void
@@ -17,17 +18,40 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
     
     private let refreshControl = UIRefreshControl()
 
-    private let filesDataSource =  FilesDataSource()
+    internal var filesDataSource: FilesDataSource!
     private let collectionViewDelegateLayout = CollectionViewDelegateWithLayout()
     private var currentPlayingMovie: File?
+    private var currentTitle: String?
+    private var activityView: NVActivityIndicatorView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if filesDataSource != nil{
+            refresh()
+        }
+    }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        if let navVC = self.navigationController as? FilesNVC{
+            filesDataSource = navVC.filesDataSource
+        }else if let navVC = self.navigationController as? FavoritesNavVC {
+            filesDataSource = navVC.filesDataSource
+            currentTitle = "Favorites"
+        }
         folderCollection.dataSource = filesDataSource
         folderCollection.delegate = collectionViewDelegateLayout
         folderCollection.addSubview(refreshControl)
         folderCollection.alwaysBounceVertical = true // required for refresh control
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged) // selector for refresh when collection view is pulled down
+        
+        let frame = CGRect(x: (self.view.frame.size.width - 80)/2, y: (self.view.frame.size.height - 80)/2, width: 80, height: 80)
+        activityView = NVActivityIndicatorView(frame:frame, type: .ballSpinFadeLoader, color: .systemIndigo)
+        self.view.addSubview(activityView)
         loadDataFromServer()
+    }
+    
+    func configure(){
+        
     }
     
     private func invalidQueryError(_ message: String) {
@@ -36,44 +60,45 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
     
     // Retrieve all data from server
     private func loadDataFromServer(reloadData: Bool = true, onLoadComplete: loadComplete? = nil){
-        ClientService.instance.get() { (data) in
-            self.filesDataSource.updateData(to: data) { (rootFolder) in
-                if reloadData{
-                    self.setupCollectionView(withFolder: rootFolder)
-                }
+        filesDataSource.getData { (folder) in
+            if let folder = folder as? Folder{
+                self.setupCollectionView(withFolder: folder)
             }
             self.endRefresh()
             if let loadComplete = onLoadComplete{
-                loadComplete() // call completion if added
+                loadComplete()// call completion if added
             }
         } onError: { (error) in
-            self.invalidQueryError(error)
+            self.invalidQueryError("\(error)")
+            self.endRefresh()
         }
     }
     
     //Refresh data, reload previous folder after refresh if it exists, or reload root folder
     @objc private func refresh() {
         let hash = filesDataSource.currentFolder?.hash
-        ClientService.instance.refresh() { (response) in
-            print(response)
-            // load data from server, using completion to load root folder or current folder if it exists
-            self.loadDataFromServer(reloadData: false) {
-                if let hash = hash{
-                    if let rootFolder = self.filesDataSource.rootFolder{
-                        var folder: Folder
-                        if hash == rootFolder.hash{
-                            folder = rootFolder // skip searching if previous folder was root
-                        }else{
-                            folder = self.findFolder(rootFolder.items, withHash: hash) ?? rootFolder
+        filesDataSource.refresh { (response) in
+            if let response = response as? String{
+                print("Refreshed! \(response)")
+                self.loadDataFromServer(reloadData: false) {
+                    if let hash = hash{
+                        if let rootFolder = self.filesDataSource.rootFolder{
+                            var folder: Folder
+                            if hash == rootFolder.hash{
+                                folder = rootFolder // skip searching if previous folder was root
+                            }else{
+                                folder = rootFolder.findFolder(withHash: hash) ?? rootFolder
+                            }
+                            self.setupCollectionView(withFolder: folder)
                         }
-                        self.setupCollectionView(withFolder: folder)
                     }
                 }
+            }else{
+                print("Refreshed, but return type uknown: \(response)")
             }
-        } onError: { (error) in
-            self.invalidQueryError(error)
-            print(error)
+        } onError: { (response) in
             self.endRefresh()
+            print("Error here: \(response)")
         }
     }
     
@@ -81,6 +106,7 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
     // appropriate file info
     private func displayVideo(for file: File){
         let pathURL = "/\(String.pathAsURL(file.hash))" // convert file hash to URL
+        activityView.startAnimating()
         ClientService.instance.play(file: file) { (serverFile) in
             print("Will Play: \(serverFile.name)")
             guard let videoPlayerVC = self.storyboard?.instantiateViewController(identifier: "videoPlayerVC") as? VideoPlayerVC else {
@@ -94,39 +120,24 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
             videoPlayerVC.modalTransitionStyle = .coverVertical
             videoPlayerVC.view.backgroundColor = UIColor.black
             videoPlayerVC.delegate = self
+            self.activityView.stopAnimating()
             self.present(videoPlayerVC, animated: true, completion: nil)
             videoPlayerVC.initPlayer(url: "\(pathURL)/Play/", fileHash: file.hash, beginningTimestamp: file.playbackPosition)
             print("Playing...: http://nissa.local:3004/\(file.hash)/Play/")
         } onError: { (message) in
             print("error: \(message)")
+            self.activityView.stopAnimating()
         }
     }
     
     func saveTimestamp(timestamp: Int, hash: Int){
-        print("Here!")
         if let file = currentPlayingMovie{
             if hash == file.hash{
                 file.setPlaybackPosition(playbackPosition: timestamp)
                 print("Time stamp: \(timestamp)")
-                ClientService.instance.patch(file: file)
+                filesDataSource.patch(data: file)
             }
         }
-    }
-    
-    //returns folder from given collection with hash, or nil if it doesn't exist
-    private func findFolder(_ items: [FilesystemItem], withHash hash:Int) -> Folder?{
-        for item in items{
-            if let folder = item as? Folder{
-                if folder.hash == hash{
-                    return folder
-                }else{
-                    if let folder = findFolder(folder.items, withHash: hash){
-                        return folder
-                    }
-                }
-            }
-        }
-        return nil
     }
     
     private func endRefresh(){
@@ -149,7 +160,6 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
         }
     }
 }
-
 
 //Etension for IBActions
 extension MovieCollectionVC{
@@ -174,8 +184,6 @@ extension MovieCollectionVC{
     
     @IBAction func favoritesBtnPressed(_ sender: FavoritesButton) {
         sender.set(isFavorite: !sender.isFavorite())
-        if let file = sender.getItem() as? File{
-            ClientService.instance.patch(file: file)
-        }
+        filesDataSource.patch(data: sender.getItem())
     }
 }

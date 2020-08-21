@@ -11,6 +11,9 @@
 		5556FDC955448F2E03159C71 /* Pods_HomeStreaming_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */; };
 		ADC485A9BC833287207CEF82 /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414A08E2D442CE48EE8992FA /* Pods_HomeStreaming_app_HomeStreaming_appUITests.framework */; };
 		CE017D2A24E2965D007EEF38 /* SmallSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE017D2924E2965D007EEF38 /* SmallSlider.swift */; };
+		CE0933B224EDB19C00E8CB4B /* FilesNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0933B124EDB19C00E8CB4B /* FilesNVC.swift */; };
+		CE0933B424EDB2C800E8CB4B /* FavoritesNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0933B324EDB2C800E8CB4B /* FavoritesNavVC.swift */; };
+		CE0933BC24EDC73900E8CB4B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = CE0933BB24EDC73900E8CB4B /* NVActivityIndicatorView */; };
 		CE123FDB24E4831600831FE9 /* VideoInfoPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE123FDA24E4831600831FE9 /* VideoInfoPopupVC.swift */; };
 		CE123FDF24E4854400831FE9 /* VideoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE123FDE24E4854400831FE9 /* VideoInfoCell.swift */; };
 		CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */; };
@@ -23,6 +26,7 @@
 		CE324AE624D8A2D20069D52A /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE324AE524D8A2D20069D52A /* SettingsCellModel.swift */; };
 		CE38432524E8938200DC8FA8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38432424E8938200DC8FA8 /* StringExtension.swift */; };
 		CE38432A24E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38432924E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift */; };
+		CE5E097324E9047500D63391 /* ClientServiceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E097224E9047500D63391 /* ClientServiceDataSource.swift */; };
 		CE5FFE7C24E667C3006AC476 /* VideoPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6DD4BC24E666AC0003C84B /* VideoPlayer.storyboard */; };
 		CE62E9D724D8C89B008F3D26 /* SettingsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62E9D624D8C89B008F3D26 /* SettingsDetailVC.swift */; };
 		CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */; };
@@ -94,6 +98,8 @@
 		7B762CA728F91A3F69BC874B /* Pods-HomeStreaming-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeStreaming-app.release.xcconfig"; path = "Target Support Files/Pods-HomeStreaming-app/Pods-HomeStreaming-app.release.xcconfig"; sourceTree = "<group>"; };
 		C8A23A999A83A4B9F6D5CACD /* Pods_HomeStreaming_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeStreaming_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE017D2924E2965D007EEF38 /* SmallSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSlider.swift; sourceTree = "<group>"; };
+		CE0933B124EDB19C00E8CB4B /* FilesNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesNVC.swift; sourceTree = "<group>"; };
+		CE0933B324EDB2C800E8CB4B /* FavoritesNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavVC.swift; sourceTree = "<group>"; };
 		CE123FDA24E4831600831FE9 /* VideoInfoPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoPopupVC.swift; sourceTree = "<group>"; };
 		CE123FDE24E4854400831FE9 /* VideoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoCell.swift; sourceTree = "<group>"; };
 		CE2EC9EB24E0814B006CE956 /* UserPrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrefs.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 		CE324AE524D8A2D20069D52A /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
 		CE38432424E8938200DC8FA8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CE38432924E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateWithLayout.swift; sourceTree = "<group>"; };
+		CE5E097224E9047500D63391 /* ClientServiceDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientServiceDataSource.swift; sourceTree = "<group>"; };
 		CE62E9D624D8C89B008F3D26 /* SettingsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailVC.swift; sourceTree = "<group>"; };
 		CE6DD4BC24E666AC0003C84B /* VideoPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VideoPlayer.storyboard; path = "/Users/jonathanhirsch/Documents/Projects/Homestream-app/HomeStreaming-app/VideoPlayer.storyboard"; sourceTree = "<absolute>"; };
 		CE6E852624D8C75300D661BC /* SettingsViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewDataSource.swift; sourceTree = "<group>"; };
@@ -124,6 +131,7 @@
 		CEA7E15A24DA5AA8005E5E95 /* SettingsSplitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSplitVC.swift; sourceTree = "<group>"; };
 		CEA7E15E24DA5C09005E5E95 /* SettingsOptionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionCellModel.swift; sourceTree = "<group>"; };
 		CEB8014B24DCCE090035DBDB /* ServerAddressField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAddressField.swift; sourceTree = "<group>"; };
+		CEBCC3BA24EE2B1600398453 /* Posters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Posters.storyboard; path = "/Users/jonathanhirsch/Documents/Projects/Homestream-app/HomeStreaming-app/Posters.storyboard"; sourceTree = "<absolute>"; };
 		CED045AB24C1160D00334E7F /* HomeStreaming-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeStreaming-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED045AE24C1160D00334E7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED045B024C1160D00334E7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0933BC24EDC73900E8CB4B /* NVActivityIndicatorView in Frameworks */,
 				CEE9817824C2E18C00CF9428 /* Differ in Frameworks */,
 				CED045E324C1163400334E7F /* SocketIO in Frameworks */,
 				437864EC13D10EEAEC217461 /* Pods_HomeStreaming_app.framework in Frameworks */,
@@ -272,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9DE9F624E7EBC7005B54F0 /* VideoPlayerDelegate.swift */,
+				CE5E097224E9047500D63391 /* ClientServiceDataSource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -283,6 +293,8 @@
 				CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */,
 				CE9DE9FE24E87BC7005B54F0 /* FilesDataSource.swift */,
 				CE38432924E8A1CA00DC8FA8 /* CollectionViewDelegateWithLayout.swift */,
+				CE0933B124EDB19C00E8CB4B /* FilesNVC.swift */,
+				CE0933B324EDB2C800E8CB4B /* FavoritesNavVC.swift */,
 			);
 			path = "All Files Controllers";
 			sourceTree = "<group>";
@@ -359,6 +371,7 @@
 				CEE9815424C1435300CF9428 /* Views */,
 				CEE9815324C1434C00CF9428 /* Controllers */,
 				CED045AE24C1160D00334E7F /* AppDelegate.swift */,
+				CEBCC3BA24EE2B1600398453 /* Posters.storyboard */,
 				CED045B024C1160D00334E7F /* SceneDelegate.swift */,
 				CE6DD4BC24E666AC0003C84B /* VideoPlayer.storyboard */,
 				CED045B424C1160D00334E7F /* Main.storyboard */,
@@ -473,6 +486,7 @@
 			packageProductDependencies = (
 				CED045E224C1163400334E7F /* SocketIO */,
 				CEE9817724C2E18C00CF9428 /* Differ */,
+				CE0933BB24EDC73900E8CB4B /* NVActivityIndicatorView */,
 			);
 			productName = "HomeStreaming-app";
 			productReference = CED045AB24C1160D00334E7F /* HomeStreaming-app.app */;
@@ -551,6 +565,7 @@
 			packageReferences = (
 				CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */,
 				CEE9817624C2E18C00CF9428 /* XCRemoteSwiftPackageReference "Differ" */,
+				CE0933BA24EDC73900E8CB4B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = CED045AC24C1160D00334E7F /* Products */;
 			projectDirPath = "";
@@ -684,16 +699,19 @@
 				CEB8014C24DCCE090035DBDB /* ServerAddressField.swift in Sources */,
 				CE324ADF24D89D6B0069D52A /* RoundedImageView.swift in Sources */,
 				CEA7E15F24DA5C09005E5E95 /* SettingsOptionCellModel.swift in Sources */,
+				CE5E097324E9047500D63391 /* ClientServiceDataSource.swift in Sources */,
 				CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */,
 				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
 				CE123FDF24E4854400831FE9 /* VideoInfoCell.swift in Sources */,
 				CEE9817324C2A59600CF9428 /* FilesystemItem.swift in Sources */,
+				CE0933B424EDB2C800E8CB4B /* FavoritesNavVC.swift in Sources */,
 				CE2EC9EE24E08FB7006CE956 /* Folder.swift in Sources */,
 				CEF2B2B324E26B76002302DA /* RoundedUIView.swift in Sources */,
 				CEA7E15924D9FACF005E5E95 /* SettingsOptionCell.swift in Sources */,
 				CEA011E024E5DBA200F5DB69 /* Notification.Name Extension.swift in Sources */,
 				CE78F44724E0806D000F004F /* SettingsOptionTextfieldCell.swift in Sources */,
 				CE6E852724D8C75300D661BC /* SettingsViewDataSource.swift in Sources */,
+				CE0933B224EDB19C00E8CB4B /* FilesNVC.swift in Sources */,
 				CEF2B2B124E23B7A002302DA /* header.m in Sources */,
 				CE2EC9EC24E0814B006CE956 /* UserPrefs.swift in Sources */,
 				CE123FDB24E4831600831FE9 /* VideoInfoPopupVC.swift in Sources */,
@@ -1065,6 +1083,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE0933BA24EDC73900E8CB4B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
@@ -1084,6 +1110,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE0933BB24EDC73900E8CB4B /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE0933BA24EDC73900E8CB4B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
 		CED045E224C1163400334E7F /* SocketIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */;

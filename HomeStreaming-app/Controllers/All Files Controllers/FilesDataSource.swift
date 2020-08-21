@@ -7,15 +7,21 @@
 
 import UIKit
 
-class FilesDataSource: NSObject, UICollectionViewDataSource {
+class FilesDataSource: NSObject, UICollectionViewDataSource, ClientServiceDataSource {
+    
     public private(set) var rootFolder: Folder? // represent root folder sent by server
     public private(set) var currentFolder: Folder? // represent currently selected folder
     
+    internal let dataManager: DataManager
+    
+    init<P: DataManager>(dataManager: P){
+        self.dataManager = dataManager
+    }
     
     // Updates data used to display folders
     // If reloadTable is nil or false, caller must update data manually
-    func updateData(to data: MessageData, completed: ((Folder)->Void) = {(folder: Folder) -> Void in}){
-        rootFolder = Folder(name: data.currentFolder, type: .folder, hash: data.folders.hash, isFavorite: data.folders.isFavorite)
+    private func updateData(to data: MessageData, completed: ((Folder)->Void) = {(folder: Folder) -> Void in}){
+        rootFolder = Folder(name: data.folders.name, type: .folder, hash: data.folders.hash, isFavorite: data.folders.isFavorite)
         rootFolder?.addItems(items: loadServerData(from_files: data.folders.files, parent: rootFolder!))
         rootFolder?.addItems(items: loadServerData(from_subfolders:data.folders.subfolders, parent: rootFolder!))
         
@@ -69,4 +75,33 @@ class FilesDataSource: NSObject, UICollectionViewDataSource {
         self.currentFolder = currentFolder
     }
     
+    
+    func getData(onSuccess: @escaping onSuccess, onError: @escaping onError){
+        dataManager.get{ (data) in
+            if let data = data as? MessageData{
+                self.updateData(to: data)
+                if let rootFolder = self.rootFolder{
+                    onSuccess(rootFolder)
+                }else{
+                onError("No Data found from updateData")
+                }
+            }else{
+            onError("Data in updateData is in wrong format -- \(data)")
+            }
+        } onError: { (error) in
+           onError(error)
+        }
+    }
+    
+    func patch(data: FilesystemItem){
+        dataManager.patch(data: data)
+    }
+    
+    func refresh(onSuccess: @escaping onSuccess, onError: @escaping onError){
+        dataManager.refresh { (data) in
+            onSuccess(data)
+        } onError: { (response) in
+            onError(response)
+        }
+    }
 }

@@ -104,14 +104,20 @@ final class ClientService: NSObject{
     }
     
     func getFavorites(onSuccess: @escaping OnGetFoldersAndFilesSuccess, onError: @escaping OnAPIFailure){
-        
+        let url = URL(string: "\(URL_BASE)/Get_favorites/")!
+        genericGet(url: url, decodingObjectSuccess: MessageData.self) { (success) in
+            onSuccess(success)
+        } onError: { (error) in
+            print("Error in getFoldersAndFilesAt")
+            onError(error)
+        }
     }
     
     
     
     func play(file: File, onSuccess: @escaping OnGetFileSuccess, onError: @escaping OnAPIFailure){
-        let url = URL(string: "\(URL_BASE)/\(file.hash)/")!
-        let fileDic = ["address": "\(URL_BASE)"]
+        let url = URL(string: "\(URL_BASE)/start_stream/")!
+        let fileDic = ["address": "\(URL_BASE)", "hash" : file.hash] as [String : Any]
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -155,18 +161,14 @@ final class ClientService: NSObject{
         return try?JSONSerialization.data(withJSONObject: parsedObject, options: .fragmentsAllowed)
     }
     
-    func patch(file: File){
-        let url = URL(string: "\(URL_BASE)/\(file.hash)/")!
-        let fileDic = ["Type": "File" ,"name":file.name, "hash": file.hash, "isFavorite": file.isFavorite, "playbackPosition": file.playbackPosition] as [String : Any]
-        
-        print(url.absoluteString)
-        
+    private func patch(data: [String:Any]){
+        let url = URL(string: "\(URL_BASE)/Patch-file-folder/")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        guard let httpBody = getHTTPBody(dictionnary: fileDic) else{return}
+        guard let httpBody = getHTTPBody(dictionnary: data) else{return}
         request.httpBody = httpBody
         
         
@@ -192,8 +194,20 @@ final class ClientService: NSObject{
                     print("error here: \(error.localizedDescription)")
                 }
             }
-            
         }
         task.resume()
+    }
+        
+    
+    
+    func patch(folder: Folder){
+        let data = ["type": "folder" ,"name":folder.name, "hash": folder.hash, "isFavorite": folder.isFavorite] as [String : Any]
+        patch(data: data)
+    }
+    
+    func patch(file: File){
+        let data = ["type": "file" ,"name":file.name, "hash": file.hash, "isFavorite": file.isFavorite, "playbackPosition": file.playbackPosition] as [String : Any]
+        
+        patch(data: data)
     }
 }

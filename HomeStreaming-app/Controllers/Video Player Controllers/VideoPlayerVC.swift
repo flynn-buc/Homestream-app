@@ -12,8 +12,7 @@ import AVKit
 class VideoPlayerVC: UIViewController {
     
     private let ANIMATION_DURATION = 0.50
-
-    @IBOutlet weak var volumeUpButton: UIButton!
+    
     @IBOutlet weak var volumeSliderView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var timeSlider: SmallSlider!
@@ -44,6 +43,7 @@ class VideoPlayerVC: UIViewController {
         return player
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,7 +58,6 @@ class VideoPlayerVC: UIViewController {
             mpVolumeView.autoresizingMask = UIView.AutoresizingMask.flexibleWidth
             volumeSliderView.addSubview(mpVolumeView)
             volumeSliderWidth = volumeSliderView.frame.width
-            setAnchorPoint(anchorPoint: CGPoint(x: 1, y: 0.5), forView: mpVolumeView)
         }
         
         let tap = UITapGestureRecognizer(target:self, action: #selector(self.toggleControlView))
@@ -116,28 +115,17 @@ class VideoPlayerVC: UIViewController {
     }
     
     override var prefersStatusBarHidden: Bool {
-        return statusBarHidden
+        return true
     }
     
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.fade
     }
     
-    func setStatusBar(hidden: Bool, delay: TimeInterval = 0.0) {
-        statusBarHidden = hidden
-        
-        if (hidden){
-            self.additionalSafeAreaInsets.top = 20
-        }else{
-            self.additionalSafeAreaInsets.top = 0
-        }
-        
-        UIView.animate(withDuration: ANIMATION_DURATION, delay: delay, animations: {
-            self.setNeedsStatusBarAppearanceUpdate()
-        }) { (success: Bool) in
-        }
-    }
     
     func adjustPlaybackPosition(){
         player.pause()
@@ -223,14 +211,12 @@ extension VideoPlayerVC {
         statusBarHidden = false
         UIView.animate(withDuration: duration, delay: delay, options: [UIView.AnimationOptions.curveEaseIn, .allowUserInteraction], animations: {
             view.alpha = 0.90
-            self.setNeedsStatusBarAppearanceUpdate()
         }, completion: completion)  }
     
     private func fadeOut(view: UIView, duration: TimeInterval = 1, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
         statusBarHidden = true
         UIView.animate(withDuration: duration, delay: delay, options: [UIView.AnimationOptions.curveEaseIn,.allowUserInteraction], animations: {
             view.alpha = 0.0
-            self.setNeedsStatusBarAppearanceUpdate()
         }, completion: completion)
     }
     
@@ -251,50 +237,6 @@ extension VideoPlayerVC {
                 self.controlsAreVisible = false
             }
         }
-    }
-    
-    private func showOrHideVolumeSlider() {
-        if (volumeSliderVisible){
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut) {
-                self.mpVolumeView?.transform = CGAffineTransform.identity.scaledBy(x: 0.0001, y: 1)
-                self.volumeUpButton.setImage(UIImage(systemName: "speaker.wave.2"), for: .normal)
-            } completion: { (finished) in
-                self.volumeSliderVisible = false;
-                self.scheduleFadeout()
-            }
-        }else{
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut) {
-                self.mpVolumeView?.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
-                self.volumeUpButton.setImage(UIImage(systemName: "speaker.wave.3"), for: .normal)
-            } completion: { (finished) in
-                self.volumeSliderVisible = true;
-                self.scheduleFadeout()
-                
-            }
-        }
-    }
-    
-    private func setAnchorPoint(anchorPoint: CGPoint, forView view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = true
-        var newPoint = CGPoint(x: view.bounds.size.width * anchorPoint.x,
-                               y: view.bounds.size.height * anchorPoint.y)
-        
-        
-        var oldPoint = CGPoint(x: view.bounds.size.width * view.layer.anchorPoint.x,
-                               y: view.bounds.size.height * view.layer.anchorPoint.y)
-        
-        newPoint = newPoint.applying(view.transform)
-        oldPoint = oldPoint.applying(view.transform)
-        
-        var position = view.layer.position
-        position.x -= oldPoint.x
-        position.x += newPoint.x
-        
-        position.y -= oldPoint.y
-        position.y += newPoint.y
-        
-        view.layer.position = position
-        view.layer.anchorPoint = anchorPoint
     }
 }
 
@@ -397,10 +339,6 @@ extension VideoPlayerVC{
     
     @IBAction func fullScreenArrowsPressed(_ sender: Any) {
         
-    }
-    
-    @IBAction func volumeUpButtonPressed(_ sender: Any) {
-        showOrHideVolumeSlider()
     }
     
     @IBAction func airplayButtonPressed(_ sender: Any) {

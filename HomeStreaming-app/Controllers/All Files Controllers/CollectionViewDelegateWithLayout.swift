@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewDelegateWithLayout: NSObject, UICollectionViewDelegate {
+class CollectionViewDelegateWithLayout: NSObject, UICollectionViewDelegateFlowLayout {
     //Adjust cell size for iphones
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var cellSize:CGSize = CGSize(width: 164, height: 152)

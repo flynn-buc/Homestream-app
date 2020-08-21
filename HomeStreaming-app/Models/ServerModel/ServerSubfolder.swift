@@ -13,4 +13,4 @@ struct ServerSubfolder: Codable{
     let isFavorite: Bool
     let files: [ServerFile]
     let subfolders: [ServerSubfolder]
-    }
+}

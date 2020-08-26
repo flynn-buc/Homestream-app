@@ -58,6 +58,7 @@ class PosterPageVC: UINavigationController, PagingViewControllerDataSource {
         pagingVC.backgroundColor = UIColor.black
         pagingVC.selectedBackgroundColor = UIColor.black
         pagingVC.includeSafeAreaInsets = false
+        pagingVC.menuBackgroundColor = UIColor.black
         
         
         

@@ -16,31 +16,17 @@
             <objects>
                 <navigationController title="Test" id="JAQ-3V-MpF" customClass="PosterPageVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="c3I-I5-0lE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PLB-FE-zag">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="PLB-FE-zag">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wao-ls-lD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-666" y="1525"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="FID-VU-9ip">
-            <objects>
-                <viewController id="kkw-ev-AdV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hbl-nM-Q5h">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="XCr-FQ-cV6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="gqG-ai-vXq"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vaO-np-LbJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137" y="1525"/>
+            <point key="canvasLocation" x="-30" y="1396"/>
         </scene>
         <!--MovieVC-->
         <scene sceneID="oUY-TA-AB4">
@@ -655,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nb-QG-Hce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1757.8125" y="1187.701317715959"/>
+            <point key="canvasLocation" x="1412" y="1396"/>
         </scene>
         <!--Poster CollectionVC-->
         <scene sceneID="gon-2o-KUN">
@@ -688,9 +674,12 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="Avengers" textAlignment="center" lineBreakMode="clip" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="4" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZb-JC-Axd">
                                                             <rect key="frame" x="0.0" y="0.0" width="208" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" name="Color"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            </variation>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-PZ-wiW" customClass="FavoritesButton" customModule="HomeStreaming_app" customModuleProvider="target">
                                                             <rect key="frame" x="213" y="0.0" width="35" height="30"/>
@@ -848,7 +837,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBe-fl-teB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960.35156249999989" y="1187.701317715959"/>
+            <point key="canvasLocation" x="724" y="1396"/>
         </scene>
     </scenes>
     <designables>

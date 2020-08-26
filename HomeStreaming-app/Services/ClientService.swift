@@ -20,6 +20,7 @@ typealias genericClosure<T> = (T) -> Void
 
 final class ClientService: NSObject{
     static let instance = ClientService()
+    var token: String?
     
     let session = URLSession(configuration: .default)
     var URL_BASE = "http://\(IP):\(port)"
@@ -43,31 +44,46 @@ final class ClientService: NSObject{
     
     // Generic call 'Get' call to server
     private func genericGet<T>(url: URL, decodingObjectSuccess: T.Type, onSuccess: @escaping genericClosure<T>, onError: @escaping OnAPIFailure) where T: Codable{
-        print("URL::: \(url.absoluteString)") // print url Used
-        let task = session.dataTask(with: url) { (data, response, error) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    onError("error there: \(error.localizedDescription)")
-                    return
-                }
-                guard let data = data, let response = response as? HTTPURLResponse else{
-                    onError("Invalid Data or Response")
-                    return}
-                
-                do{
-                    if response.statusCode == 200{ // success
-                        let response = try JSONDecoder().decode(decodingObjectSuccess, from: data)
-                        onSuccess(response)
-                    } else { // non success
-                        let err = try JSONDecoder().decode(APIError.self, from: data)
-                        onError(err.message)
+        
+        if let token = token {
+            print("Token before sending: \(token)")
+            var request = URLRequest(url: url)
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            request.addValue(token, forHTTPHeaderField: "token")
+            
+            
+            print("URL::: \(url.absoluteString)") // print url Used
+            let task = session.dataTask(with: request) { (data, response, error) in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        onError("error there: \(error.localizedDescription)")
+                        return
                     }
-                }catch{
-                    onError("error here: \(error.localizedDescription)")
+                    guard let data = data, let response = response as? HTTPURLResponse else{
+                        onError("Invalid Data or Response")
+                        return}
+                    
+                    do{
+                        if response.statusCode == 200{ // success
+                            let response = try JSONDecoder().decode(decodingObjectSuccess, from: data)
+                            onSuccess(response)
+                        } else { // non success
+                            let err = try JSONDecoder().decode(APIError.self, from: data)
+                            onError(err.message)
+                        }
+                    }catch{
+                        onError("error here: \(error.localizedDescription)")
+                    }
                 }
             }
+            task.resume()
+        }else{
+            authenticateRetrieveToken { (response) in
+                self.genericGet(url: url, decodingObjectSuccess: decodingObjectSuccess, onSuccess: onSuccess, onError: onError)
+                print("Token: \(response)")
+            }
         }
-        task.resume()
     }
     
     // Server call to retrieve all data
@@ -123,6 +139,7 @@ final class ClientService: NSObject{
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue(token!, forHTTPHeaderField: "token")
         guard let httpBody = getHTTPBody(dictionnary: fileDic) else{return}
         request.httpBody = httpBody
         
@@ -149,6 +166,48 @@ final class ClientService: NSObject{
                 }
             }
             
+        }
+        task.resume()
+    }
+    
+    func authenticateRetrieveToken(onSuccess: @escaping OnAPIFailure){
+        print("Authenticating.....")
+        let url = URL(string: "\(URL_BASE)/Authenticate/")!
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        guard let username = UserPrefs.data.string(forTextKey: .username) else{return}
+        guard let password = UserPrefs.data.string(forTextKey: .password) else{return}
+        
+        
+        guard let httpBody = getHTTPBody(dictionnary: ["username": username, "password": password]) else{return}
+        request.httpBody = httpBody
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print("error authenticate: \(error.localizedDescription)")
+                }
+                guard let data = data, let response = response as? HTTPURLResponse else{
+                    print("Invalid Authenticate Request")
+                    return
+                }
+                do{
+                    if response.statusCode == 200{
+                        let response = try JSONDecoder().decode(APIError.self, from: data)
+                        print("Token Str: \(response.message)")
+                        self.token = response.message
+                        onSuccess(response.message)
+                    }else{
+                        let err = try JSONDecoder().decode(APIError.self, from: data)
+                        print(err.message)
+                    }
+                }catch{
+                    print("Error authentication: \(error.localizedDescription)")
+                }
+            }
         }
         task.resume()
     }
@@ -197,7 +256,7 @@ final class ClientService: NSObject{
         }
         task.resume()
     }
-        
+    
     
     
     func patch(folder: Folder){

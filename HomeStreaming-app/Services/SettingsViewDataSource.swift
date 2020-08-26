@@ -82,7 +82,7 @@ final private class NetworkItems: MenuItems{
 
     private let localIP = TextSettingsOptionCellModel(title: "Local Server IP:", key: .localIP)
     private let port = TextSettingsOptionCellModel(title: "Port:", key: .port)
-    private let remoteAccess = SwitchSettingsOptionCellModel(title: "Enable Remote Access:", key: .enableRemoteAccess)
+    private let remoteAccess = SwitchSettingsOptionCellModel(title: "Auto Connect with :", key: .enableRemoteAccess)
     private let remoteIP = TextSettingsOptionCellModel(title: "Remote Server IP:", key: .remoteIP, keyIfDisplayed: .enableRemoteAccess)
     
     init(){

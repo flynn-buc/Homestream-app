@@ -1,16 +1,44 @@
 PODS:
+  - Blueprints (0.13.1)
+  - CocoaButton (1.0.0)
+  - Gradients (0.3.0)
+  - GradientView (2.3.4)
   - MobileVLCKit (3.3.13)
+  - Parchment (2.4.0)
+  - PolioPager (2.5)
+  - SideMenu (6.4.9)
 
 DEPENDENCIES:
+  - Blueprints
+  - CocoaButton
+  - Gradients
+  - GradientView
   - MobileVLCKit
+  - Parchment
+  - PolioPager
+  - SideMenu (~> 6.0)
 
 SPEC REPOS:
   trunk:
+    - Blueprints
+    - CocoaButton
+    - Gradients
+    - GradientView
     - MobileVLCKit
+    - Parchment
+    - PolioPager
+    - SideMenu
 
 SPEC CHECKSUMS:
+  Blueprints: ddd6ab1e455c98471aaef2fdd0b09b5f9b53af5b
+  CocoaButton: 9a2e91b1b6973b2d2a780699b3f55d9f01900439
+  Gradients: d7e1be639692b86577616ee55ea96f54fb5f1de1
+  GradientView: 61d79cc948bf66f9d453865794ace916c2ba0918
   MobileVLCKit: 92e1ea43124259417f481c890821efb2399d25e3
+  Parchment: 002785473861582385db5c6725165353c500198e
+  PolioPager: ccb4e382fef0c3c0ee52bdec3d9e9794eafa510a
+  SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
 
-PODFILE CHECKSUM: 85316b9ef64f25b8af178b33f2f0615fe8844ecb
+PODFILE CHECKSUM: 6c523aeed3e1cf9907e8960286d173c7efd92e3f
 
 COCOAPODS: 1.9.3

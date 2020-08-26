@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnD-vL-u9F">
     <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -30,10 +29,32 @@
             </objects>
             <point key="canvasLocation" x="-1011" y="1053"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Slide Menu-->
+        <scene sceneID="ePF-g2-KWB">
+            <objects>
+                <navigationController id="zMj-Yz-3RB" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Slide Menu" id="iwk-G9-65k"/>
+                    <navigationItem key="navigationItem" id="SyO-H4-ABn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RuR-6C-A0H">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="completeGestureDuration">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowPushOfSameClassTwice" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSb-CA-Ys8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="592" y="1864"/>
+        </scene>
+        <!--Tab BarVC-->
         <scene sceneID="6Sf-lu-JcG">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hnD-vL-u9F" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hnD-vL-u9F" customClass="TabBarVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X2A-IR-HCY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -42,11 +63,11 @@
                         <color key="tintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
+                        <segue destination="llg-yX-9dc" kind="relationship" relationship="viewControllers" id="Wjn-sl-9d9"/>
                         <segue destination="3lX-Ok-7sy" kind="relationship" relationship="viewControllers" destinationCreationSelector="showMovies" id="FVK-Ec-iON"/>
                         <segue destination="8LP-E5-h3u" kind="relationship" relationship="viewControllers" id="ZhW-rm-xaa"/>
                         <segue destination="fTi-g2-PXv" kind="relationship" relationship="viewControllers" id="h3Q-3e-zxk"/>
                         <segue destination="7b1-aJ-AdH" kind="relationship" relationship="viewControllers" id="pI8-Pb-7b5"/>
-                        <segue destination="llg-yX-9dc" kind="relationship" relationship="viewControllers" id="Wjn-sl-9d9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVh-RF-Uat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -311,6 +332,7 @@
         <scene sceneID="bJ5-Vh-Cii">
             <objects>
                 <navigationController id="XCQ-dz-Bgr" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="APQ-Bj-swg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cRW-gh-T6e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -328,6 +350,7 @@
             <objects>
                 <splitViewController id="fTi-g2-PXv" customClass="SettingsSplitVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" id="pXN-BU-yQ1"/>
+                    <navigationItem key="navigationItem" id="5vF-6e-txd"/>
                     <connections>
                         <segue destination="XCQ-dz-Bgr" kind="relationship" relationship="masterViewController" id="MAC-0f-yGC"/>
                         <segue destination="pHk-Mk-N1Q" kind="relationship" relationship="detailViewController" id="Bb9-Q0-3f3"/>
@@ -443,13 +466,20 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="OI4-sD-qtq"/>
                     <navigationItem key="navigationItem" title="Folder List" id="IVx-xo-B8J">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="t1k-W7-dLA">
-                            <imageReference key="image" image="chevron.backward" symbolScale="large"/>
-                            <color key="tintColor" name="AccentColor"/>
-                            <connections>
-                                <action selector="backBtnPressed:" destination="aaR-wM-spg" id="JnE-Iu-S3g"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" id="t1k-W7-dLA">
+                                <imageReference key="image" image="chevron.backward" symbolScale="large"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="aaR-wM-spg" id="JnE-Iu-S3g"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="A4f-AR-qY9">
+                                <connections>
+                                    <segue destination="zMj-Yz-3RB" kind="presentation" id="5vH-h0-qQB"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" id="KFi-GZ-Sv4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nL2-rh-cU8">
                                 <rect key="frame" x="1274" y="14" width="72" height="22"/>

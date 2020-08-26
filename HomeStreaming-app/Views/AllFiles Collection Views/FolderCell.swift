@@ -33,7 +33,7 @@ class FolderCell: UICollectionViewCell {
         folderButton.setTitle(filesystemItem.name, for: .normal)
         folderButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         folderButton.tag = index
-        favoritesButton.setItem(item: &filesystemItem)
+        favoritesButton.setItem(item: filesystemItem)
         favoritesButton.set(isFavorite: filesystemItem.isFavorite)
     }
     

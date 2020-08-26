@@ -77,17 +77,19 @@ class VideoPlayerVC: UIViewController {
         
         self.fileHash = fileHash
         self.beginningTimestamp = Float(beginningTimestamp) / 10000.0
+        print("Beginning time: \(self.beginningTimestamp)")
         let media = VLCMedia(url: url)
         media.delegate = self
         player.media = media
         player.delegate = self
         player.drawable = playerView
-        print("Playing: \(String(describing: url.absoluteString))")
+        print("Playing (video Player): \(String(describing: url.absoluteString))")
         playButton.setImage(UIImage(systemName: "pause"), for:.normal)
         
 
         player.play()
         pausePlayback()
+        sleep(UInt32(1))
         player.position = self.beginningTimestamp
         resumePlayback()
         timestampTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(saveTimestamp), userInfo: nil, repeats: true)
@@ -255,6 +257,7 @@ extension VideoPlayerVC: VLCMediaDelegate, VLCMediaPlayerDelegate{
             if (hasStarted){
                 mediaControlsView.isHidden = false
                 mediaControlsView.becomeFirstResponder()
+                
                 totalTimeLbl.text = player.media.length.stringValue
                 fadeInThenFadeOut(view: mediaControlsView, duration: ANIMATION_DURATION, delay: 1) {
                     self.controlsAreVisible = false
@@ -263,7 +266,6 @@ extension VideoPlayerVC: VLCMediaDelegate, VLCMediaPlayerDelegate{
         }
         else{
             if player.position > 0.995 && !player.isPlaying{
-                //player.position = 0
                 dismiss(animated: true)
             }
         }

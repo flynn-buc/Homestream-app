@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilesDataSource: NSObject, UICollectionViewDataSource, ClientServiceDataSource {
+class MoviePosterDataSource: NSObject, UICollectionViewDataSource, ClientServiceDataSource {
     
     public private(set) var rootFolder: Folder? // represent root folder sent by server
     public private(set) var currentFolder: Folder? // represent currently selected folder
@@ -23,61 +23,60 @@ class FilesDataSource: NSObject, UICollectionViewDataSource, ClientServiceDataSo
     private func updateData(to data: MessageData, completed: ((Folder)->Void) = {(folder: Folder) -> Void in}){
         rootFolder = Folder(name: data.folders.name, type: .folder, hash: data.folders.hash, isFavorite: data.folders.isFavorite)
         rootFolder?.addItems(items: loadServerData(from_files: data.folders.files, parent: rootFolder!))
-        rootFolder?.addItems(items: loadServerData(from_subfolders:data.folders.subfolders, parent: rootFolder!))
+        loadServerData(from_subfolders:data.folders.subfolders, parent: rootFolder!)
         
         if let rootFolder = rootFolder{
             completed(rootFolder)
-            
         }
     }
     
     //Recursively populate subfolder data
-    private func loadServerData(from_subfolders serverfolders: [ServerSubfolder], parent: FilesystemItem) -> [Folder]{
+    private func loadServerData(from_subfolders serverfolders: [ServerSubfolder], parent: FilesystemItem){
         var folders: [Folder] = []
         for serverfolder in serverfolders{
             let newFolder = Folder(name: serverfolder.name, type: .folder, hash:serverfolder.hash, isFavorite: serverfolder.isFavorite, parent: parent)
-            newFolder.addItems(items: loadServerData(from_subfolders: serverfolder.subfolders, parent: newFolder))
-            newFolder.addItems(items: loadServerData(from_files: serverfolder.files, parent: newFolder))
+            loadServerData(from_subfolders: serverfolder.subfolders, parent: newFolder)
+            rootFolder?.addItems(items: loadServerData(from_files: serverfolder.files, parent: rootFolder!))
             folders.append(newFolder)
         }
-        return folders
     }
     
     //Populate file Data
     private func loadServerData(from_files serverFiles: [ServerFile], parent: FilesystemItem) -> [File]{
-        var files: [File] = []
+        var files: [MovieFile] = []
         for file in serverFiles{
+            
+                print(file.name)
             if let data = file.data{
-                print("Data: \(data.image)")
+                if (file.type == "MOVIE"){
+                    let type: FileType = file.name.contains(".srt") ? .subtitle: .movie
+                    files.append(MovieFile(name: file.name, type: type, hash: file.hash, isFavorite: file.isFavorite, parent: parent, playbackPosition: file.playbackPosition, data: data))
+                }
             }
-            let type: FileType = file.name.contains(".srt") ? .subtitle: .movie
-            files.append(File(name: file.name, type: type, hash: file.hash, isFavorite: file.isFavorite, parent: parent, playbackPosition: file.playbackPosition))
+            
         }
         return files
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentFolder?.items.count ?? 0
+        return rootFolder?.items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "folderCell", for: indexPath) as? FolderCell{
-            if var item = currentFolder?.items[indexPath.row]{
-                cell.setup(filesystemItem: &item, index: indexPath.row)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "posterCell", for: indexPath) as? PosterCollectionCell{
+            if let movie = rootFolder?.items[indexPath.row] as? MovieFile{
+                cell.setup(movieFile: movie)
                 return cell
             }
         }
-        return FolderCell()
+        
+        return PosterCollectionCell()
     }
-    
-    func updateRootFolder(to rootFolder: Folder){
-        self.rootFolder = rootFolder
-    }
-    
-    func updateCurrentFolder(to currentFolder: Folder){
-        self.currentFolder = currentFolder
-    }
-    
     
     func getData(onSuccess: @escaping onSuccess, onError: @escaping onError){
         dataManager.get{ (data) in

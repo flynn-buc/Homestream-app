@@ -14,3 +14,10 @@ enum FileType{
     case movie
     case folder
 }
+
+enum VideoFileType{
+    case movie
+    case tv_show
+    case subtitle
+    case null
+}

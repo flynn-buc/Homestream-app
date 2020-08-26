@@ -14,7 +14,7 @@ class FavoritesButton: UIButton {
         set(isFavorite: item.isFavorite)
     }
     
-    func setItem(item: inout FilesystemItem){
+    func setItem(item: FilesystemItem){
         self.item = item
     }
     

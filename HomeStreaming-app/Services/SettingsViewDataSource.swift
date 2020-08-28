@@ -82,11 +82,12 @@ final private class NetworkItems: MenuItems{
 
     private let localIP = TextSettingsOptionCellModel(title: "Local Server IP:", key: .localIP)
     private let port = TextSettingsOptionCellModel(title: "Port:", key: .port)
-    private let remoteAccess = SwitchSettingsOptionCellModel(title: "Auto Connect with :", key: .enableRemoteAccess)
-    private let remoteIP = TextSettingsOptionCellModel(title: "Remote Server IP:", key: .remoteIP, keyIfDisplayed: .enableRemoteAccess)
+    private let remoteAccess = SwitchSettingsOptionCellModel(title: "Login with remote IP:", key: .enableRemoteAccess)
+    private let manualRemoteIP = SwitchSettingsOptionCellModel(title: "Manual Remote IP", key: .manualRemoteIP)
+    private let remoteIP = TextSettingsOptionCellModel(title: "Remote Server IP:", key: .remoteIP, keyIfDisplayed: .manualRemoteIP)
     
     init(){
-        super.init(items: [localIP, port, remoteAccess, remoteIP])
+        super.init(items: [localIP, port, remoteAccess, manualRemoteIP, remoteIP])
     }
 }
 

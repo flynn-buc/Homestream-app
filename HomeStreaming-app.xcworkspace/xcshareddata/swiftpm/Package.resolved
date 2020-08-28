@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "BlurredModalViewController",
+        "repositoryURL": "https://github.com/flynn-buc/BlurredModalViewController",
+        "state": {
+          "branch": null,
+          "revision": "2ce2da53ea39962fafa87ec25a243bc74c26b801",
+          "version": "1.0.1"
+        }
+      },
+      {
         "package": "Differ",
         "repositoryURL": "https://github.com/tonyarnold/Differ",
         "state": {

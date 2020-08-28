@@ -15,6 +15,8 @@
 		CE017D2A24E2965D007EEF38 /* SmallSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE017D2924E2965D007EEF38 /* SmallSlider.swift */; };
 		CE050B6D24F59B7D0047A1CD /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE050B6C24F59B7D0047A1CD /* TabBarVC.swift */; };
 		CE050B6F24F5A4F40047A1CD /* PosterPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE050B6E24F5A4F40047A1CD /* PosterPageVC.swift */; };
+		CE050B7124F66EC90047A1CD /* APITokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE050B7024F66EC90047A1CD /* APITokenResponse.swift */; };
+		CE050B7324F838850047A1CD /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE050B7224F838850047A1CD /* PlayButton.swift */; };
 		CE0933B224EDB19C00E8CB4B /* FilesNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0933B124EDB19C00E8CB4B /* FilesNVC.swift */; };
 		CE0933B424EDB2C800E8CB4B /* FavoritesNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0933B324EDB2C800E8CB4B /* FavoritesNavVC.swift */; };
 		CE0933BC24EDC73900E8CB4B /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = CE0933BB24EDC73900E8CB4B /* NVActivityIndicatorView */; };
@@ -47,6 +49,7 @@
 		CE9B238A24DDEAE30042D2E0 /* MovieCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B238924DDEAE30042D2E0 /* MovieCollectionVC.swift */; };
 		CE9DE9F724E7EBC7005B54F0 /* VideoPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DE9F624E7EBC7005B54F0 /* VideoPlayerDelegate.swift */; };
 		CE9E63E424E4FC7B000ABE45 /* SystemVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E63E324E4FC7B000ABE45 /* SystemVolumeView.swift */; };
+		CE9ED81624F9B7C400E4CAFE /* BlurredModalViewController in Frameworks */ = {isa = PBXBuildFile; productRef = CE9ED81524F9B7C400E4CAFE /* BlurredModalViewController */; };
 		CEA011E024E5DBA200F5DB69 /* Notification.Name Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA011DF24E5DBA200F5DB69 /* Notification.Name Extension.swift */; };
 		CEA011E224E5F9C100F5DB69 /* VideoSettingsPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA011E124E5F9C100F5DB69 /* VideoSettingsPopupVC.swift */; };
 		CEA7E15924D9FACF005E5E95 /* SettingsOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7E15824D9FACF005E5E95 /* SettingsOptionCell.swift */; };
@@ -72,7 +75,7 @@
 		CEE9815724C1445900CF9428 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815624C1445900CF9428 /* ClientService.swift */; };
 		CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815A24C148E900CF9428 /* MessageData.swift */; };
 		CEE9816024C16F5F00CF9428 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9815F24C16F5F00CF9428 /* FolderCell.swift */; };
-		CEE9816624C224F100CF9428 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816524C224F100CF9428 /* APIError.swift */; };
+		CEE9816624C224F100CF9428 /* APIStrMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816524C224F100CF9428 /* APIStrMessageResponse.swift */; };
 		CEE9816824C22A9500CF9428 /* ServerSubfolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816724C22A9500CF9428 /* ServerSubfolder.swift */; };
 		CEE9816F24C2A51000CF9428 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9816E24C2A51000CF9428 /* FileType.swift */; };
 		CEE9817324C2A59600CF9428 /* FilesystemItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9817224C2A59600CF9428 /* FilesystemItem.swift */; };
@@ -116,6 +119,8 @@
 		CE017D2924E2965D007EEF38 /* SmallSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSlider.swift; sourceTree = "<group>"; };
 		CE050B6C24F59B7D0047A1CD /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		CE050B6E24F5A4F40047A1CD /* PosterPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPageVC.swift; sourceTree = "<group>"; };
+		CE050B7024F66EC90047A1CD /* APITokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITokenResponse.swift; sourceTree = "<group>"; };
+		CE050B7224F838850047A1CD /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		CE0933B124EDB19C00E8CB4B /* FilesNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesNVC.swift; sourceTree = "<group>"; };
 		CE0933B324EDB2C800E8CB4B /* FavoritesNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavVC.swift; sourceTree = "<group>"; };
 		CE0D712A24F34C0000ED786B /* PosterCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionVC.swift; sourceTree = "<group>"; };
@@ -178,7 +183,7 @@
 		CEE9815624C1445900CF9428 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
 		CEE9815A24C148E900CF9428 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		CEE9815F24C16F5F00CF9428 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
-		CEE9816524C224F100CF9428 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CEE9816524C224F100CF9428 /* APIStrMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStrMessageResponse.swift; sourceTree = "<group>"; };
 		CEE9816724C22A9500CF9428 /* ServerSubfolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSubfolder.swift; sourceTree = "<group>"; };
 		CEE9816E24C2A51000CF9428 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		CEE9817224C2A59600CF9428 /* FilesystemItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesystemItem.swift; sourceTree = "<group>"; };
@@ -199,6 +204,7 @@
 				CE0933BC24EDC73900E8CB4B /* NVActivityIndicatorView in Frameworks */,
 				CEE9817824C2E18C00CF9428 /* Differ in Frameworks */,
 				CED045E324C1163400334E7F /* SocketIO in Frameworks */,
+				CE9ED81624F9B7C400E4CAFE /* BlurredModalViewController in Frameworks */,
 				437864EC13D10EEAEC217461 /* Pods_HomeStreaming_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +481,7 @@
 				CEA7E15D24DA5BB5005E5E95 /* Settings Views */,
 				CEB97DB424DFA02F001C7EBA /* DecimalPad */,
 				CEF2B2B224E26B76002302DA /* RoundedUIView.swift */,
+				CE050B7224F838850047A1CD /* PlayButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -504,7 +511,8 @@
 				CEE9815A24C148E900CF9428 /* MessageData.swift */,
 				CE9B238724DDEA8F0042D2E0 /* ServerFile.swift */,
 				CEE9816724C22A9500CF9428 /* ServerSubfolder.swift */,
-				CEE9816524C224F100CF9428 /* APIError.swift */,
+				CEE9816524C224F100CF9428 /* APIStrMessageResponse.swift */,
+				CE050B7024F66EC90047A1CD /* APITokenResponse.swift */,
 				CEC11F7624F31D92007A8DDF /* MovieData.swift */,
 				CEC11F7824F31DCF007A8DDF /* CastData.swift */,
 			);
@@ -544,6 +552,7 @@
 				CED045E224C1163400334E7F /* SocketIO */,
 				CEE9817724C2E18C00CF9428 /* Differ */,
 				CE0933BB24EDC73900E8CB4B /* NVActivityIndicatorView */,
+				CE9ED81524F9B7C400E4CAFE /* BlurredModalViewController */,
 			);
 			productName = "HomeStreaming-app";
 			productReference = CED045AB24C1160D00334E7F /* HomeStreaming-app.app */;
@@ -624,6 +633,7 @@
 				CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */,
 				CEE9817624C2E18C00CF9428 /* XCRemoteSwiftPackageReference "Differ" */,
 				CE0933BA24EDC73900E8CB4B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				CE9ED81424F9B7C300E4CAFE /* XCRemoteSwiftPackageReference "BlurredModalViewController" */,
 			);
 			productRefGroup = CED045AC24C1160D00334E7F /* Products */;
 			projectDirPath = "";
@@ -800,9 +810,11 @@
 				CE5E097324E9047500D63391 /* ClientServiceDataSource.swift in Sources */,
 				CEE9815B24C148E900CF9428 /* MessageData.swift in Sources */,
 				CED045B924C1160D00334E7F /* HomeStreaming_app.xcdatamodeld in Sources */,
+				CE050B7124F66EC90047A1CD /* APITokenResponse.swift in Sources */,
 				CE123FDF24E4854400831FE9 /* VideoInfoCell.swift in Sources */,
 				CEE9817324C2A59600CF9428 /* FilesystemItem.swift in Sources */,
 				CE0D712B24F34C0000ED786B /* PosterCollectionVC.swift in Sources */,
+				CE050B7324F838850047A1CD /* PlayButton.swift in Sources */,
 				CE050B6D24F59B7D0047A1CD /* TabBarVC.swift in Sources */,
 				CE0933B424EDB2C800E8CB4B /* FavoritesNavVC.swift in Sources */,
 				CE00AE7224F3AFED00F7157F /* RoundImageView.swift in Sources */,
@@ -833,7 +845,7 @@
 				CED045B124C1160D00334E7F /* SceneDelegate.swift in Sources */,
 				CE9B238A24DDEAE30042D2E0 /* MovieCollectionVC.swift in Sources */,
 				CEE9815724C1445900CF9428 /* ClientService.swift in Sources */,
-				CEE9816624C224F100CF9428 /* APIError.swift in Sources */,
+				CEE9816624C224F100CF9428 /* APIStrMessageResponse.swift in Sources */,
 				CE0D712F24F3506D00ED786B /* PosterCollectionCell.swift in Sources */,
 				CE9E63E424E4FC7B000ABE45 /* SystemVolumeView.swift in Sources */,
 			);
@@ -1197,6 +1209,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		CE9ED81424F9B7C300E4CAFE /* XCRemoteSwiftPackageReference "BlurredModalViewController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/flynn-buc/BlurredModalViewController";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 		CED045E124C1163400334E7F /* XCRemoteSwiftPackageReference "socket" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
@@ -1220,6 +1240,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE0933BA24EDC73900E8CB4B /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		CE9ED81524F9B7C400E4CAFE /* BlurredModalViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9ED81424F9B7C300E4CAFE /* XCRemoteSwiftPackageReference "BlurredModalViewController" */;
+			productName = BlurredModalViewController;
 		};
 		CED045E224C1163400334E7F /* SocketIO */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -9,47 +9,45 @@ import UIKit
 import Parchment
 
 class PosterPageVC: UINavigationController, PagingViewControllerDataSource {
-
-    
-    
-    var firstVC: UIViewController!
-    var secondVC: UIViewController!
-    var thirdVC: UIViewController!
+    var movieVC: UIViewController!
+    var tvshowVC: UIViewController!
+    var favoritesVC: UIViewController!
     var pagingVC: PagingViewController!
     
     var controllers = [UIViewController]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarItem.image = UIImage(systemName: "film.fill")
-        self.tabBarItem.title = "Media"
         
-        if let vc = storyboard?.instantiateViewController(identifier: "posterCollectionVC") as? PosterCollectionVC{
-            firstVC = vc
+        let movieStoryboard = UIStoryboard(name: "Posters", bundle: nil)
+        
+        if let vc = movieStoryboard.instantiateViewController(identifier: "posterCollectionVC") as? PosterCollectionVC{
+            movieVC = vc
         }
-        
-        if let vc = storyboard?.instantiateViewController(identifier: "posterCollectionVC") as? PosterCollectionVC{
-            secondVC = vc
+
+        if let vc = movieStoryboard.instantiateViewController(identifier: "posterCollectionVC") as? PosterCollectionVC{
+            tvshowVC = vc
         }
-        
-        if let vc = storyboard?.instantiateViewController(identifier: "posterCollectionVC") as? PosterCollectionVC{
-            thirdVC = vc
+
+        if let vc = movieStoryboard.instantiateViewController(identifier: "posterCollectionVC") as? PosterCollectionVC{
+            vc.movieDataSource = MoviePosterDataSource(dataManager: FavoritesDataManager())
+            favoritesVC = vc
         }
-        
-        
-        
-        firstVC.title = "Movies"
-        secondVC.title = "TV Shows"
-        thirdVC.title = "Favorites"
-        
+
+
+
+        movieVC.title = "Movies"
+        tvshowVC.title = "TV Shows"
+        favoritesVC.title = "Favorites"
+
         self.navigationBar.backgroundColor = UIColor.black
         self.view.backgroundColor = UIColor.black
         self.navigationBar.isTranslucent = false
-        
-        controllers = [firstVC, secondVC, thirdVC]
-        
+
+        controllers = [movieVC, tvshowVC, favoritesVC]
+
         pagingVC = PagingViewController()
-        
+
         pagingVC.dataSource = self
         pagingVC.textColor = UIColor.gray
         pagingVC.selectedTextColor = UIColor.systemIndigo
@@ -59,12 +57,9 @@ class PosterPageVC: UINavigationController, PagingViewControllerDataSource {
         pagingVC.selectedBackgroundColor = UIColor.black
         pagingVC.includeSafeAreaInsets = false
         pagingVC.menuBackgroundColor = UIColor.black
-        
-        
-        
-        
+
         addChild(pagingVC)
-        
+
         self.view.addSubview(pagingVC.view)
         pagingVC.didMove(toParent: self)
         pagingVC.view.translatesAutoresizingMaskIntoConstraints = false
@@ -75,11 +70,6 @@ class PosterPageVC: UINavigationController, PagingViewControllerDataSource {
             pagingVC.view.topAnchor.constraint(equalTo: margins.topAnchor),
             pagingVC.view.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
         ])
-        
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     func numberOfViewControllers(in pagingViewController: PagingViewController) -> Int {

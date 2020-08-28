@@ -47,9 +47,6 @@ class FilesDataSource: NSObject, UICollectionViewDataSource, ClientServiceDataSo
     private func loadServerData(from_files serverFiles: [ServerFile], parent: FilesystemItem) -> [File]{
         var files: [File] = []
         for file in serverFiles{
-            if let data = file.data{
-                print("Data: \(data.image)")
-            }
             let type: FileType = file.name.contains(".srt") ? .subtitle: .movie
             files.append(File(name: file.name, type: type, hash: file.hash, isFavorite: file.isFavorite, parent: parent, playbackPosition: file.playbackPosition))
         }

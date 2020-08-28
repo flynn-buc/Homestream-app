@@ -336,7 +336,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r0K-cl-ZWf"/>
                         <constraints>
-                            <constraint firstItem="r0K-cl-ZWf" firstAttribute="bottom" secondItem="hxj-0Z-i6i" secondAttribute="bottom" id="EVt-nK-tWB"/>
+                            <constraint firstAttribute="bottom" secondItem="hxj-0Z-i6i" secondAttribute="bottom" id="6W2-LZ-yn6"/>
                             <constraint firstItem="hxj-0Z-i6i" firstAttribute="leading" secondItem="r0K-cl-ZWf" secondAttribute="leading" id="RZ8-tz-3El"/>
                             <constraint firstItem="hxj-0Z-i6i" firstAttribute="trailing" secondItem="r0K-cl-ZWf" secondAttribute="trailing" id="ThN-Ls-rw5"/>
                             <constraint firstItem="hxj-0Z-i6i" firstAttribute="top" secondItem="r0K-cl-ZWf" secondAttribute="top" id="asB-L4-tUg"/>
@@ -344,6 +344,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="1Pa-eW-CYu" id="Twv-aN-gf6"/>
+                        <outlet property="fullScreenButton" destination="DIh-aq-Shh" id="nr7-vG-z4w"/>
                         <outlet property="mediaControlsView" destination="D58-gG-JT1" id="cT7-3a-lDh"/>
                         <outlet property="playButton" destination="rRU-3E-jW4" id="5ko-DA-0nb"/>
                         <outlet property="playerView" destination="hxj-0Z-i6i" id="1Jv-zL-Mmk"/>

@@ -20,6 +20,7 @@ enum UserDefaultKey: String{
     case enableAuthentication = "enableAuthentication"
     case username = "username"
     case password = "password"
+    case manualRemoteIP = "autoUpdateRemoteIP"
     
     
 }

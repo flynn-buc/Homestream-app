@@ -20,6 +20,7 @@ class VideoPlayerVC: UIViewController {
     @IBOutlet weak var totalTimeLbl: UILabel!
     @IBOutlet weak var mediaControlsView: UIView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var fullScreenButton: UIButton!
     @IBOutlet weak var playerView: UIView!{
         didSet{
             self.playerView.backgroundColor = UIColor.black
@@ -37,6 +38,7 @@ class VideoPlayerVC: UIViewController {
     private var volumeSliderWidth: CGFloat = 0.0
     private var fileHash: Int = 0
     private var beginningTimestamp: Float = 0
+    private var isFullscreen = false;
     
     private let player: VLCMediaPlayer = {
         let player = VLCMediaPlayer()
@@ -47,7 +49,7 @@ class VideoPlayerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         extendedLayoutIncludesOpaqueBars = true
         mpVolumeView = SystemVolumeView(frame: volumeSliderView.bounds)
         if let mpVolumeView = mpVolumeView{
@@ -86,7 +88,7 @@ class VideoPlayerVC: UIViewController {
         print("Playing (video Player): \(String(describing: url.absoluteString))")
         playButton.setImage(UIImage(systemName: "pause"), for:.normal)
         
-
+        
         player.play()
         pausePlayback()
         sleep(UInt32(1))
@@ -178,6 +180,33 @@ class VideoPlayerVC: UIViewController {
         scheduleFadeout()
     }
     
+    func toggleFullScreen(){
+        isFullscreen = !isFullscreen
+        
+        if isFullscreen{
+            fullScreenButton.setImage(UIImage(systemName: "arrow.down.right.and.arrow.up.left"), for: .normal)
+            NSLayoutConstraint.activate([
+                playerView.topAnchor.constraint(equalTo: view.topAnchor),
+                playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                playerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            ])
+        }else{
+            fullScreenButton.setImage(UIImage(systemName: "arrow.up.left.and.arrow.down.right"), for: .normal)
+            let safeArea = self.view.safeAreaLayoutGuide
+            NSLayoutConstraint.activate([
+                playerView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+                playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                playerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+                playerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+                playerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            ])
+        }
+    }
+    
     @objc func saveTimestamp(){
         if let delegate = delegate{
             delegate.saveTimestamp(timestamp: Int(player.position * 10000), hash: fileHash)
@@ -185,7 +214,7 @@ class VideoPlayerVC: UIViewController {
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-       saveTimestamp()
+        saveTimestamp()
         timestampTimer?.invalidate()
         super.dismiss(animated: flag) {
             self.scheduleFadeout()
@@ -340,7 +369,7 @@ extension VideoPlayerVC{
     }
     
     @IBAction func fullScreenArrowsPressed(_ sender: Any) {
-        
+        toggleFullScreen()
     }
     
     @IBAction func airplayButtonPressed(_ sender: Any) {

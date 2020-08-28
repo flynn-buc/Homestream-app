@@ -19,6 +19,9 @@ class ActorCell: UICollectionViewCell {
     func initView(image: String, name: String, characterName: String){
         nameLabel.text = name
         characterLabel.text = characterName
+        if (image == "blank poster"){
+            actorImage.image = UIImage(named: image)
+        }
         actorImage.downloaded(from: image)
         
     }

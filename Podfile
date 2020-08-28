@@ -17,13 +17,10 @@ target 'HomeStreaming-app' do
   end
 
 pod 'MobileVLCKit'
-pod 'PolioPager'
-pod 'SideMenu', '~>6.0'
 pod 'Parchment'
-pod 'CocoaButton'
-pod 'Gradients'
 pod 'Blueprints'
 pod 'GradientView'
-
+pod 'TransitionButton'
+pod 'RAMAnimatedTabBarController'
 
 end

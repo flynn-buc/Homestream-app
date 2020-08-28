@@ -45,8 +45,6 @@ class MoviePosterDataSource: NSObject, UICollectionViewDataSource, ClientService
     private func loadServerData(from_files serverFiles: [ServerFile], parent: FilesystemItem) -> [File]{
         var files: [MovieFile] = []
         for file in serverFiles{
-            
-                print(file.name)
             if let data = file.data{
                 if (file.type == "MOVIE"){
                     let type: FileType = file.name.contains(".srt") ? .subtitle: .movie
@@ -80,6 +78,7 @@ class MoviePosterDataSource: NSObject, UICollectionViewDataSource, ClientService
     
     func getData(onSuccess: @escaping onSuccess, onError: @escaping onError){
         dataManager.get{ (data) in
+            print("Getting data")
             if let data = data as? MessageData{
                 self.updateData(to: data)
                 if let rootFolder = self.rootFolder{

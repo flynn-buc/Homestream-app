@@ -17,8 +17,12 @@ class PosterCollectionCell: UICollectionViewCell {
     
     func setup(movieFile: MovieFile){
         if let data = movieFile.data{
-        titleLabel.text = data.title
-            posterImage.downloaded(from: data.image)
+            titleLabel.text = data.title
+            if (data.image == "blank poster"){
+                posterImage.image = UIImage(named: data.image)
+            }else{
+                posterImage.downloaded(from: data.image)
+            }
         }
         
         favoritesButton.setItem(item: movieFile)

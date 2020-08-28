@@ -8,6 +8,7 @@
 import UIKit
 import NVActivityIndicatorView
 
+
 private let reuseIdentifier = "Cell"
 typealias loadComplete = () -> Void
 
@@ -17,15 +18,16 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
     @IBOutlet weak var backBtn: UIBarButtonItem!
     
     private let refreshControl = UIRefreshControl()
-
+    
     internal var filesDataSource: FilesDataSource!
     private let collectionViewDelegateLayout = CollectionViewDelegateWithLayout()
     private var currentPlayingMovie: File?
     private var currentTitle: String?
     private var activityView: NVActivityIndicatorView!
+    private var firstload = true
     
-    override func viewWillAppear(_ animated: Bool) {
-        if filesDataSource != nil{
+    override func viewDidAppear(_ animated: Bool) {
+        if filesDataSource != nil && !firstload{
             refresh()
         }
     }
@@ -47,10 +49,11 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
         let frame = CGRect(x: (self.view.frame.size.width - 80)/2, y: (self.view.frame.size.height - 80)/2, width: 80, height: 80)
         activityView = NVActivityIndicatorView(frame:frame, type: .ballSpinFadeLoader, color: .systemIndigo)
         self.view.addSubview(activityView)
-        loadDataFromServer()
-    }
-    
-    func configure(){
+        loadDataFromServer {
+            self.firstload = false
+        } onError: {
+            self.firstload = false
+        }
         
     }
     
@@ -59,18 +62,20 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
     }
     
     // Retrieve all data from server
-    private func loadDataFromServer(reloadData: Bool = true, onLoadComplete: loadComplete? = nil){
+    private func loadDataFromServer(reloadData: Bool = true, onLoadComplete: @escaping loadComplete = {}, onError: @escaping loadComplete = {}){
         filesDataSource.getData { (folder) in
             if let folder = folder as? Folder{
-                self.setupCollectionView(withFolder: folder)
+                if (reloadData){
+                    self.setupCollectionView(withFolder: folder)
+                }
             }
             self.endRefresh()
-            if let loadComplete = onLoadComplete{
-                loadComplete()// call completion if added
-            }
+            print("Got here!")
+            onLoadComplete()// call completion if added
         } onError: { (error) in
             self.invalidQueryError("\(error)")
             self.endRefresh()
+            onError()
         }
     }
     
@@ -92,6 +97,8 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
                             self.setupCollectionView(withFolder: folder)
                         }
                     }
+                } onError: {
+                    print("Error getting data during refresh")
                 }
             }else{
                 print("Refreshed, but return type uknown: \(response)")
@@ -155,6 +162,7 @@ class MovieCollectionVC: UIViewController, VideoPlayerDelegate {
                 print(currentFolder.name)
                 folderCollection.reloadChanges(from: oldItems, to: currentFolder.items)
             }else{
+                print("I am here unfortunately")
                 self.folderCollection.reloadData()
             }
         }
@@ -175,7 +183,7 @@ extension MovieCollectionVC{
             displayVideo(for: fileToPlay)
         }
     }
-
+    
     // if current folder has a parent, load parent folder (only root should fail here)
     @IBAction func backBtnPressed(_ sender: Any) {
         guard let parent = filesDataSource.currentFolder?.parent as? Folder else {return}

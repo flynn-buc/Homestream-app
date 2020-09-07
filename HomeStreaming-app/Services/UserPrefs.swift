@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ Wrapper for User Defaults. WIll be changed
+ */
 
 final class UserPrefs{
     static let data = UserPrefs()

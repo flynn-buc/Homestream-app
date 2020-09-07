@@ -7,9 +7,8 @@
 
 import UIKit
 
+/// Default button type for a cell in all items
 class FolderButton: UIButton {
-    
     //Default type
     var type: FileType = .folder
-
 }

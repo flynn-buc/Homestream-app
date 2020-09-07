@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Get token response from server to authenticate
 struct APITokenResponse: Codable{
     let ip: String
     let token: String

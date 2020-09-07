@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//Folder received from folder, holds array of files and array of folders
 struct ServerSubfolder: Codable{
     let name: String
     let path: String

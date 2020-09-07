@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/jonathanhirsch/Documents/Projects/Homestream-app/HomeStreaming-app/Posters.storyboard">
+      location = "group:/Users/jonathanhirsch/Documents/Projects/Homestream-app/HomeStreaming-app/TVShowPosters.storyboard">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/jonathanhirsch/Documents/Projects/Homestream-app/HomeStreaming-app/MoviePosters.storyboard">
    </FileRef>
    <FileRef
       location = "group:/Users/jonathanhirsch/Documents/Projects/Homestream-app/HomeStreaming-app/VideoPlayer.storyboard">

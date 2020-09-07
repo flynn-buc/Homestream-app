@@ -7,7 +7,7 @@
 
 import UIKit
 import MediaPlayer
-
+/// Extend the default MPVolumeView to change the tint color and ensure it remains within the specified bound (workaround)
 class SystemVolumeView: MPVolumeView {
     override func volumeSliderRect(forBounds bounds: CGRect) -> CGRect {
         var newBounds = super.volumeSliderRect(forBounds: bounds)

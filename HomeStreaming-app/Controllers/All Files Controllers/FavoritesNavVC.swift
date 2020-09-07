@@ -8,7 +8,6 @@
 import UIKit
 
 class FavoritesNavVC: UINavigationController {
-
     
     let filesDataSource = FilesDataSource(dataManager: FavoritesDataManager())
     

@@ -66,13 +66,16 @@ class MoviePosterDataSource: NSObject, UICollectionViewDataSource, ClientService
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "posterCell", for: indexPath) as? PosterCollectionCell{
-            if let movie = rootFolder?.items[indexPath.row] as? MovieFile{
-                cell.setup(movieFile: movie)
-                return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "posterCell", for: indexPath) as? PosterCollectionCell, let rootFolder = rootFolder{
+            if (indexPath.row <= rootFolder.items.count){
+                if let movie = rootFolder.items[indexPath.row] as? MovieFile{
+                    cell.setup(movieFile: movie)
+                    return cell
+                }
             }
         }
         
+        collectionView.register(PosterCollectionCell.self, forCellWithReuseIdentifier: "posterCell")
         return PosterCollectionCell()
     }
     
@@ -84,13 +87,13 @@ class MoviePosterDataSource: NSObject, UICollectionViewDataSource, ClientService
                 if let rootFolder = self.rootFolder{
                     onSuccess(rootFolder)
                 }else{
-                onError("No Data found from updateData")
+                    onError("No Data found from updateData")
                 }
             }else{
-            onError("Data in updateData is in wrong format -- \(data)")
+                onError("Data in updateData is in wrong format -- \(data)")
             }
         } onError: { (error) in
-           onError(error)
+            onError(error)
         }
     }
     

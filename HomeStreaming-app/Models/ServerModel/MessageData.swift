@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Basic message response from server for all files and folders
 struct MessageData: Codable{
     let message: String
     let folders: ServerSubfolder

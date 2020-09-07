@@ -6,6 +6,7 @@
 //
 
 import Foundation
+// File received from server
 struct ServerFile: Codable{
     let name: String
     let hash: Int

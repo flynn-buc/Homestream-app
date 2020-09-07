@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/// adjust layout for iphones vs ipads for folder displays
 class CollectionViewDelegateWithLayout: NSObject, UICollectionViewDelegateFlowLayout {
     //Adjust cell size for iphones
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

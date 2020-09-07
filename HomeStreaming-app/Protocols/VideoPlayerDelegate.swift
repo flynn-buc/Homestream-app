@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Used to save timestamp from video player
 protocol VideoPlayerDelegate {
     func saveTimestamp(timestamp: Int, hash: Int)
-        }
+}

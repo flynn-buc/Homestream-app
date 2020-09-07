@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Encode Strings for URLs
 extension String{
     static func pathAsURL (_ pathURL: Any) -> String{
        return "\(pathURL)".pathAsURL()

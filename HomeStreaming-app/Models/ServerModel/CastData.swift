@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//Defines cast data received from server, used to display
 struct CastData: Codable{
     let id: Int
     let name: String

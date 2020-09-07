@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// Represent icon and title in a UITableViewCell
 struct SettingsCellModel{
     var icon: UIImage?
     var title: String

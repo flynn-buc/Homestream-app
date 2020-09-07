@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Defines a favorite button with two states, capable of changing state and updating to ensure it matches the underlying item's favorite state
 class FavoritesButton: UIButton {
     private var item: FilesystemItem!
     

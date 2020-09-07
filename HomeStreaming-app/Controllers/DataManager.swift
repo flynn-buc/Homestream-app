@@ -7,8 +7,10 @@
 
 import Foundation
 
-typealias onGetMessageDataSuccess = (Any) ->()
-typealias onloadFileSuccess = (Any) ->()
+typealias onGetMessageDataSuccess = (Any)->()
+typealias onloadFileSuccess = (Any)->()
+
+///Represents a manager to interface with Client Data service. Enables abstraction of data querying and updating based on the type desired
 protocol DataManager {
     func get(onSuccess: @escaping onGetMessageDataSuccess, onError: @escaping onError)
     func refresh(onSuccess: @escaping onSuccess, onError: @escaping onError)
@@ -16,7 +18,8 @@ protocol DataManager {
     func patch(data: Any)
     }
 
-extension DataManager{
+/// Default Manager, should be overriden to provide additional functionality (i.e. favorites)
+class DefaultDataManager: DataManager{
     func get(onSuccess: @escaping onGetMessageDataSuccess, onError: @escaping onError) {
             ClientService.instance.get(){ (data) in
                 onSuccess(data)
@@ -24,7 +27,6 @@ extension DataManager{
                 onError(error)
             }
         }
-        
         
         func refresh(onSuccess: @escaping onSuccess, onError: @escaping onError){
             ClientService.instance.refresh { (response) in
@@ -53,18 +55,23 @@ extension DataManager{
         }
 }
 
-struct DefaultDataManager: DataManager{
-    
+/// Represents a DataManager that will only retrieve favorites
+class FavoritesDataManager: DefaultDataManager{
+     override func get(onSuccess: @escaping onGetMessageDataSuccess, onError: @escaping onError) {
+        ClientService.instance.getFavorites(onSuccess: onSuccess, onError: onError)
+    }
 }
 
-struct FavoritesDataManager: DataManager{
-        
-     func get(onSuccess: @escaping onGetMessageDataSuccess, onError: @escaping onError) {
-        print("I was called")
-        ClientService.instance.getFavorites { (data) in
-            onSuccess(data)
-        } onError: { (error) in
-            onError(error)
-        }
+typealias onGetTVShowSuccess = (TVShowData)->()
+///Represents a Data manager for retrieving TV Shows specifically
+class TVShowDataManager: DefaultDataManager{
+    
+     override func get(onSuccess: @escaping onGetMessageDataSuccess, onError: @escaping onError){
+        ClientService.instance.getTVShowData(onSuccess: onSuccess, onError: onError);
     }
+}
+
+class TVShowFavoritesDataManager: TVShowDataManager{
+    
+    
 }

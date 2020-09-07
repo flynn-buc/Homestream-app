@@ -36,7 +36,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLf-i8-pAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-998" y="1054"/>
+            <point key="canvasLocation" x="-1168" y="731"/>
         </scene>
         <!--Tab BarVC-->
         <scene sceneID="6Sf-lu-JcG">
@@ -58,6 +58,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="ecD-US-goy" kind="relationship" relationship="viewControllers" id="vQ3-MB-d15"/>
+                        <segue destination="dGs-2n-s9I" kind="relationship" relationship="viewControllers" id="yzF-3S-K32"/>
                         <segue destination="3lX-Ok-7sy" kind="relationship" relationship="viewControllers" id="b3g-Ve-FGa"/>
                         <segue destination="8LP-E5-h3u" kind="relationship" relationship="viewControllers" id="Oyh-Rh-vhp"/>
                         <segue destination="fTi-g2-PXv" kind="relationship" relationship="viewControllers" id="h3Q-3e-zxk"/>
@@ -131,7 +132,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYh-HM-1vp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-248" y="1054"/>
+            <point key="canvasLocation" x="-506" y="731"/>
         </scene>
         <!--Item-->
         <scene sceneID="zzq-Wn-nMp">
@@ -524,11 +525,11 @@
             </objects>
             <point key="canvasLocation" x="180.57553956834533" y="2794.9748743718592"/>
         </scene>
-        <!--Media-->
+        <!--Movies-->
         <scene sceneID="fpM-nY-vjZ">
             <objects>
-                <navigationController id="ecD-US-goy" customClass="PosterPageVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Media" image="film.fill" catalog="system" id="Hay-1v-mOM">
+                <navigationController id="ecD-US-goy" customClass="MoviePosterPageVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Movies" image="film.fill" catalog="system" id="Hay-1v-mOM">
                         <color key="badgeColor" name="AccentColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
@@ -549,7 +550,21 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUT-qF-mtH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="515" y="923"/>
+            <point key="canvasLocation" x="166" y="731"/>
+        </scene>
+        <!--TV Shows-->
+        <scene sceneID="RkK-ho-c4F">
+            <objects>
+                <navigationController id="dGs-2n-s9I" customClass="TVShowPosterPageVC" customModule="HomeStreaming_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TV Shows" image="tv" catalog="system" id="es9-rE-IqZ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gma-H4-rGL">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYK-q5-Xor" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="731"/>
         </scene>
         <!--Posters-->
         <scene sceneID="LwE-nN-HaT">
@@ -602,7 +617,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="7PT-HP-qI8"/>
+        <segue reference="lMa-Jf-p5v"/>
         <segue reference="Bb9-Q0-3f3"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -615,9 +630,10 @@
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="subtitle" width="512" height="512"/>
+        <image name="tv" catalog="system" width="128" height="97"/>
         <image name="wifi" catalog="system" width="128" height="92"/>
         <namedColor name="AccentColor">
-            <color red="0.36899998784065247" green="0.36100000143051147" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.27399998903274536" green="0.26800000667572021" blue="0.68000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

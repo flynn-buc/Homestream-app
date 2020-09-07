@@ -21,6 +21,5 @@ pod 'Parchment'
 pod 'Blueprints'
 pod 'GradientView'
 pod 'TransitionButton'
-pod 'RAMAnimatedTabBarController'
-
+pod 'CachyKit'
 end

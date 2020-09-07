@@ -15,13 +15,15 @@ class PosterCollectionCell: UICollectionViewCell {
     
     private let refreshControl = UIRefreshControl()
     
+    /// Setup a poster cell for movies using the title, small poster, and favorites status of a movie
+    /// - Parameter MovieFile: The movie file to dsiplay as a poster
     func setup(movieFile: MovieFile){
         if let data = movieFile.data{
             titleLabel.text = data.title
             if (data.image == "blank poster"){
                 posterImage.image = UIImage(named: data.image)
             }else{
-                posterImage.downloaded(from: data.image)
+                posterImage.load(url: URL(string: data.smallPoster)!, placeholder: nil)
             }
         }
         

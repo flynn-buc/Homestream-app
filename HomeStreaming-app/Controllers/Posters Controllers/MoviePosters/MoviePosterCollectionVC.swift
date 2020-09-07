@@ -9,28 +9,16 @@ import UIKit
 import Blueprints
 import BlurredModalViewController
 
-class PosterCollectionVC: UIViewController, UICollectionViewDelegate {
-    
-    let maxHeightIpad:CGFloat = 400
-    let minHeightIpad: CGFloat = 300
-    
-    let ratio: CGFloat = 406/256
-    
-    let currentCellHeight: CGFloat = 200
-    let currentCellWeidth: CGFloat = 100
-    
+class MoviePosterCollectionVC: UIViewController, UICollectionViewDelegate {
     private let refreshControl = UIRefreshControl()
     private var rootFolder: Folder?
     var movieDataSource = MoviePosterDataSource(dataManager: DefaultDataManager())
     private var initialOrientationIsPortrait = false;
     
-    @IBOutlet var posterCollectionView: UICollectionView!
+    @IBOutlet var posterCollectionView: PosterCollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.tabBarItem.image = UIImage(systemName: "film.fill")
-        self.navigationController?.tabBarItem.title = "Media"
-        
         posterCollectionView.dataSource = movieDataSource
         posterCollectionView.delegate = self
         
@@ -45,6 +33,7 @@ class PosterCollectionVC: UIViewController, UICollectionViewDelegate {
             self.adjustLayout()
         }
     }
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -86,6 +75,7 @@ class PosterCollectionVC: UIViewController, UICollectionViewDelegate {
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let movieVC = storyboard?.instantiateViewController(identifier: "movieVC") as? MovieVC,
            let blurredVC = storyboard?.instantiateViewController(identifier: "blurredVC") as? BlurredModalViewController{
@@ -95,7 +85,7 @@ class PosterCollectionVC: UIViewController, UICollectionViewDelegate {
                 if UIDevice.current.userInterfaceIdiom == .pad{
                     blurredVC.modalPresentationStyle = .overCurrentContext
                     blurredVC.setViewControllerToDisplay(movieVC)
-                    blurredVC.style = .systemUltraThinMaterialDark
+                    blurredVC.style = .systemThinMaterial
                     self.present(blurredVC, animated: false)
                     
                 }else{
@@ -103,7 +93,7 @@ class PosterCollectionVC: UIViewController, UICollectionViewDelegate {
                 }
                 
                 if let cell = collectionView.cellForItem(at: indexPath) as? PosterCollectionCell{
-                    movieVC.linkFavoritesButtons(button: cell.favoritesButton)
+                  
                 }
             }
         }
@@ -111,51 +101,10 @@ class PosterCollectionVC: UIViewController, UICollectionViewDelegate {
     
     
     @objc private func adjustLayout(){
-        let isPortrait = self.isPortrait()
-        var itemsPerRow:CGFloat = 3.0
-        var height: CGFloat = 220
-        var interItemSpacing: CGFloat = 10
-        var lineSpacing: CGFloat = 10
-        var insets = EdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        
-        if UIDevice.current.userInterfaceIdiom == .phone{
-            if isPortrait{
-                itemsPerRow = 3.0
-                lineSpacing = 30
-            }else{
-                itemsPerRow = 4.0
-                height = 250
-                interItemSpacing = 5
-                insets.left = 5
-                insets.right = 5
-            }
-        }else{
-            height = 285
-            if isPortrait{
-                print("Here!!")
-                itemsPerRow = 5.0
-            }else{
-                itemsPerRow = 6.0
-                print("There")
-            }
-        }
-        
-        let blueprintLayout: VerticalBlueprintLayout = VerticalBlueprintLayout(
-            itemsPerRow: itemsPerRow,
-            height: height,
-            minimumInteritemSpacing: interItemSpacing,
-            minimumLineSpacing: lineSpacing,
-            sectionInset: insets,
-            stickyHeaders: true,
-            stickyFooters: false
-        )
-        posterCollectionView.collectionViewLayout = blueprintLayout
+        posterCollectionView.collectionViewLayout = posterCollectionView.getVerticalCellLayout()
     }
     
-    private func isPortrait()->Bool{
-        let size = self.view.bounds.size
-        return (size.width < size.height)
-    }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

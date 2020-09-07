@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Represent a cell with data that can be changed by user
 class SettingsOptionCellModel {
     public private(set) var title: String
     public private(set) var component: UIControl
@@ -22,6 +23,7 @@ class SettingsOptionCellModel {
     
 }
 
+//Cell with a switch
 class SwitchSettingsOptionCellModel: SettingsOptionCellModel {
     public private(set) var uiSwitch: UISwitch
 
@@ -32,6 +34,7 @@ class SwitchSettingsOptionCellModel: SettingsOptionCellModel {
     }
 }
 
+//Cell with a text frield - Can be toggled by a switch
 class TextSettingsOptionCellModel: SettingsOptionCellModel{
     public private(set) var textField: UITextField
     

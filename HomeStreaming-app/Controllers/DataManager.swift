@@ -55,6 +55,12 @@ class DefaultDataManager: DataManager{
         }
 }
 
+class MovieDataManager: DefaultDataManager{
+    override func get(onSuccess: @escaping onGetMessageDataSuccess, onError: @escaping onError){
+        ClientService.instance.getMovies(onSuccess: onSuccess, onError: onError)
+    }
+}
+
 /// Represents a DataManager that will only retrieve favorites
 class FavoritesDataManager: DefaultDataManager{
      override func get(onSuccess: @escaping onGetMessageDataSuccess, onError: @escaping onError) {

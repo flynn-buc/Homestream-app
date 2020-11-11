@@ -26,6 +26,9 @@ class MoviePosterDataSource: NSObject, UICollectionViewDataSource, ClientService
         loadServerData(from_subfolders:data.folders.subfolders, parent: rootFolder!)
         
         if let rootFolder = rootFolder{
+            for folder in rootFolder.items{
+                print(folder.name)
+            }
             completed(rootFolder)
         }
     }

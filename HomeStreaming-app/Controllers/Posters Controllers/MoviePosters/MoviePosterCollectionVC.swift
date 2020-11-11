@@ -12,7 +12,7 @@ import BlurredModalViewController
 class MoviePosterCollectionVC: UIViewController, UICollectionViewDelegate {
     private let refreshControl = UIRefreshControl()
     private var rootFolder: Folder?
-    var movieDataSource = MoviePosterDataSource(dataManager: DefaultDataManager())
+    var movieDataSource = MoviePosterDataSource(dataManager: MovieDataManager())
     private var initialOrientationIsPortrait = false;
     
     @IBOutlet var posterCollectionView: PosterCollectionView!

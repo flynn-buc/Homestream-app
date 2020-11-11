@@ -32,9 +32,35 @@ final class ClientService: NSObject{
     
     private var isLocalIP = false
     
+    
+    // GET
+    private let GET_DATA_HANDLER_PATH = "/get/all/";
+    private let GET_FAVORITES_PATH = "/get/favorites/all";
+    private let GET_TV_SHOW_PATHS = "/get/tv-show/";
+    private let GET_MOVIES_PATH = "/get/movies/";
+    private let GET_MOVIES_FAVORITES_PATH = "/get/movies/favorites";
+    
+    //REFRESH (POST)
+    private let REFRESH_ALL_HANDLER_PATH = "/refresh/all/";
+    private let REFRESH_MOVIES_PATH = "/refresh/movies/";
+    private let REFRESH_TV_SHOWS_PATH = "/refresh/tv-shows/";
+    
+    //PATCH
+    private let PATCH_TV_SHOW = "/patch/tv-shows/";
+    private let PATCH_MOVIE = "/patch/movies/";
+    private let PATCH_FILE_FOLDER_PATH = "/patch-file-folder/";
+    
+    
+    private let STREAM_PATH = "/start_stream/";
+    private let AUTHENTICATE_PATH = "/authenticate/";
+    private let PING_PATH = "/ping/";
+    
     private let patch_file_folder = "/patch-file-folder/"
-    private let get_data_default = "/get-data/"
-    private let refresh_all = "/refresh/"
+    private let get_data_default = "/get/all/"
+    
+    
+    
+    private let refresh_all = "/refresh/all/"
     private let start_stream = "/start_stream/"
     private let get_favorites_default = "/get_favorites/"
     private let authenticate = "/authenticate/"
@@ -164,14 +190,26 @@ final class ClientService: NSObject{
     }
     
     func getFavorites(onSuccess: @escaping OnGetTVShowSuccess, onError: @escaping OnAPIStringResponse){
-        queue.async(flags: .barrier){
-            let url = URL(string: "\(self.URL_BASE)\(self.get_favorites_default)")!
-            self.genericGet(path: "\(self.get_favorites_default)", url: url, decodingObjectSuccess: TVShowData.self) { (success) in
-                onSuccess(success)
-            } onError: { (error) in
-                print("Error in getFavorites")
-                onError(error)
-            }
+//        queue.async(flags: .barrier){
+//            let url = URL(string: "\(self.URL_BASE)\(self.get_favorites_default)")!
+//            self.genericGet(path: "\(self.get_favorites_default)", url: url, decodingObjectSuccess: TVShowData.self) { (success) in
+//                onSuccess(success)
+//            } onError: { (error) in
+//                print("Error in getFavorites")
+//                onError(error)
+//            }
+//        }
+    }
+    
+    func getMovies(onSuccess: @escaping OnGetFoldersAndFilesSuccess, onError: @escaping OnAPIStringResponse){
+        let url = URL(string: "\(URL_BASE)\(GET_MOVIES_PATH)")!
+        self.genericGet(path: "\(GET_MOVIES_PATH)" ,url: url, decodingObjectSuccess: MessageData.self) { (success) in
+            onSuccess(success)
+           
+            print("Finished getting movies")
+        } onError: { (error) in
+            print("Error in getMovies")
+            onError(error)
         }
     }
     
